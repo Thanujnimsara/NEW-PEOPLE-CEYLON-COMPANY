@@ -38,10 +38,10 @@ Built strictly in accordance with the **People’s Ceylon (Private) Limited Webs
    - **Customer Complaints & Grievance Mechanism**: Structured 3-step escalation process with 7–14 business day resolution timeline.
    - **Direct WhatsApp Business & Hotline Action Buttons**: Floating instant communication triggers.
 
-4. **Brand & Visual Aesthetics (Part 5, Annex 3)**:
-   - Palette: Deep Ceylon Royal Navy (`#0A2540`), Ceylon Warm Gold (`#C59B27`), Emerald Finance Green (`#0F766E`), Slate White.
+4. **Brand & Visual Aesthetics (Official Logo Aligned)**:
+   - Palette: Golden Yellow (`#F5A623`), Dark Red / Crimson (`#A81B1B`), Deep Midnight Obsidian (`#0F172A`), Slate White.
    - Typography: Google Fonts `Plus Jakarta Sans`, `Noto Sans Sinhala`, and `Noto Sans Tamil`.
-   - Authentic, high-resolution imagery: Ampara branch premises, vehicle fleet, director executive portrait, SME entrepreneurship.
+   - Authentic branding: Official People's Ceylon gear & growth arrow emblem, high-resolution fleet, director executive portrait, and Ampara branch imagery.
 
 ---
 
