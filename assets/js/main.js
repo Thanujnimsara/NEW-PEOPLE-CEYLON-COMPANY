@@ -365,7 +365,7 @@ window.previewDocument = function(docType) {
         <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #C59B27; padding-bottom: 15px; margin-bottom: 20px;">
           <div>
             <h2 style="color: #0A2540; margin: 0; font-size: 20px;">PEOPLE'S CEYLON (PRIVATE) LIMITED</h2>
-            <div style="font-size: 12px; color: #64748B;">Company Registration No. PV 00354852 • Registered Office: No. 28/125/1, Weranketagoda, Ampara</div>
+            <div style="font-size: 12px; color: #64748B;">Company Registration No. PV 00354852 • Registered Office: No. 28/125/1, Weranketagoda, Ampara • Business Office: Temple Junction, D.S. Senanayake Street, Ampara</div>
           </div>
           <div style="text-align: right; font-weight: bold; color: #C59B27;">FORM: PC-HP-01</div>
         </div>
