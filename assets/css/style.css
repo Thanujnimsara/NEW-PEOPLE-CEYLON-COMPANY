@@ -854,20 +854,6 @@ body.lang-ta .nav-link {
 }
 
 .product-card-badge {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: var(--color-accent);
-  color: #FFFFFF;
-  padding: 0.25rem 0.75rem;
-  border-radius: var(--radius-full);
-  font-size: 0.725rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  z-index: 2;
-}
-
-#revolving-loans .product-card-badge {
   display: none !important;
 }
 
