@@ -867,6 +867,10 @@ body.lang-ta .nav-link {
   z-index: 2;
 }
 
+#revolving-loans .product-card-badge {
+  display: none !important;
+}
+
 .product-card-media {
   height: 180px;
   overflow: hidden;
