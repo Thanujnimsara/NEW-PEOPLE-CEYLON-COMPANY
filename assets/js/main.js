@@ -360,69 +360,19 @@ window.previewDocument = function(docType) {
   let html = "";
 
   if (docType === 'hp_app') {
-    title = "Vehicle Hire Purchase Application Form (Official)";
+    title = "Vehicle Hire Purchase Application Form (Interactive & Print Ready)";
     html = `
-      <div style="border: 2px solid #0A2540; padding: 25px; border-radius: 8px; font-family: sans-serif; color: #1E293B;">
-        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #C59B27; padding-bottom: 15px; margin-bottom: 20px;">
-          <div>
-            <h2 style="color: #0A2540; margin: 0; font-size: 20px;">PEOPLE'S CEYLON (PRIVATE) LIMITED</h2>
-            <div style="font-size: 12px; color: #64748B;">Company Registration No. PV 00354852 • Registered Office: No. 28/125/1, Weranketagoda, Ampara • Business Office: Temple Junction, D.S. Senanayake Street, Ampara</div>
-          </div>
-          <div style="text-align: right; font-weight: bold; color: #C59B27;">FORM: PC-HP-01</div>
-        </div>
-        <h3 style="text-align: center; text-transform: uppercase; margin: 15px 0; color: #0A2540;">APPLICATION FOR VEHICLE HIRE PURCHASE FACILITY</h3>
-        <table style="width: 100%; border-collapse: collapse; margin-bottom: 15px; font-size: 13px;">
-          <tr>
-            <td style="padding: 8px; border: 1px solid #CBD5E1; background: #F8FAFC; width: 30%;">Full Name of Applicant:</td>
-            <td style="padding: 8px; border: 1px solid #CBD5E1;">____________________________________________________</td>
-          </tr>
-          <tr>
-            <td style="padding: 8px; border: 1px solid #CBD5E1; background: #F8FAFC;">National Identity Card (NIC) / Passport:</td>
-            <td style="padding: 8px; border: 1px solid #CBD5E1;">________________________ Date of Birth: ________________</td>
-          </tr>
-          <tr>
-            <td style="padding: 8px; border: 1px solid #CBD5E1; background: #F8FAFC;">Permanent Residential Address:</td>
-            <td style="padding: 8px; border: 1px solid #CBD5E1;">____________________________________________________</td>
-          </tr>
-          <tr>
-            <td style="padding: 8px; border: 1px solid #CBD5E1; background: #F8FAFC;">Mobile Phone & WhatsApp Number:</td>
-            <td style="padding: 8px; border: 1px solid #CBD5E1;">________________________ Email: _______________________</td>
-          </tr>
-          <tr>
-            <td style="padding: 8px; border: 1px solid #CBD5E1; background: #F8FAFC;">Occupation / Business Name:</td>
-            <td style="padding: 8px; border: 1px solid #CBD5E1;">________________________ Monthly Net Income: LKR ________</td>
-          </tr>
-        </table>
-
-        <h4 style="color: #0A2540; margin-top: 15px; margin-bottom: 5px;">VEHICLE DETAILS & FINANCING REQUIREMENTS</h4>
-        <table style="width: 100%; border-collapse: collapse; margin-bottom: 15px; font-size: 13px;">
-          <tr>
-            <td style="padding: 8px; border: 1px solid #CBD5E1; background: #F8FAFC; width: 30%;">Vehicle Make / Model & Year:</td>
-            <td style="padding: 8px; border: 1px solid #CBD5E1;">________________________ Reg. No: ____________________</td>
-          </tr>
-          <tr>
-            <td style="padding: 8px; border: 1px solid #CBD5E1; background: #F8FAFC;">Vehicle Seller / Dealership:</td>
-            <td style="padding: 8px; border: 1px solid #CBD5E1;">________________________ Valuation/Invoice (LKR): _________</td>
-          </tr>
-          <tr>
-            <td style="padding: 8px; border: 1px solid #CBD5E1; background: #F8FAFC;">Initial Down Payment (LKR):</td>
-            <td style="padding: 8px; border: 1px solid #CBD5E1;">________________________ Required Facility (LKR): _______</td>
-          </tr>
-          <tr>
-            <td style="padding: 8px; border: 1px solid #CBD5E1; background: #F8FAFC;">Proposed Repayment Period:</td>
-            <td style="padding: 8px; border: 1px solid #CBD5E1;">[ ] 12 Months  [ ] 24 Months  [ ] 36 Months  [ ] 48 Months  [ ] 60 Months</td>
-          </tr>
-        </table>
-
-        <div style="background: #F1F5F9; padding: 12px; border-radius: 6px; font-size: 11px; margin-top: 15px; line-height: 1.5;">
-          <strong>Applicant Declaration:</strong> I hereby declare that all information given above is true and accurate. I consent to People's Ceylon (Private) Limited conducting verification checks including with the Credit Information Bureau (CRIB) in full compliance with the Personal Data Protection Act No. 9 of 2022.
-        </div>
-        <div style="display: flex; justify-content: space-between; margin-top: 40px; font-size: 12px;">
-          <div>Applicant Signature: __________________________</div>
-          <div>Date: __________________________</div>
-        </div>
+      <div style="display: flex; justify-content: space-between; align-items: center; background: #EEF2F6; padding: 10px 14px; border-radius: 6px; margin-bottom: 12px;">
+        <span style="font-size: 13px; color: #1E293B; font-weight: 600;">You can type directly into the form below, auto-save, and print.</span>
+        <a href="hp-application-form.html" target="_blank" class="btn btn-primary btn-sm" style="text-decoration: none;">Open in Fullscreen Tab ↗</a>
       </div>
+      <iframe src="hp-application-form.html" style="width: 100%; height: 72vh; border: 1px solid #CBD5E1; border-radius: 8px;"></iframe>
     `;
+    printTitle.innerText = title;
+    previewContent.innerHTML = html;
+    openModal('docPreviewModal');
+    return;
+  }
   } else if (docType === 'guar_stmt') {
     title = "Guarantor's Legal Statement & Consent Form";
     html = `
@@ -541,6 +491,11 @@ window.previewDocument = function(docType) {
 };
 
 window.printCurrentDoc = function() {
+  const iframe = document.querySelector('#docPreviewContent iframe');
+  if (iframe && iframe.contentWindow) {
+    iframe.contentWindow.print();
+    return;
+  }
   const content = document.getElementById('docPreviewContent').innerHTML;
   const printWindow = window.open('', '_blank');
   printWindow.document.write(`

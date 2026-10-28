@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>People’s Ceylon – HP Application, Guarantor’s Statement, Vehicle Inspection</title>
+<link rel="icon" type="image/png" href="assets/images/peoples-ceylon-emblem-badge.png">
+<style>
+:root{--ink:#1c2541;--line:#8f99ad;--lab:#eceff5;--bg:#d9dde6;--gold:#f2c14e}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);font:13px/1.35 "Segoe UI",Arial,sans-serif;color:#111}
+.bar{position:sticky;top:0;z-index:100;background:var(--ink);padding:8px 12px;display:flex;gap:6px;flex-wrap:wrap;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,0.25)}
+.bar a.back-btn{display:inline-flex;align-items:center;gap:4px;font:inherit;text-decoration:none;padding:6px 12px;border:1px solid rgba(255,255,255,0.25);background:rgba(255,255,255,0.1);color:#fff;border-radius:4px;cursor:pointer;font-weight:600}
+.bar a.back-btn:hover{background:rgba(255,255,255,0.2)}
+.bar button{font:inherit;padding:6px 12px;border:1px solid #5d6b92;background:transparent;color:#fff;border-radius:4px;cursor:pointer;transition:all 0.15s ease}
+.bar button:hover{background:#2c3a66}
+.bar button.on{background:#fff;color:var(--ink);font-weight:700}
+.bar .sp{flex:1}
+.bar button.pr{background:#f2c14e;color:#1c1c1c;border-color:#f2c14e;font-weight:700}
+.bar button.pr:hover{background:#ffd56b}
+.sheet{display:none;width:210mm;max-width:100%;margin:14px auto;background:#fff;padding:12mm;box-shadow:0 2px 10px #0003;border-radius:2px}
+.sheet.on,body.all .sheet{display:block}
+.lh{border:1.5px solid var(--ink);text-align:center;padding:8px 6px;margin-bottom:8px;position:relative}
+.lh b{font-size:16px;display:block;color:var(--ink);letter-spacing:0.5px}
+.lh small{font-size:11px;display:block;color:#333;margin-top:2px}
+h1{text-align:center;font-size:15px;margin:8px 0;letter-spacing:.3px;color:var(--ink);text-transform:uppercase}
+h2{font-size:12px;margin:10px 0 3px;color:var(--ink);border-bottom:1px solid #ddd;padding-bottom:2px}
+table{width:100%;border-collapse:collapse;table-layout:fixed}
+td,th{border:1px solid var(--line);padding:0;vertical-align:middle}
+td.l,th{background:var(--lab);font-weight:600;padding:3px 6px;font-size:11.5px;text-align:left}
+.mx td:first-child{padding:3px 6px;font-size:12px}
+input:not([type]),input[type=text],input[type=date],select,textarea{width:100%;border:0;background:transparent;font:inherit;padding:4px 6px;outline:0;display:block;color:#000}
+textarea{resize:none;overflow:hidden;min-height:28px}
+select{appearance:none;-webkit-appearance:none;cursor:pointer}
+input:focus,textarea:focus,select:focus{background:#fff6d1}
+.v{padding:4px 6px;display:block;font-weight:600}
+.cc{text-align:center}
+input[type=checkbox]{width:15px;height:15px;margin:0;vertical-align:middle;accent-color:#1c2541}
+.cks{padding:4px 6px}
+.cks label,.ci label{margin-right:14px;white-space:nowrap;font-size:11.5px}
+.ci{padding:2px 0}
+p,ol{font-size:11.5px;text-align:justify;margin:4px 0;line-height:1.4}
+ol{padding-left:20px}
+li{margin-bottom:4px}
+.sg td{width:50%;padding:6px 8px;vertical-align:top}
+.sl{height:32px;border-bottom:1px solid #000}
+.cap{font-size:11px;margin:2px 0 6px}
+.nt{font-size:11px;color:#555}
+.sf{display:flex;gap:4px;align-items:center;margin-top:2px}
+.sf span{white-space:nowrap;font-size:11.5px}
+.sf input{border-bottom:1px dotted var(--line)}
+.ft{text-align:center;font-size:10px;color:#555;margin-top:12px;border-top:1px solid #eee;padding-top:6px}
+@page{size:A4;margin:8mm}
+@media print{
+ body{background:#fff}
+ .bar{display:none!important}
+ .sheet{display:none!important;box-shadow:none;margin:0;padding:0;width:auto}
+ .sheet.on,body.all .sheet{display:block!important}
+ body.all .sheet{break-after:page}
+ body.all .sheet:last-child{break-after:auto}
+ td.l,th{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+ input:focus,textarea:focus,select:focus{background:none}
+ h2{break-after:avoid}
+ .sec{break-inside:avoid}
+ input[type=date].empty{color:transparent}
+ input[type=date]::-webkit-calendar-picker-indicator{display:none}
+ tr,.sg{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="bar" id="bar">
+  <a href="index.html" class="back-btn">← Back to Website</a>
+</div>
+<div id="root"></div>
+
+<script>
+const el=(t,c,h)=>{const e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e};
+let n=0,fid='';
+const tag=e=>{e.dataset.k=fid+'.'+n++;return e};
+const cb=()=>tag(Object.assign(el('input'),{type:'checkbox'}));
+
+/* One input from a short spec: ''=text, d=date, n=number, a=multi-line, o:A,B=dropdown, c:A,B=tick boxes, v:x=fixed text */
+function inp(ty,sh){
+  let e;
+  if(ty.startsWith('v:'))return el('span','v',ty.slice(2));
+  if(ty.startsWith('c:')){
+    const w=el('div','cks');
+    ty.slice(2).split(',').forEach(o=>{const l=el('label');l.append(cb(),' '+o);w.append(l)});
+    return w;
+  }
+  if(ty=='a'){e=el('textarea');e.rows=1}
+  else if(ty.startsWith('o:')){e=el('select');e.innerHTML='<option></option>'+ty.slice(2).split(',').map(o=>`<option>${o}</option>`).join('')}
+  else{e=el('input');e.type=ty=='d'?'date':'text';if(ty=='n')e.inputMode='decimal'}
+  if(sh)e.dataset.s=sh;
+  return tag(e);
+}
+
+/* label / value table, rows of "Label|type|shareKey" */
+function kv(rows){
+  const t=el('table');
+  t.innerHTML='<colgroup><col width=22%><col width=28%><col width=22%><col width=28%></colgroup>';
+  rows.forEach(r=>{
+    const tr=el('tr');
+    r.forEach(s=>{
+      const[lb,ty='',sh='']=s.split('|');
+      tr.append(el('td','l',lb));
+      const td=el('td');if(r.length==1)td.colSpan=3;
+      td.append(inp(ty,sh));tr.append(td);
+    });
+    t.append(tr);
+  });
+  return t;
+}
+/* plain table with blank input rows */
+function grid(h,rows){
+  const t=el('table');
+  t.innerHTML='<tr>'+h.map(x=>`<th>${x}</th>`).join('')+'</tr>';
+  for(let i=0;i<rows;i++){const tr=el('tr');h.forEach(()=>{const td=el('td');td.append(inp('a'));tr.append(td)});t.append(tr)}
+  return t;
+}
+/* fixed labels down the side; kinds: c=tick box, t=remarks */
+function mx(h,labels,kinds,w=38){
+  const t=el('table','mx'),nc=kinds.filter(k=>k=='c').length,nt=kinds.length-nc;
+  t.innerHTML=`<colgroup><col width=${w}%>`+kinds.map(k=>`<col width=${k=='c'?8:(100-w-8*nc)/nt}%>`).join('')+'</colgroup><tr>'+h.map(x=>`<th>${x}</th>`).join('')+'</tr>';
+  labels.forEach(l=>{
+    const tr=el('tr');tr.append(el('td','',l));
+    kinds.forEach(k=>{const td=el('td',k=='c'?'cc':'');td.append(k=='c'?cb():inp('a'));tr.append(td)});
+    t.append(tr);
+  });
+  return t;
+}
+const ticks=list=>{const d=el('div');list.forEach(x=>{const r=el('div','ci'),l=el('label');l.append(cb(),' '+x);r.append(l);d.append(r)});return d};
+/* signature blocks: cell = [caption, note, ...fieldSpecs] */
+function sign(rows){
+  const t=el('table','sg');
+  rows.forEach(r=>{
+    const tr=el('tr');
+    r.forEach(([cap,note,...f])=>{
+      const td=el('td');
+      if(note)td.append(el('div','nt',note));
+      if(cap)td.append(el('div','sl'),el('div','cap',cap));
+      f.forEach(s=>{const[lb,ty='',sh]=s.split('|'),d=el('div','sf');d.append(el('span','',lb+':'),inp(ty,sh));td.append(d)});
+      tr.append(td);
+    });
+    t.append(tr);
+  });
+  return t;
+}
+const H=(s,t,x)=>{const d=el('div','sec');d.append(el('h2','',t),x);s.append(d)};
+
+function sheet(id,title,body){
+  fid=id;n=0;
+  const s=el('section','sheet');s.id=id;
+  s.append(el('div','lh','<b>PEOPLE’S CEYLON (PRIVATE) LIMITED</b><small>Company No. PV 00354852</small><small>Registered Office: No. 28/125/1, Weranketagoda, Ampara &nbsp;|&nbsp; Business Office: Temple Junction, D.S. Senanayake Street, Ampara</small><small>Telephone: 063 7 245245 &nbsp;|&nbsp; E-mail: info@peoplesceylon.lk</small>'),el('h1','',title));
+  body(s);
+  s.append(el('div','ft','People’s Ceylon (Private) Limited &nbsp;|&nbsp; Company No. PV 00354852 • Operating under Companies Act No. 7 of 2007'));
+  return s;
+}
+
+/* ---------- 1. Hire purchase application ---------- */
+const app=s=>{
+  s.append(kv([['Application No.||ano','Date received|d']]));
+  H(s,'A.  FACILITY REQUESTED',kv([
+    ['Vehicle make||make','Model||model'],
+    ['Year of manufacture|n|year','Condition (New / Used)|o:New,Used|cond'],
+    ['Supplier / Dealer||supplier','Cash price (Rs.)|n'],
+    ['Deposit (Rs.)|n','Amount to be financed (Rs.)|n|amt'],
+    ['Repayment period (months)|n','Preferred monthly installment (Rs.)|n']]));
+  H(s,'B.  APPLICANT DETAILS',kv([
+    ['Full name||hirer'],
+    ['Name with initials','NIC No.||nic'],
+    ['Date of birth|d','Gender|o:Male,Female'],
+    ['Marital status|o:Single,Married,Divorced,Widowed','No. of dependents|n'],
+    ['Permanent address|a'],
+    ['Present address (if different)|a'],
+    ['Mobile no.','Home / other no.'],
+    ['Email','Residence status (Own / Rented / Family)|o:Own,Rented,Family'],
+    ['Years at present address|n','Spouse name and NIC']]));
+  H(s,'C.  EMPLOYMENT / BUSINESS DETAILS',kv([
+    ['Occupation / designation','Employer / business name'],
+    ['Employer / business address|a'],
+    ['Years in present job / business|n','Business Reg. No. (if any)'],
+    ['Monthly income (Rs.)|n','Other monthly income (Rs.)|n']]));
+  H(s,'D.  MONTHLY OBLIGATIONS AND EXISTING FACILITIES',grid(['Institution','Type of facility','Monthly installment (Rs.)','Outstanding (Rs.)'],3));
+  H(s,'E.  BANK DETAILS',kv([['Bank','Branch'],['Account No.','Account type']]));
+  H(s,'F.  REFEREES (NOT RELATIVES)',grid(['Name','Address','Telephone','Relationship'],2));
+  H(s,'G.  DOCUMENTS TO BE SUBMITTED',ticks([
+    'Copy of NIC (applicant and guarantors)',
+    'Proof of address (utility bill / grama niladhari certificate)',
+    'Income proof: pay slips / business registration and last 6 months’ bank statements',
+    'Proforma invoice or quotation from the supplier',
+    'Two passport-size photographs (applicant and each guarantor)',
+    'Guarantor statements and income proof of the guarantors',
+    'Vehicle inspection report (used vehicles)']));
+  H(s,'H.  DECLARATION AND CONSENT',el('p','','I declare that the information given in this application and the documents submitted are true and correct. I authorise People’s Ceylon (Private) Limited to verify the information with my employer, bankers, referees and any other source, and to obtain a credit report on me from the Credit Information Bureau of Sri Lanka (CRIB). I consent to the company collecting and processing my personal data for the purpose of assessing and administering this application. I understand that submitting this application does not oblige the company to grant the facility, and that the company may decline it without giving reasons.'));
+  s.append(sign([[['Signature of Applicant','','Name||hirer','NIC No.||nic'],['','','Date|d','Place']]]));
+  H(s,'FOR OFFICE USE ONLY',kv([
+    ['Recommended by','Date|d'],
+    ['Decision|c:Approved,Rejected,Deferred'],
+    ['Approved amount (Rs.)|n','Approved by / Date']]));
+};
+
+/* ---------- 2. Guarantor’s statement (No. 1 and No. 2) ---------- */
+const guar=no=>s=>{
+  s.append(kv([['Guarantor No.|v:'+no+' / 2','Application No.||ano']]));
+  H(s,'A.  DETAILS OF THE APPLICANT (HIRER)',kv([
+    ['Name of Hirer||hirer','NIC No.||nic'],
+    ['Vehicle / goods','Facility amount (Rs.)|n|amt']]));
+  H(s,'B.  DETAILS OF THE GUARANTOR',kv([
+    ['Full name'],
+    ['NIC No.','Date of birth|d'],
+    ['Residential address|a'],
+    ['Mobile no.','Other telephone'],
+    ['Relationship to the Hirer','Marital status|o:Single,Married,Divorced,Widowed'],
+    ['Occupation / designation','Employer / business name'],
+    ['Employer / business address|a'],
+    ['Monthly income (Rs.)|n','Bank, branch and account no.']]));
+  H(s,'C.  ASSETS AND COMMITMENTS OF THE GUARANTOR',mx(['Asset / liability','Description (location, make, institution)','Value / outstanding (Rs.)'],
+    ['Immovable property / vehicles','Existing loans / leases','Other guarantees already given'],['t','t'],30));
+  const ol=el('ol','');
+  ['I have read the Hire Purchase Agreement and the Letter of Offer relating to the above facility, or they have been explained to me in a language I understand, and I understand them.',
+   'I jointly and severally guarantee and indemnify People’s Ceylon (Private) Limited (the Owners) as to the regular and punctual payment by the Hirer of all monthly hiring rentals and other sums due, and the performance of the Hirer’s obligations under the Agreement.',
+   'I agree to pay forthwith on demand all monies that become payable by the Hirer, including rentals, interest, damages, costs and charges, and that the Owners may proceed against me before or together with the Hirer.',
+   'I agree that any time or concession given to the Hirer, with or without notice to me, will not release me from this guarantee.',
+   'I understand that I am renouncing the rights of a surety known as the beneficium ordinis sui excussionis and the beneficium divisionis, and that this has been explained to me.',
+   'I declare that the information given by me in this statement is true and correct, and I consent to the company verifying it and obtaining a credit report on me from the Credit Information Bureau of Sri Lanka (CRIB).'
+  ].forEach(x=>ol.append(el('li','',x)));
+  H(s,'D.  GUARANTEE',ol);
+  s.append(sign([
+    [['Signature of Guarantor','','Name / NIC No.','Date|d'],['Witness 1','','Name / NIC No.']],
+    [['Witness 2','','Name / NIC No.'],['Attested by (officer of the company)','','Name and designation']]]));
+};
+
+/* ---------- 3. Vehicle inspection report ---------- */
+const insp=s=>{
+  s.append(kv([
+    ['Application No.||ano','Inspection date|d'],
+    ['Place of inspection','Inspected by'],
+    ['Hirer / applicant||hirer','Supplier / owner||supplier']]));
+  H(s,'A.  VEHICLE DETAILS',kv([
+    ['Class / type','Make||make'],
+    ['Model||model','Year of manufacture|n|year'],
+    ['Registration No.','Colour'],
+    ['Chassis No.','Engine No.'],
+    ['Fuel type|o:Petrol,Diesel,Hybrid,Electric','Transmission|o:Manual,Automatic'],
+    ['Engine capacity (cc)|n','Odometer reading (km)|n'],
+    ['No. of previous owners|n','Condition (New / Used)|o:New,Used|cond']]));
+  H(s,'B.  DOCUMENTS VERIFIED',mx(['Document','Seen','Not seen','Remarks'],[
+    'Certificate of Registration (CR) / ownership document','Revenue licence','Insurance certificate','Emission test certificate','Chassis and engine numbers match the CR','Tax invoice / sales certificate (new vehicles)'],['c','c','t'],40));
+  H(s,'C.  CONDITION OF THE VEHICLE',mx(['Item','Good','Fair','Poor','Remarks'],[
+    'Body and paint','Chassis / frame (signs of accident or repair)','Engine','Gearbox / transmission','Brakes','Suspension and steering','Tyres and wheels','Lights and electrical system','Air conditioning','Interior and seats','Glass and mirrors','Battery','Exhaust / emissions'],['c','c','c','t'],36));
+  H(s,'D.  VALUATION AND RECOMMENDATION',kv([
+    ['Market value (Rs.)|n','Forced-sale value (Rs.)|n'],
+    ['Photographs attached|c:Front,Rear,Both sides,Interior,Chassis and engine plates,Odometer'],
+    ['Overall finding|c:Satisfactory,Satisfactory subject to the remarks above,Not satisfactory'],
+    ['Inspector’s remarks|a']]));
+  s.append(sign([[['Signature of Inspector','','Name','Date|d'],['Signature of Applicant','I have seen the vehicle as described above.','Name||hirer']]]));
+};
+
+/* ---------- build page ---------- */
+const forms=[
+  ['app','HP Application','HIRE PURCHASE APPLICATION',app],
+  ['g1','Guarantor 1','GUARANTOR’S STATEMENT',guar(1)],
+  ['g2','Guarantor 2','GUARANTOR’S STATEMENT',guar(2)],
+  ['vi','Vehicle Inspection','VEHICLE INSPECTION REPORT',insp]];
+const root=document.getElementById('root'),bar=document.getElementById('bar');
+forms.forEach(([id,,title,fn])=>root.append(sheet(id,title,fn)));
+
+const K='pcl_hp_forms_v1';
+let st={};try{st=JSON.parse(localStorage.getItem(K))||{}}catch(e){}
+const all=()=>[...document.querySelectorAll('[data-k]')];
+all().forEach(e=>{const v=st[e.dataset.k];if(v==null)return;if(e.type=='checkbox')e.checked=!!v;else e.value=v});
+const save=()=>{const o={};all().forEach(e=>{const v=e.type=='checkbox'?e.checked:e.value;if(v)o[e.dataset.k]=v});try{localStorage.setItem(K,JSON.stringify(o))}catch(e){}};
+const mark=()=>document.querySelectorAll('input[type=date]').forEach(d=>d.classList.toggle('empty',!d.value));
+const fit=t=>{if(!t.offsetParent)return;t.style.height='auto';t.style.height=Math.max(28,t.scrollHeight)+'px'};
+const fitAll=()=>document.querySelectorAll('textarea').forEach(fit);
+
+document.addEventListener('input',e=>{
+  const t=e.target;
+  if(t.dataset.s)document.querySelectorAll(`[data-s="${t.dataset.s}"]`).forEach(o=>{if(o!==t)o.value=t.value});
+  if(t.tagName=='TEXTAREA')fit(t);
+  mark();save();
+});
+document.addEventListener('change',()=>{mark();save()});
+mark();
+
+/* toolbar */
+let cur='app';
+function show(id){
+  cur=id;
+  document.querySelectorAll('.sheet').forEach(s=>s.classList.toggle('on',s.id==id));
+  bar.querySelectorAll('[data-t]').forEach(b=>b.classList.toggle('on',b.dataset.t==id));
+  fitAll();window.scrollTo(0,0);
+}
+forms.forEach(([id,name])=>{const b=el('button','',name);b.dataset.t=id;b.onclick=()=>show(id);bar.append(b)});
+bar.append(el('span','sp'));
+const mk=(txt,cls,fn)=>{const b=el('button',cls,txt);b.onclick=fn;bar.append(b)};
+mk('Clear this form','',()=>{
+  if(!confirm('Clear everything entered in this form?'))return;
+  document.getElementById(cur).querySelectorAll('[data-k]').forEach(e=>{if(e.type=='checkbox')e.checked=false;else e.value=''});
+  fitAll();mark();save();
+});
+const doPrint=a=>{document.body.classList.toggle('all',a);fitAll();setTimeout(()=>window.print(),60)};
+mk('Print all forms','',()=>doPrint(true));
+mk('Print this form','pr',()=>doPrint(false));
+addEventListener('afterprint',()=>{document.body.classList.remove('all');fitAll()});
+show('app');
+</script>
+</body>
+</html>
