@@ -401,6 +401,20 @@ ul {
   text-decoration: none;
 }
 
+.brand-official-logo {
+  height: 50px;
+  max-height: 52px;
+  width: auto;
+  border-radius: 6px;
+  display: block;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  transition: transform var(--transition-fast);
+}
+
+.brand:hover .brand-official-logo {
+  transform: scale(1.02);
+}
+
 .brand-emblem {
   width: 44px;
   height: 44px;
@@ -1835,6 +1849,11 @@ body.lang-ta .nav-link {
 }
 
 @media (max-width: 768px) {
+  .brand-official-logo {
+    height: 40px;
+    max-height: 42px;
+  }
+
   .nav-menu {
     position: fixed;
     top: 4.75rem;
