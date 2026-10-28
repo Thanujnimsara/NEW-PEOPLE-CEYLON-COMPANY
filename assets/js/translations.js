@@ -37,7 +37,7 @@ const siteTranslations = {
     // Hero
     hero_badge: "Trusted Financial Partner in Sri Lanka",
     hero_title: "Hire purchase and business loans, <span class='highlight'>explained clearly.</span>",
-    hero_subtitle: "People’s Ceylon (Private) Limited helps individuals, professionals and small businesses buy vehicles and grow, with clear terms and friendly service from our office in Ampara.",
+    hero_subtitle: "People’s Ceylon (Private) Limited helps individuals, professionals, and small businesses buy vehicles and grow, offering transparent terms and friendly service through our branches across Sri Lanka.",
     hero_btn_apply: "Apply Now",
     hero_btn_call: "Call: 063 724 5245",
     hero_btn_calc: "Calculate My Installment",
@@ -270,7 +270,7 @@ const siteTranslations = {
     // Hero
     hero_badge: "ශ්‍රී ලංකාවේ විශ්වාසනීය මුල්‍ය හවුල්කරු",
     hero_title: "වාහන කුලී සින්නක්කර සහ ව්‍යාපාරික ණය, <span class='highlight'>පැහැදිලිව හා විශ්වාසයෙන්.</span>",
-    hero_subtitle: "අම්පාර ප්‍රධාන කාර්යාලයේ සිට පුද්ගලයන්ට, වෘත්තිකයන්ට සහ සුළු ව්‍යාපාරිකයන්ට වාහන මිලදී ගැනීමට සහ තම ව්‍යාපාරය දියුණු කර ගැනීමට සුහදශීලී සහ විශ්වාසනීය මුල්‍ය සේවාවක්.",
+    hero_subtitle: "ශ්‍රී ලංකාව පුරා විසිරුණු අපගේ ශාඛා ජාලය හරහා පුද්ගලයන්ට, වෘත්තිකයන්ට සහ සුළු ව්‍යාපාරිකයන්ට වාහන මිලදී ගැනීමට සහ තම ව්‍යාපාරය දියුණු කර ගැනීමට විනිවිදභාවයෙන් යුත් කොන්දේසි සහ සුහදශීලී සේවාවක්.",
     hero_btn_apply: "දැන්ම අයදුම් කරන්න",
     hero_btn_call: "අමතන්න: 063 724 5245",
     hero_btn_calc: "මගේ වාරිකය ගණනය කරන්න",
@@ -503,7 +503,7 @@ const siteTranslations = {
     // Hero
     hero_badge: "இலங்கையின் நம்பிக்கையான நிதிப் பங்காளர்",
     hero_title: "வாகன வாடகை கொள்முதல் மற்றும் வணிகக் கடன்கள், <span class='highlight'>மிகத் தெளிவாக.</span>",
-    hero_subtitle: "அம்பாறை அலுவலகத்திலிருந்து தனிநபர்கள், தொழில் வல்லுநர்கள் மற்றும் சிறு வணிகங்கள் வாகனங்களை வாங்கவும் வளரவும் தெளிவான விதிமுறைகளுடன் கூடிய நட்பு சேவை.",
+    hero_subtitle: "இலங்கை முழுவதும் உள்ள எமது கிளைகள் ஊடாக தனிநபர்கள், தொழில் வல்லுநர்கள் மற்றும் சிறு வணிகங்கள் வாகனங்களை வாங்கவும் வளரவும் வெளிப்படையான விதிமுறைகளுடன் கூடிய நட்பு சேவை.",
     hero_btn_apply: "இப்போதே விண்ணப்பிக்கவும்",
     hero_btn_call: "அழைக்கவும்: 063 724 5245",
     hero_btn_calc: "என் தவணையைக் கணிக்கவும்",
