@@ -92,14 +92,51 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
               <span data-i18n="nav_hp">Hire Purchase</span>
             </a>
-            <a href="#business-loans" class="dropdown-link">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
-              <span data-i18n="nav_biz_loan">Business Loans</span>
+
+            <!-- Business Loans Dropdown with Subcategories -->
+            <div class="dropdown-submenu">
+              <a href="#business-loans" class="dropdown-link submenu-toggle">
+                <span style="display: flex; align-items: center; gap: 0.75rem;">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                  <span data-i18n="nav_biz_loan">Business Loans</span>
+                </span>
+                <svg class="submenu-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </a>
+              <div class="submenu-dropdown">
+                <a href="#sme-loans" class="dropdown-link">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                  <span data-i18n="nav_sme_loan">SME Loan</span>
+                </a>
+                <a href="#working-capital" class="dropdown-link">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+                  <span data-i18n="nav_wc_loan">Working Capital Loan</span>
+                </a>
+                <a href="#micro-loans" class="dropdown-link">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"></path><line x1="12" y1="6" x2="12" y2="8"></line><line x1="12" y1="16" x2="12" y2="18"></line></svg>
+                  <span data-i18n="nav_micro_loan">Micro Loan</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Gold Purchase Loan -->
+            <a href="#gold-loans" class="dropdown-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <span data-i18n="nav_gold_loan">Gold Purchase Loan</span>
             </a>
-            <a href="#working-capital" class="dropdown-link">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
-              <span data-i18n="nav_wc_loan">Working Capital Loans</span>
+
+            <!-- Education Loan -->
+            <a href="#education-loans" class="dropdown-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+              <span data-i18n="nav_edu_loan">Education Loan</span>
             </a>
+
+            <!-- Revolving Loan -->
+            <a href="#revolving-loans" class="dropdown-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
+              <span data-i18n="nav_revolving_loan">Revolving Loan</span>
+            </a>
+
+            <!-- Professional Loans -->
             <a href="#professional-loans" class="dropdown-link">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
               <span data-i18n="nav_prof_loan">Professional Loans</span>
@@ -232,8 +269,12 @@
             <label class="form-label" data-i18n="label_product">Select Financial Facility</label>
             <select class="form-control" name="facility">
               <option value="hp" data-i18n="opt_hp">Vehicle Hire Purchase</option>
-              <option value="biz" data-i18n="opt_biz">Business Expansion Loan</option>
+              <option value="sme" data-i18n="opt_sme">SME Business Loan</option>
               <option value="wc" data-i18n="opt_wc">Working Capital Loan</option>
+              <option value="micro" data-i18n="opt_micro">Micro Business Loan</option>
+              <option value="gold" data-i18n="opt_gold">Gold Purchase Loan</option>
+              <option value="edu" data-i18n="opt_edu">Higher Education Loan</option>
+              <option value="revolving" data-i18n="opt_revolving">Revolving Loan</option>
               <option value="prof" data-i18n="opt_prof">Professional Loan</option>
             </select>
           </div>
@@ -280,7 +321,7 @@
           </div>
           <div class="product-card-body">
             <div class="product-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
             </div>
             <h3 class="product-title" data-i18n="hp_title">Hire Purchase</h3>
             <p class="product-desc" data-i18n="hp_desc">Drive your vehicle sooner. We buy the vehicle you choose and you pay in fixed monthly installments. Ownership passes to you after the final installment is paid.</p>
@@ -311,39 +352,40 @@
           </div>
         </div>
 
-        <!-- 2. Business Loans -->
-        <div class="product-card" id="business-loans">
+        <!-- 2. SME Business Loans -->
+        <div class="product-card" id="sme-loans">
+          <span class="product-card-badge" style="background: var(--color-primary);">Enterprise</span>
           <div class="product-card-media">
-            <img src="assets/images/business-sme.jpg" alt="Business Loans for Sri Lankan Enterprises">
+            <img src="assets/images/sme-loan.jpg" alt="SME Business Loans Sri Lanka">
           </div>
           <div class="product-card-body">
             <div class="product-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
             </div>
-            <h3 class="product-title" data-i18n="biz_title">Business Loans</h3>
-            <p class="product-desc" data-i18n="biz_desc">Funding to start, run or expand your business, with repayment terms that match your income and seasonal cash flow.</p>
+            <h3 class="product-title" data-i18n="sme_title">SME Business Loans</h3>
+            <p class="product-desc" data-i18n="sme_desc">Tailored growth capital for expanding Sri Lankan manufacturing, agricultural and commercial enterprises with flexible collateral.</p>
             
             <div class="product-features">
               <div class="product-feature-item">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span data-i18n="biz_f1">Working capital, shop expansion & machinery purchase</span>
+                <span data-i18n="sme_f1">Facility amounts up to LKR 15,000,000 with flexible terms</span>
               </div>
               <div class="product-feature-item">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span data-i18n="biz_f2">Repayment periods from 6 to 48 months</span>
+                <span data-i18n="sme_f2">Tenures from 12 to 60 months with seasonal structured plans</span>
               </div>
               <div class="product-feature-item">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span data-i18n="biz_f3">Flexible collateral & personal guarantee options</span>
+                <span data-i18n="sme_f3">Custom grace periods for machinery & asset installations</span>
               </div>
               <div class="product-feature-item">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span data-i18n="biz_f4">Tailored structured installments matching harvest/sales</span>
+                <span data-i18n="sme_f4">Fast corporate underwriting with dedicated relationship manager</span>
               </div>
             </div>
 
             <div style="display: flex; gap: 0.75rem;">
-              <button class="btn btn-primary btn-sm" style="flex: 1;" data-open-modal="callbackModal" data-facility="biz" data-i18n="hero_btn_apply">Apply Now</button>
+              <button class="btn btn-primary btn-sm" style="flex: 1;" data-open-modal="callbackModal" data-facility="sme" data-i18n="hero_btn_apply">Apply Now</button>
               <button class="btn btn-outline btn-sm" onclick="previewDocument('biz_app')" data-i18n="btn_download">Download Form</button>
             </div>
           </div>
@@ -351,6 +393,9 @@
 
         <!-- 3. Working Capital Loans -->
         <div class="product-card" id="working-capital">
+          <div class="product-card-media">
+            <img src="assets/images/working-capital.jpg" alt="Working Capital Loans Sri Lanka">
+          </div>
           <div class="product-card-body">
             <div class="product-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
@@ -377,12 +422,175 @@
               </div>
             </div>
 
-            <button class="btn btn-primary btn-sm" style="width: 100%;" data-open-modal="callbackModal" data-facility="wc" data-i18n="hero_btn_apply">Apply Now</button>
+            <div style="display: flex; gap: 0.75rem;">
+              <button class="btn btn-primary btn-sm" style="flex: 1;" data-open-modal="callbackModal" data-facility="wc" data-i18n="hero_btn_apply">Apply Now</button>
+              <button class="btn btn-outline btn-sm" onclick="previewDocument('biz_app')" data-i18n="btn_download">Download Form</button>
+            </div>
           </div>
         </div>
 
-        <!-- 4. Professional Loans -->
+        <!-- 4. Micro Business Loans -->
+        <div class="product-card" id="micro-loans">
+          <span class="product-card-badge" style="background: var(--color-emerald);">Grassroots</span>
+          <div class="product-card-media">
+            <img src="assets/images/micro-loan.jpg" alt="Micro Business Loans Sri Lanka">
+          </div>
+          <div class="product-card-body">
+            <div class="product-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"></path><line x1="12" y1="6" x2="12" y2="8"></line><line x1="12" y1="16" x2="12" y2="18"></line></svg>
+            </div>
+            <h3 class="product-title" data-i18n="micro_title">Micro Business Loans</h3>
+            <p class="product-desc" data-i18n="micro_desc">Empowering grassroots entrepreneurs, retail shops, traders, and self-employed individuals with quick, hassle-free credit.</p>
+            
+            <div class="product-features">
+              <div class="product-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span data-i18n="micro_f1">Fast micro credit from LKR 50,000 to LKR 1,000,000</span>
+              </div>
+              <div class="product-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span data-i18n="micro_f2">Simple documentation with no complex financial audit needed</span>
+              </div>
+              <div class="product-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span data-i18n="micro_f3">Flexible daily, weekly or monthly repayment options</span>
+              </div>
+              <div class="product-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span data-i18n="micro_f4">Doorstep advisory and rapid 24-hour loan disbursement</span>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 0.75rem;">
+              <button class="btn btn-primary btn-sm" style="flex: 1;" data-open-modal="callbackModal" data-facility="micro" data-i18n="hero_btn_apply">Apply Now</button>
+              <button class="btn btn-outline btn-sm" onclick="previewDocument('biz_app')" data-i18n="btn_download">Download Form</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Gold Purchase Loan -->
+        <div class="product-card" id="gold-loans">
+          <span class="product-card-badge" style="background: #D97706;">Instant Appraisal</span>
+          <div class="product-card-media">
+            <img src="assets/images/gold-purchase-loan.jpg" alt="Gold Purchase Loan Sri Lanka">
+          </div>
+          <div class="product-card-body">
+            <div class="product-icon" style="background: rgba(217, 119, 6, 0.1); color: #D97706;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            </div>
+            <h3 class="product-title" data-i18n="gold_title">Gold Purchase Loan</h3>
+            <p class="product-desc" data-i18n="gold_desc">Convenient, secure financing to purchase gold jewelry and precious assets with full transparency and maximum advance values.</p>
+            
+            <div class="product-features">
+              <div class="product-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span data-i18n="gold_f1">High loan-to-value advances at lowest statutory interest charges</span>
+              </div>
+              <div class="product-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span data-i18n="gold_f2">Instant appraisal with calibrated precision digital scales</span>
+              </div>
+              <div class="product-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span data-i18n="gold_f3">Ultra-secure bank vault custody and comprehensive insurance</span>
+              </div>
+              <div class="product-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span data-i18n="gold_f4">Flexible settlement terms with partial redemption options</span>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 0.75rem;">
+              <button class="btn btn-primary btn-sm" style="flex: 1;" data-open-modal="callbackModal" data-facility="gold" data-i18n="hero_btn_apply">Apply Now</button>
+              <button class="btn btn-outline btn-sm" onclick="previewDocument('biz_app')" data-i18n="btn_download">Download Form</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Education Loans -->
+        <div class="product-card" id="education-loans">
+          <span class="product-card-badge" style="background: #2563EB;">Special Rate</span>
+          <div class="product-card-media">
+            <img src="assets/images/education-loan.jpg" alt="Higher Education Loans Sri Lanka">
+          </div>
+          <div class="product-card-body">
+            <div class="product-icon" style="background: rgba(37, 99, 235, 0.1); color: #2563EB;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+            </div>
+            <h3 class="product-title" data-i18n="edu_title">Higher Education Loans</h3>
+            <p class="product-desc" data-i18n="edu_desc">Invest in academic and professional futures. Finance local and foreign university degrees, postgraduate diplomas, and professional qualifications.</p>
+            
+            <div class="product-features">
+              <div class="product-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span data-i18n="edu_f1">Covers university tuition, course materials & exam fees</span>
+              </div>
+              <div class="product-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span data-i18n="edu_f2">Repayment tenures up to 5 years with moratorium while studying</span>
+              </div>
+              <div class="product-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span data-i18n="edu_f3">Low preferential interest rates for students and parents</span>
+              </div>
+              <div class="product-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span data-i18n="edu_f4">Direct payment settlement to recognized universities and colleges</span>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 0.75rem;">
+              <button class="btn btn-primary btn-sm" style="flex: 1;" data-open-modal="callbackModal" data-facility="edu" data-i18n="hero_btn_apply">Apply Now</button>
+              <button class="btn btn-outline btn-sm" onclick="previewDocument('biz_app')" data-i18n="btn_download">Download Form</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. Revolving Loans -->
+        <div class="product-card" id="revolving-loans">
+          <span class="product-card-badge" style="background: #0D9488;">On-Demand Credit</span>
+          <div class="product-card-media">
+            <img src="assets/images/revolving-loan.jpg" alt="Revolving Credit Loans Sri Lanka">
+          </div>
+          <div class="product-card-body">
+            <div class="product-icon" style="background: rgba(13, 148, 136, 0.1); color: #0D9488;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
+            </div>
+            <h3 class="product-title" data-i18n="revolving_title">Revolving Credit Loans</h3>
+            <p class="product-desc" data-i18n="revolving_desc">An active, flexible line of credit where you only pay charges for the funds you draw, replenishing as you repay.</p>
+            
+            <div class="product-features">
+              <div class="product-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span data-i18n="revolving_f1">Pre-approved revolving credit limit accessible on-demand</span>
+              </div>
+              <div class="product-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span data-i18n="revolving_f2">Interest charged only on the utilized amount and days</span>
+              </div>
+              <div class="product-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span data-i18n="revolving_f3">Smooth cash-flow management without applying every time</span>
+              </div>
+              <div class="product-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span data-i18n="revolving_f4">Ideal for seasonal trade cycles, bulk orders & emergencies</span>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 0.75rem;">
+              <button class="btn btn-primary btn-sm" style="flex: 1;" data-open-modal="callbackModal" data-facility="revolving" data-i18n="hero_btn_apply">Apply Now</button>
+              <button class="btn btn-outline btn-sm" onclick="previewDocument('biz_app')" data-i18n="btn_download">Download Form</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8. Professional Loans -->
         <div class="product-card" id="professional-loans">
+          <span class="product-card-badge" style="background: var(--color-accent-dark);">Fast-Track</span>
+          <div class="product-card-media">
+            <img src="assets/images/professional-loan.jpg" alt="Professional Loans Sri Lanka">
+          </div>
           <div class="product-card-body">
             <div class="product-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
@@ -409,7 +617,10 @@
               </div>
             </div>
 
-            <button class="btn btn-primary btn-sm" style="width: 100%;" data-open-modal="callbackModal" data-facility="prof" data-i18n="hero_btn_apply">Apply Now</button>
+            <div style="display: flex; gap: 0.75rem;">
+              <button class="btn btn-primary btn-sm" style="flex: 1;" data-open-modal="callbackModal" data-facility="prof" data-i18n="hero_btn_apply">Apply Now</button>
+              <button class="btn btn-outline btn-sm" onclick="previewDocument('biz_app')" data-i18n="btn_download">Download Form</button>
+            </div>
           </div>
         </div>
       </div>
@@ -433,9 +644,13 @@
           <div class="calc-inputs-pane">
             <div class="calc-tabs">
               <button class="calc-tab-btn active" data-facility="hp" data-i18n="nav_hp">Hire Purchase</button>
-              <button class="calc-tab-btn" data-facility="biz" data-i18n="nav_biz_loan">Business Loans</button>
+              <button class="calc-tab-btn" data-facility="sme" data-i18n="nav_sme_loan">SME Loan</button>
               <button class="calc-tab-btn" data-facility="wc" data-i18n="nav_wc_loan">Working Capital</button>
-              <button class="calc-tab-btn" data-facility="prof" data-i18n="nav_prof_loan">Professional Loans</button>
+              <button class="calc-tab-btn" data-facility="micro" data-i18n="nav_micro_loan">Micro Loan</button>
+              <button class="calc-tab-btn" data-facility="gold" data-i18n="nav_gold_loan">Gold Loan</button>
+              <button class="calc-tab-btn" data-facility="edu" data-i18n="nav_edu_loan">Education Loan</button>
+              <button class="calc-tab-btn" data-facility="revolving" data-i18n="nav_revolving_loan">Revolving Loan</button>
+              <button class="calc-tab-btn" data-facility="prof" data-i18n="nav_prof_loan">Professional</button>
             </div>
 
             <!-- Amount Slider -->
@@ -1094,8 +1309,12 @@
           <label class="form-label" data-i18n="label_product">Facility Required</label>
           <select class="form-control" name="facility">
             <option value="hp" data-i18n="opt_hp">Vehicle Hire Purchase</option>
-            <option value="biz" data-i18n="opt_biz">Business Expansion Loan</option>
+            <option value="sme" data-i18n="opt_sme">SME Business Loan</option>
             <option value="wc" data-i18n="opt_wc">Working Capital Loan</option>
+            <option value="micro" data-i18n="opt_micro">Micro Business Loan</option>
+            <option value="gold" data-i18n="opt_gold">Gold Purchase Loan</option>
+            <option value="edu" data-i18n="opt_edu">Higher Education Loan</option>
+            <option value="revolving" data-i18n="opt_revolving">Revolving Loan</option>
             <option value="prof" data-i18n="opt_prof">Professional Loan</option>
           </select>
         </div>
@@ -1308,7 +1527,7 @@
   </div>
 
   <!-- JavaScript Files -->
-  <script src="assets/js/translations.js?v=1.1"></script>
-  <script src="assets/js/main.js?v=1.1"></script>
+  <script src="assets/js/translations.js?v=1.2"></script>
+  <script src="assets/js/main.js?v=1.2"></script>
 </body>
 </html>

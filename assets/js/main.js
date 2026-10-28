@@ -120,10 +120,18 @@ function initCalculator() {
       // Update rates according to facility
       if (calcState.facility === 'hp') {
         calcState.rate = 14.5;
-      } else if (calcState.facility === 'biz') {
+      } else if (calcState.facility === 'biz' || calcState.facility === 'sme') {
         calcState.rate = 16.0;
       } else if (calcState.facility === 'wc') {
         calcState.rate = 15.5;
+      } else if (calcState.facility === 'micro') {
+        calcState.rate = 16.5;
+      } else if (calcState.facility === 'gold') {
+        calcState.rate = 12.0;
+      } else if (calcState.facility === 'edu') {
+        calcState.rate = 11.5;
+      } else if (calcState.facility === 'revolving') {
+        calcState.rate = 15.0;
       } else if (calcState.facility === 'prof') {
         calcState.rate = 13.5;
       }
