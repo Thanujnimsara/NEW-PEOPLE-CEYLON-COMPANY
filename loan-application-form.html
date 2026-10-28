@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ණය ඉල්ලුම්පත්‍රය / Loan Application – People’s Ceylon</title>
+<link rel="icon" type="image/png" href="assets/images/peoples-ceylon-emblem-badge.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;600;700&family=Inter:wght@400;600&display=swap">
+<style>
+:root{--bg:#e9edf0;--ink:#1b2528;--mut:#5d6b70;--br:#0f5c4d;--line:#9fb0b5;--fill:#f4faf8;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1c2326}}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);font-family:"Noto Sans Sinhala","Inter",system-ui,sans-serif;color:var(--ink);font-size:14px;line-height:1.45}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:100;display:flex;gap:8px;flex-wrap:wrap;justify-content:center;align-items:center;padding:10px 14px;background:var(--br);box-shadow:0 2px 8px rgba(0,0,0,0.25)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--br);z-index:10}
+.bar a.back-btn{display:inline-flex;align-items:center;gap:4px;font:inherit;font-weight:600;text-decoration:none;border-radius:8px;padding:8px 14px;background:rgba(255,255,255,0.15);color:#fff;border:1px solid rgba(255,255,255,0.25);cursor:pointer;transition:all 0.15s ease}
+.bar a.back-btn:hover{background:rgba(255,255,255,0.25)}
+.bar button{font:inherit;font-weight:600;border:0;border-radius:8px;padding:8px 16px;cursor:pointer;background:#fff;color:var(--br);transition:all 0.15s ease}
+.bar button:hover{background:#f0f7f5}
+.bar button.p{background:#ffd54a;color:#222;font-weight:700}
+.bar button.p:hover{background:#ffe072}
+.sheet{max-width:210mm;margin:16px auto;background:#fff;color:#1b2528;padding:12mm 12mm 14mm;box-shadow:0 2px 14px #0003;border-radius:4px}
+header{text-align:center;margin-bottom:6px}
+header h1{margin:0;font-size:20px;color:var(--br)}header p{margin:2px 0;font-size:12px;color:var(--mut)}
+.title{text-align:center;font-size:17px;font-weight:700;margin:10px 0;border-top:2px solid var(--br);border-bottom:2px solid var(--br);padding:5px 0}.title small{display:block;font-size:13px;letter-spacing:.12em}
+h2{font-size:13px;color:var(--br);margin:14px 0 6px;padding-bottom:2px;border-bottom:1.5px solid var(--br);letter-spacing:.03em;break-after:avoid}
+section{break-inside:avoid-page}
+.g{display:grid;grid-template-columns:1fr 1fr;gap:6px 16px}
+.f{display:block}.w{grid-column:1/-1}
+.l{display:block;font-weight:600;font-size:12.5px}.l small{display:block;font-weight:400;font-size:11px;color:var(--mut);font-family:Inter,sans-serif}
+input[type=text],input[type=date],input[type=email],input[type=tel],select,textarea{width:100%;font:inherit;color:#102;border:0;border-bottom:1px solid var(--line);background:var(--fill);padding:5px 6px;border-radius:2px;outline:0}
+input:focus,select:focus,textarea:focus{background:#fff6cf;border-bottom-color:var(--br)}
+textarea{resize:vertical}
+.c{display:flex;gap:8px;align-items:flex-start;padding:3px 0;font-size:13px}.c input{margin-top:4px;width:16px;height:16px;accent-color:var(--br);flex:none}
+.c em{display:block;font-style:normal;font-size:11.5px;color:var(--mut);font-family:Inter,sans-serif}
+.tw{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:12px}
+th,td{border:1px solid var(--line);padding:3px;vertical-align:top}th{background:#e3f0ec;text-align:left;font-weight:600}
+th small{display:block;font-weight:400;color:var(--mut);font-family:Inter,sans-serif}
+td input[type=text]{background:transparent;border:0;padding:4px}
+td:first-child{font-weight:600;white-space:nowrap}
+.add{margin-top:6px;font:inherit;font-size:12px;border:1px dashed var(--br);color:var(--br);background:transparent;border-radius:6px;padding:4px 10px;cursor:pointer}
+.add:hover{background:#e3f0ec}
+.decl{font-size:12.5px;text-align:justify}.decl p{margin:4px 0}.decl .en{font-style:italic;color:#46555a;font-family:Inter,sans-serif;font-size:12px}
+.off{margin-top:14px;border:1.5px solid var(--line);padding:2px 10px 10px;border-radius:6px;break-inside:avoid}
+.off h2{color:#5d6b70;border-color:#5d6b70}
+.foot{text-align:center;font-size:11px;color:var(--mut);margin-top:12px}
+.sig{margin-top:6px}
+@media (max-width:620px){.g{grid-template-columns:1fr}.sheet{margin:0;padding:12px;border-radius:0}}
+@media print{
+@page{size:A4;margin:10mm}
+:root,body{background:#fff!important;padding:0}
+body::before,.bar,.add,.nop{display:none!important}
+.sheet{box-shadow:none;margin:0;padding:0;max-width:none;border-radius:0}
+.g{grid-template-columns:1fr 1fr!important}
+input,select,textarea{background:transparent!important;border-bottom:1px solid #777!important}
+select{appearance:none;-webkit-appearance:none}textarea{resize:none}
+*{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{font-size:12px}
+}
+</style>
+</head>
+<body>
+<div class="bar">
+  <a href="index.html" class="back-btn">← Back to Website</a>
+  <button class="p" onclick="window.print()">🖨️ Print / මුද්‍රණය</button>
+  <button onclick="if(confirm('සියල්ල මකා දමන්නද? / Clear everything entered?')){localStorage.removeItem('pcl_loan_form_v1');location.reload()}">↺ Clear / මකන්න</button>
+</div>
+<form class="sheet" id="app" onsubmit="return false"></form>
+
+<script>
+const L=(s,e)=>`<span class="l">${s}<small>${e}</small></span>`;
+const F=(s,e,t='text',w)=>`<label class="f${w?' w':''}">${L(s,e)}<input type="${t}"></label>`;
+const W=(s,e,t)=>F(s,e,t,1);
+const TA=(s,e)=>`<label class="f w">${L(s,e)}<textarea rows="2"></textarea></label>`;
+const SEL=(s,e,o)=>`<label class="f">${L(s,e)}<select><option value=""></option>${o.map(x=>`<option>${x}</option>`).join('')}</select></label>`;
+const C=(s,e)=>`<label class="c"><input type="checkbox"><span>${s}${e?`<em>${e}</em>`:''}</span></label>`;
+const S=(s,e,b)=>`<section><h2>${e} / ${s}</h2>${b}</section>`;
+const G=b=>`<div class="g">${b}</div>`;
+const I=()=>'<input type="text">';
+const TH=a=>`<tr>${a.map(x=>`<th>${x[0]}<small>${x[1]}</small></th>`).join('')}</tr>`;
+const row=n=>`<tr>${Array(n).fill(`<td>${I()}</td>`).join('')}</tr>`;
+
+const dRows=[row(4),row(4)];
+const sec=[['☐ ඇපකරුවන්','Personal guarantees'],['☐ පොරොන්දු නෝට්ටුව','Promissory note'],['☐ වාහනය','Vehicle'],['☐ ඉඩම් / දේපළ','Land / property'],['☐ වෙනත්','Other']];
+const gu=[['සම්පූර්ණ නම','Full name'],['ජාතික හැඳුනුම්පත් අංකය','NIC No.'],['ලිපිනය','Address'],['දුරකථන අංකය','Telephone'],['ඉල්ලුම්කරු සමඟ සම්බන්ධතාව','Relationship to applicant'],['රැකියාව සහ මාසික ආදායම (රු.)','Occupation and monthly income (Rs.)']];
+const docs=[['ජාතික හැඳුනුම්පතේ පිටපත (ඉල්ලුම්කරු සහ ඇපකරුවන්)','Copy of NIC (applicant and guarantors)'],['ලිපිනය සනාථ කරන ලේඛනය (බිල්පත / ග්‍රාම නිලධාරි සහතිකය)','Proof of address (utility bill / GN certificate)'],['ආදායම් සනාථ කිරීම: වැටුප් පත්‍රිකා / ව්‍යාපාර ලියාපදිංචි සහතිකය සහ අවසන් මාස 6ක බැංකු ප්‍රකාශ','Income proof: pay slips / business registration and last 6 months’ bank statements'],['ණය අරමුණ සනාථ කරන ලේඛන (ව්‍යාපාර සැලැස්ම / මිල ගණන් / ඉන්වොයිස්)','Documents supporting the purpose (business plan / quotations / invoices)'],['ආරක්ෂක ලේඛන (ඔප්පු / වාහන ලියාපදිංචි සහතිකය), ඇත්නම්','Security documents (deeds / vehicle CR), if any'],['ඇපකරුවන්ගේ ආදායම් සනාථ කිරීම','Income proof of the guarantors'],['ඡායාරූප 2 බැගින් (ඉල්ලුම්කරු සහ එක් එක් ඇපකරු)','Two passport-size photographs (applicant and each guarantor)']];
+
+document.getElementById('app').innerHTML=`
+<header><h1>පීපල්ස් සිලෝන් (ප්‍රයිවට්) ලිමිටඩ්</h1><h1>PEOPLE’S CEYLON (PRIVATE) LIMITED</h1>
+<p>Company No. PV 00354852</p>
+<p>Registered Office: No. 28/125/1, Weranketagoda, Ampara &nbsp;|&nbsp; Business Office: Temple Junction, D.S. Senanayake Street, Ampara</p>
+<p>Telephone: 063 7 245245 &nbsp;|&nbsp; E-mail: info@peoplesceylon.lk</p></header>
+<div class="title">ණය ඉල්ලුම්පත්‍රය<small>LOAN APPLICATION</small></div>
+${G(F('ඉල්ලුම්පත්‍ර අංකය','Application No.')+F('ලැබුණු දිනය','Date received','date'))}
+
+${S('ඉල්ලා සිටින ණය පහසුකම','A. LOAN REQUESTED',
+ `<div class="l" style="margin-bottom:2px">ණය වර්ගය<small>Loan product</small></div>
+ ${C('ව්‍යාපාරික ණය','Business loan')}${C('ක්‍රියාකාරී ප්‍රාග්ධන ණය','Working capital loan')}${C('වෘත්තීය ණය','Professional loan')}${C('වෙනත්','Other')}
+ ${G(F('ඉල්ලන ණය මුදල (රු.)','Loan amount requested (Rs.)')+F('අකුරින්','Amount in words')+TA('ණය ලබාගන්නා අරමුණ','Purpose of the loan')+F('ණය කාලය (මාස)','Loan period (months)')+SEL('ආපසු ගෙවීමේ වාරය','Repayment frequency',['මාසික / Monthly','කාර්තුමය / Quarterly','අර්ධ වාර්ෂික / Half-yearly','වාර්ෂික / Annually'])+F('කැමති වාරිකය (රු.)','Preferred installment (Rs.)')+F('මුදල අවශ්‍ය දිනය','Date funds required','date'))}`)}
+
+${S('ඉල්ලුම්කරුගේ විස්තර','B. APPLICANT DETAILS',
+ G(W('සම්පූර්ණ නම','Full name')+F('මුලකුරු සහිත නම','Name with initials')+F('ජාතික හැඳුනුම්පත් අංකය','NIC No.')+F('උපන් දිනය','Date of birth','date')+SEL('ස්ත්‍රී පුරුෂ භාවය','Gender',['පුරුෂ / Male','ස්ත්‍රී / Female'])+SEL('විවාහක අවිවාහක බව','Marital status',['විවාහක / Married','අවිවාහක / Single','වෙනත් / Other'])+F('යැපෙන්නන් ගණන','No. of dependents')+TA('ස්ථිර ලිපිනය','Permanent address')+TA('වර්තමාන ලිපිනය (වෙනස් නම්)','Present address (if different)')+F('ජංගම දුරකථන අංකය','Mobile no.','tel')+F('නිවසේ / වෙනත් දුරකථන අංකය','Home / other no.','tel')+F('විද්‍යුත් තැපැල් ලිපිනය','Email','email')+SEL('පදිංචි තත්ත්වය','Residence status',['තමාගේ / Own','කුලී / Rented','පවුලේ / Family'])+F('වර්තමාන ලිපිනයේ වසර ගණන','Years at present address')+F('කලත්‍රයාගේ නම සහ හැඳුනුම්පත් අංකය','Spouse name and NIC')))}
+
+${S('රැකියා / ව්‍යාපාර විස්තර','C. EMPLOYMENT / BUSINESS DETAILS',
+ G(F('රැකියාව / තනතුර','Occupation / designation')+F('සේවායෝජකයාගේ / ව්‍යාපාරයේ නම','Employer / business name')+TA('සේවායෝජකයාගේ / ව්‍යාපාරයේ ලිපිනය','Employer / business address')+F('ව්‍යාපාරයේ ස්වභාවය','Nature of business')+F('ව්‍යාපාර ලියාපදිංචි අංකය (තිබේ නම්)','Business Reg. No. (if any)')+F('වර්තමාන රැකියාවේ / ව්‍යාපාරයේ වසර ගණන','Years in present job / business')+F('මාසික ආදායම (රු.)','Monthly income (Rs.)')+F('වෙනත් මාසික ආදායම (රු.)','Other monthly income (Rs.)')+F('මාසික වියදම (රු.)','Monthly expenses (Rs.)')))}
+
+${S('පවතින ණය සහ බැරකම්','D. EXISTING LOANS AND OBLIGATIONS',
+ `<div class="tw"><table><tbody id="dt">${TH([['ආයතනය','Institution'],['පහසුකමේ වර්ගය','Type of facility'],['මාසික වාරිකය (රු.)','Monthly installment (Rs.)'],['ඉතිරි මුදල (රු.)','Outstanding (Rs.)']])}${dRows.join('')}</tbody></table></div>
+ <button type="button" class="add" onclick="dt.insertAdjacentHTML('beforeend',row(4))">+ පේළියක් එක් කරන්න / Add row</button>`)}
+
+${S('බැංකු විස්තර','E. BANK DETAILS',
+ G(F('බැංකුව','Bank')+F('ශාඛාව','Branch')+F('ගිණුම් අංකය','Account No.')+F('ගිණුම් වර්ගය','Account type')))}
+
+${S('ආරක්ෂකය','F. SECURITY OFFERED',
+ `<div class="tw"><table>${TH([['ආරක්ෂක වර්ගය','Type of security'],['විස්තරය (ස්ථානය / වාහන අංකය ආදිය)','Description (location / vehicle No. etc.)'],['ඇස්තමේන්තුගත වටිනාකම (රු.)','Estimated value (Rs.)']])}
+ ${sec.map(s=>`<tr><td><label class="c" style="padding:0"><input type="checkbox"><span>${s[0].slice(2)}<em>${s[1]}</em></span></label></td><td>${I()}</td><td>${I()}</td></tr>`).join('')}</table></div>`)}
+
+${S('ඇපකරුවන්','G. GUARANTORS',
+ `<div class="tw"><table>${TH([['විස්තරය','Details'],['ඇපකරු 01','Guarantor 01'],['ඇපකරු 02','Guarantor 02']])}
+ ${gu.map(g=>`<tr><td>${g[0]}<br><small style="font-weight:400;color:var(--mut)">${g[1]}</small></td><td>${I()}</td><td>${I()}</td></tr>`).join('')}</table></div>`)}
+
+${S('ඉදිරිපත් කළ යුතු ලේඛන','H. DOCUMENTS TO BE SUBMITTED',docs.map(d=>C(d[0],d[1])).join(''))}
+
+${S('ප්‍රකාශය සහ කැමැත්ත','I. DECLARATION AND CONSENT',
+ `<div class="decl"><p>මෙම ඉල්ලුම්පත්‍රයේ සඳහන් තොරතුරු සහ ඉදිරිපත් කළ ලේඛන සත්‍ය හා නිවැරදි බව මම ප්‍රකාශ කරමි. මාගේ සේවායෝජකයා, බැංකුකරුවන්, ඇපකරුවන් සහ වෙනත් ඕනෑම ප්‍රභවයකින් තොරතුරු තහවුරු කරගැනීමටත්, ශ්‍රී ලංකා ණය තොරතුරු කාර්යාංශයෙන් (CRIB) මා පිළිබඳ ණය වාර්තාවක් ලබාගැනීමටත් පීපල්ස් සිලෝන් (ප්‍රයිවට්) ලිමිටඩ් වෙත මම බලය පවරමි. මෙම ඉල්ලුම්පත්‍රය ඇගයීමට සහ පරිපාලනයට අදාළව මාගේ පුද්ගලික දත්ත රැස්කිරීමට සහ සැකසීමට සමාගමට මම කැමැත්ත පළ කරමි. මෙම ඉල්ලුම්පත්‍රය ඉදිරිපත් කිරීමෙන් ණය පහසුකම ලබාදීමට සමාගමට බැඳීමක් ඇති නොවන බවත්, හේතු නොදක්වා එය ප්‍රතික්ෂේප කිරීමට සමාගමට හැකි බවත් මම තේරුම් ගනිමි.</p>
+ <p class="en">I declare that the information given in this application and the documents submitted are true and correct. I authorise People’s Ceylon (Private) Limited to verify the information with my employer, bankers, guarantors and any other source, and to obtain a credit report on me from the Credit Information Bureau of Sri Lanka (CRIB). I consent to the company collecting and processing my personal data for the purpose of assessing and administering this application. I understand that submitting this application does not oblige the company to grant the loan, and that the company may decline it without giving reasons.</p></div>
+ <div class="g sig">${F('නම','Name')+F('හැඳුනුම්පත් අංකය','NIC No.')+F('දිනය','Date','date')+F('ස්ථානය','Place')}
+ <div class="f w" style="margin-top:22px;border-bottom:1px solid #444;height:34px"></div><div class="l w" style="grid-column:1/-1">ඉල්ලුම්කරුගේ අත්සන<small>Signature of Applicant</small></div></div>`)}
+
+<div class="off"><h2>කාර්යාල පරිහරණය සඳහා පමණි / FOR OFFICE USE ONLY</h2>
+${G(F('නිර්දේශ කළේ','Recommended by')+F('දිනය','Date','date'))}
+<div style="margin:6px 0">${['අනුමත / Approved','ප්‍රතික්ෂේප / Rejected','කල්දැමූ / Deferred'].map(x=>`<label class="c" style="display:inline-flex;margin-right:16px"><input type="checkbox"><span>${x}</span></label>`).join('')}</div>
+${G(F('අනුමත මුදල (රු.)','Approved amount (Rs.)')+F('ණය / ඇග්‍රීමන්ට් අංකය','Facility / Agreement No.')+F('අනුමත කළේ','Approved by')+F('දිනය','Date','date'))}</div>
+<div class="foot">People’s Ceylon (Private) Limited | Company No. PV 00354852</div>`;
+
+// Local autosave logic
+const formEl = document.getElementById('app');
+const LK = 'pcl_loan_form_v1';
+function saveForm() {
+  const data = {};
+  formEl.querySelectorAll('input, select, textarea').forEach((el, idx) => {
+    if (el.type === 'checkbox') data[idx] = el.checked;
+    else data[idx] = el.value;
+  });
+  try { localStorage.setItem(LK, JSON.stringify(data)); } catch(e){}
+}
+function loadForm() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(LK));
+    if (!saved) return;
+    formEl.querySelectorAll('input, select, textarea').forEach((el, idx) => {
+      if (saved[idx] !== undefined) {
+        if (el.type === 'checkbox') el.checked = !!saved[idx];
+        else el.value = saved[idx];
+      }
+    });
+  } catch(e){}
+}
+formEl.addEventListener('input', saveForm);
+formEl.addEventListener('change', saveForm);
+loadForm();
+</script>
+</body>
+</html>

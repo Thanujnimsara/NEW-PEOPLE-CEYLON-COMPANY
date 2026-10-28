@@ -416,45 +416,19 @@ window.previewDocument = function(docType) {
       </div>
     `;
   } else if (docType === 'biz_app') {
-    title = "Business & Working Capital Loan Application Form";
+    title = "Business Loan Application Form (Interactive & Print Ready)";
     html = `
-      <div style="border: 2px solid #0A2540; padding: 25px; border-radius: 8px; font-family: sans-serif; color: #1E293B;">
-        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #C59B27; padding-bottom: 15px; margin-bottom: 20px;">
-          <div>
-            <h2 style="color: #0A2540; margin: 0; font-size: 20px;">PEOPLE'S CEYLON (PRIVATE) LIMITED</h2>
-            <div style="font-size: 12px; color: #64748B;">Company Registration No. PV 00354852 • Ampara, Sri Lanka</div>
-          </div>
-          <div style="text-align: right; font-weight: bold; color: #C59B27;">FORM: PC-BZ-03</div>
-        </div>
-        <h3 style="text-align: center; text-transform: uppercase; margin: 15px 0; color: #0A2540;">BUSINESS & WORKING CAPITAL LOAN APPLICATION</h3>
-        <table style="width: 100%; border-collapse: collapse; margin-bottom: 15px; font-size: 13px;">
-          <tr>
-            <td style="padding: 8px; border: 1px solid #CBD5E1; background: #F8FAFC; width: 30%;">Business / Enterprise Name:</td>
-            <td style="padding: 8px; border: 1px solid #CBD5E1;">____________________________________________________</td>
-          </tr>
-          <tr>
-            <td style="padding: 8px; border: 1px solid #CBD5E1; background: #F8FAFC;">Business Registration (BR) No:</td>
-            <td style="padding: 8px; border: 1px solid #CBD5E1;">________________________ Years in Operation: _________</td>
-          </tr>
-          <tr>
-            <td style="padding: 8px; border: 1px solid #CBD5E1; background: #F8FAFC;">Business Address:</td>
-            <td style="padding: 8px; border: 1px solid #CBD5E1;">____________________________________________________</td>
-          </tr>
-          <tr>
-            <td style="padding: 8px; border: 1px solid #CBD5E1; background: #F8FAFC;">Loan Purpose:</td>
-            <td style="padding: 8px; border: 1px solid #CBD5E1;">[ ] Stock Purchase  [ ] Machinery  [ ] Working Capital  [ ] Expansion</td>
-          </tr>
-          <tr>
-            <td style="padding: 8px; border: 1px solid #CBD5E1; background: #F8FAFC;">Requested Amount (LKR):</td>
-            <td style="padding: 8px; border: 1px solid #CBD5E1;">________________________ Repayment Months: _________</td>
-          </tr>
-        </table>
-        <div style="display: flex; justify-content: space-between; margin-top: 40px; font-size: 12px;">
-          <div>Proprietor / Partner Signature: __________________________</div>
-          <div>Date: __________________________</div>
-        </div>
+      <div style="display: flex; justify-content: space-between; align-items: center; background: #EEF2F6; padding: 10px 14px; border-radius: 6px; margin-bottom: 12px;">
+        <span style="font-size: 13px; color: #1E293B; font-weight: 600;">You can type directly into the loan application form below, auto-save, and print.</span>
+        <a href="loan-application-form.html" target="_blank" class="btn btn-primary btn-sm" style="text-decoration: none;">Open in Fullscreen Tab ↗</a>
       </div>
+      <iframe src="loan-application-form.html" style="width: 100%; height: 72vh; border: 1px solid #CBD5E1; border-radius: 8px;"></iframe>
     `;
+    printTitle.innerText = title;
+    previewContent.innerHTML = html;
+    openModal('docPreviewModal');
+    return;
+  }
   } else {
     title = "Customer Required Documents Checklist";
     html = `
