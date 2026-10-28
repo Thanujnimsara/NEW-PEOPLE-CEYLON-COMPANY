@@ -372,7 +372,6 @@ window.previewDocument = function(docType) {
     previewContent.innerHTML = html;
     openModal('docPreviewModal');
     return;
-  }
   } else if (docType === 'guar_stmt') {
     title = "Guarantor's Legal Statement & Consent Form";
     html = `
@@ -428,7 +427,6 @@ window.previewDocument = function(docType) {
     previewContent.innerHTML = html;
     openModal('docPreviewModal');
     return;
-  }
   } else {
     title = "Customer Required Documents Checklist";
     html = `
