@@ -17,7 +17,7 @@
   <meta property="og:type" content="website">
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="assets/css/style.css?v=1.5">
+  <link rel="stylesheet" href="assets/css/style.css?v=1.6">
   
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/images/peoples-ceylon-emblem-badge.png">
@@ -149,7 +149,7 @@
         </div>
 
         <div class="nav-item">
-          <a href="#calculator" class="nav-link" data-i18n="nav_calc">Calculator</a>
+          <a href="#calculator" class="nav-link" data-open-modal="calculatorModal" onclick="openModal('calculatorModal'); return false;" data-i18n="nav_calc">Calculator</a>
         </div>
 
         <div class="nav-item">
@@ -195,8 +195,8 @@
       </nav>
 
       <div class="nav-actions">
-        <a href="#calculator" class="btn btn-navy btn-sm" data-i18n="btn_calc_nav">Calculate</a>
-        <a href="tel:+94637245245" class="btn btn-primary btn-sm" data-i18n="btn_call_us">Call Us</a>
+        <a href="#calculator" class="btn btn-navy btn-sm" data-open-modal="calculatorModal" onclick="openModal('calculatorModal'); return false;" data-i18n="btn_calc_nav">Calculate</a>
+        <a href="tel:0637245245" class="btn btn-primary btn-sm" data-i18n="btn_call_us">Call Us</a>
         <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation">
           <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
         </button>
@@ -226,8 +226,8 @@
         <!-- CTA Buttons -->
         <div class="hero-actions">
           <a href="#" class="btn btn-primary btn-lg" data-open-modal="callbackModal" data-facility="hp" data-i18n="hero_btn_apply">Apply Now</a>
-          <a href="tel:+94637245245" class="btn btn-outline-white btn-lg" data-i18n="hero_btn_call">Call: 063 724 5245</a>
-          <a href="#calculator" class="btn btn-outline-white btn-lg" data-i18n="hero_btn_calc">Calculate My Installment</a>
+          <a href="tel:0637245245" class="btn btn-outline-white btn-lg" data-i18n="hero_btn_call">Call: 063 724 5245</a>
+          <a href="#calculator" class="btn btn-outline-white btn-lg" data-open-modal="calculatorModal" onclick="openModal('calculatorModal'); return false;" data-i18n="hero_btn_calc">Calculate My Installment</a>
         </div>
 
         <!-- Credibility Stats -->
@@ -627,109 +627,6 @@
     </div>
   </section>
 
-  <!-- ==========================================================================
-       INSTALLMENT CALCULATOR SECTION
-       ========================================================================== -->
-  <section class="section" id="calculator">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-badge" data-i18n="calc_badge">Interactive Estimator</span>
-        <h2 class="section-title" data-i18n="calc_title">Estimate Your Monthly Installment</h2>
-        <p class="section-subtitle" data-i18n="calc_sub">Plan your finances with clarity before you apply. Adjust the loan amount and repayment period below.</p>
-      </div>
-
-      <div class="calc-wrapper">
-        <div class="calc-grid">
-          <!-- Inputs Pane -->
-          <div class="calc-inputs-pane">
-            <div class="calc-tabs">
-              <button class="calc-tab-btn active" data-facility="hp" data-i18n="nav_hp">Hire Purchase</button>
-              <button class="calc-tab-btn" data-facility="sme" data-i18n="nav_sme_loan">SME Loan</button>
-              <button class="calc-tab-btn" data-facility="wc" data-i18n="nav_wc_loan">Working Capital</button>
-              <button class="calc-tab-btn" data-facility="micro" data-i18n="nav_micro_loan">Micro Loan</button>
-              <button class="calc-tab-btn" data-facility="gold" data-i18n="nav_gold_loan">Gold Loan</button>
-              <button class="calc-tab-btn" data-facility="edu" data-i18n="nav_edu_loan">Education Loan</button>
-              <button class="calc-tab-btn" data-facility="revolving" data-i18n="nav_revolving_loan">Revolving Loan</button>
-              <button class="calc-tab-btn" data-facility="prof" data-i18n="nav_prof_loan">Professional</button>
-            </div>
-
-            <!-- Amount Slider -->
-            <div class="slider-group">
-              <div class="slider-header">
-                <span class="slider-title" data-i18n="calc_label_amount">Facility Amount (LKR)</span>
-                <span class="slider-value-display" id="calcAmountDisplay">LKR 1,500,000</span>
-              </div>
-              <input type="range" class="range-slider" id="calcAmountSlider" min="100000" max="10000000" step="50000" value="1500000">
-              <div class="range-bounds">
-                <span>LKR 100,000</span>
-                <span>LKR 10,000,000+</span>
-              </div>
-              <div class="quick-amount-chips">
-                <button class="chip-btn" data-val="500000">500,000</button>
-                <button class="chip-btn" data-val="1000000">1,000,000</button>
-                <button class="chip-btn" data-val="2500000">2,500,000</button>
-                <button class="chip-btn" data-val="5000000">5,000,000</button>
-              </div>
-            </div>
-
-            <!-- Period Slider -->
-            <div class="slider-group">
-              <div class="slider-header">
-                <span class="slider-title" data-i18n="calc_label_period">Repayment Period (Months)</span>
-                <span class="slider-value-display" id="calcPeriodDisplay">36 Months</span>
-              </div>
-              <input type="range" class="range-slider" id="calcPeriodSlider" min="6" max="60" step="6" value="36">
-              <div class="range-bounds">
-                <span>6 Months</span>
-                <span>60 Months</span>
-              </div>
-            </div>
-
-            <div style="background: var(--color-bg-alt); padding: 1rem; border-radius: var(--radius-md); display: flex; justify-content: space-between; align-items: center; border: 1px solid var(--color-border);">
-              <span style="font-weight: 600; font-size: 0.85rem;" data-i18n="calc_label_rate">Indicative Annual Charge (%)</span>
-              <span style="font-weight: 800; font-size: 1.1rem; color: var(--color-primary);" id="calcRateDisplay">14.5%</span>
-            </div>
-          </div>
-
-          <!-- Results Pane -->
-          <div class="calc-results-pane">
-            <div>
-              <div class="calc-result-box">
-                <div class="calc-result-label" data-i18n="calc_est_installment">Estimated Monthly Installment</div>
-                <div class="calc-result-amount" id="resInstallment">LKR 59,722</div>
-                <div style="font-size: 0.775rem; color: rgba(255, 255, 255, 0.7);">Fixed Monthly Payment</div>
-              </div>
-
-              <div class="calc-breakdown-list">
-                <div class="breakdown-row">
-                  <span class="breakdown-label">Facility Principal:</span>
-                  <span class="breakdown-val" id="resPrincipal">LKR 1,500,000</span>
-                </div>
-                <div class="breakdown-row">
-                  <span class="breakdown-label" data-i18n="calc_total_charges">Total Charges / Interest:</span>
-                  <span class="breakdown-val" id="resCharges">LKR 652,500</span>
-                </div>
-                <div class="breakdown-row">
-                  <span class="breakdown-label" data-i18n="calc_total_payable">Total Amount Payable:</span>
-                  <span class="breakdown-val" id="resTotal">LKR 2,152,500</span>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <div class="calc-disclaimer" data-i18n="calc_disclaimer_text">
-                Note: Rates, fees and approval are subject to the Company’s credit assessment and terms. Hire purchase agreements use a statutory charge formula and loans use standard reducing or flat methodologies. This tool provides indicative estimates only. The binding figures will be set out in your formal Letter of Offer.
-              </div>
-
-              <button class="btn btn-primary" id="calcApplyBtn" style="width: 100%;" data-i18n="calc_btn_apply">
-                Apply for this Amount
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- ==========================================================================
        HOW IT WORKS (5 STEPS FROM GUIDELINE ANNEX 5)
@@ -1260,7 +1157,7 @@
             <li><a href="#business-loans" data-i18n="nav_biz_loan">Business Loans</a></li>
             <li><a href="#working-capital" data-i18n="nav_wc_loan">Working Capital Loans</a></li>
             <li><a href="#professional-loans" data-i18n="nav_prof_loan">Professional Loans</a></li>
-            <li><a href="#calculator" data-i18n="nav_calc">Installment Calculator</a></li>
+            <li><a href="#calculator" data-open-modal="calculatorModal" onclick="openModal('calculatorModal'); return false;" data-i18n="nav_calc">Installment Calculator</a></li>
           </ul>
         </div>
 
@@ -1303,6 +1200,109 @@
   <!-- ==========================================================================
        MODALS
        ========================================================================== -->
+  <!-- 0. Installment Calculator Modal -->
+  <div class="modal-overlay" id="calculatorModal">
+    <div class="modal-card modal-calc">
+      <button class="modal-close-btn" aria-label="Close Calculator">&times;</button>
+      <div style="text-align: center; margin-bottom: 1.5rem;">
+        <span class="section-badge" data-i18n="calc_badge">Interactive Estimator</span>
+        <h3 style="font-size: 1.65rem; color: var(--color-primary); margin-top: 0.5rem;" data-i18n="calc_title">Estimate Your Monthly Installment</h3>
+        <p style="font-size: 0.875rem; color: var(--color-text-muted); max-width: 600px; margin: 0 auto;" data-i18n="calc_sub">Plan your finances with clarity before you apply. Adjust the loan amount and repayment period below.</p>
+      </div>
+
+      <div class="calc-wrapper">
+        <div class="calc-grid">
+          <!-- Inputs Pane -->
+          <div class="calc-inputs-pane">
+            <div class="calc-tabs">
+              <button class="calc-tab-btn active" data-facility="hp" data-i18n="nav_hp">Hire Purchase</button>
+              <button class="calc-tab-btn" data-facility="sme" data-i18n="nav_sme_loan">SME Loan</button>
+              <button class="calc-tab-btn" data-facility="wc" data-i18n="nav_wc_loan">Working Capital</button>
+              <button class="calc-tab-btn" data-facility="micro" data-i18n="nav_micro_loan">Micro Loan</button>
+              <button class="calc-tab-btn" data-facility="gold" data-i18n="nav_gold_loan">Gold Loan</button>
+              <button class="calc-tab-btn" data-facility="edu" data-i18n="nav_edu_loan">Education Loan</button>
+              <button class="calc-tab-btn" data-facility="revolving" data-i18n="nav_revolving_loan">Revolving Loan</button>
+              <button class="calc-tab-btn" data-facility="prof" data-i18n="nav_prof_loan">Professional</button>
+            </div>
+
+            <!-- Amount Slider -->
+            <div class="slider-group">
+              <div class="slider-header">
+                <span class="slider-title" data-i18n="calc_label_amount">Facility Amount (LKR)</span>
+                <span class="slider-value-display" id="calcAmountDisplay">LKR 1,500,000</span>
+              </div>
+              <input type="range" class="range-slider" id="calcAmountSlider" min="100000" max="10000000" step="50000" value="1500000">
+              <div class="range-bounds">
+                <span>LKR 100,000</span>
+                <span>LKR 10,000,000+</span>
+              </div>
+              <div class="quick-amount-chips">
+                <button class="chip-btn" data-val="500000">500,000</button>
+                <button class="chip-btn" data-val="1000000">1,000,000</button>
+                <button class="chip-btn" data-val="2500000">2,500,000</button>
+                <button class="chip-btn" data-val="5000000">5,000,000</button>
+              </div>
+            </div>
+
+            <!-- Period Slider -->
+            <div class="slider-group">
+              <div class="slider-header">
+                <span class="slider-title" data-i18n="calc_label_period">Repayment Period (Months)</span>
+                <span class="slider-value-display" id="calcPeriodDisplay">36 Months</span>
+              </div>
+              <input type="range" class="range-slider" id="calcPeriodSlider" min="6" max="60" step="6" value="36">
+              <div class="range-bounds">
+                <span>6 Months</span>
+                <span>60 Months</span>
+              </div>
+            </div>
+
+            <div style="background: var(--color-bg-alt); padding: 1rem; border-radius: var(--radius-md); display: flex; justify-content: space-between; align-items: center; border: 1px solid var(--color-border);">
+              <span style="font-weight: 600; font-size: 0.85rem;" data-i18n="calc_label_rate">Indicative Annual Charge (%)</span>
+              <span style="font-weight: 800; font-size: 1.1rem; color: var(--color-primary);" id="calcRateDisplay">14.5%</span>
+            </div>
+          </div>
+
+          <!-- Results Pane -->
+          <div class="calc-results-pane">
+            <div>
+              <div class="calc-result-box">
+                <div class="calc-result-label" data-i18n="calc_est_installment">Estimated Monthly Installment</div>
+                <div class="calc-result-amount" id="resInstallment">LKR 59,722</div>
+                <div style="font-size: 0.775rem; color: rgba(255, 255, 255, 0.7);">Fixed Monthly Payment</div>
+              </div>
+
+              <div class="calc-breakdown-list">
+                <div class="breakdown-row">
+                  <span class="breakdown-label">Facility Principal:</span>
+                  <span class="breakdown-val" id="resPrincipal">LKR 1,500,000</span>
+                </div>
+                <div class="breakdown-row">
+                  <span class="breakdown-label" data-i18n="calc_total_charges">Total Charges / Interest:</span>
+                  <span class="breakdown-val" id="resCharges">LKR 652,500</span>
+                </div>
+                <div class="breakdown-row">
+                  <span class="breakdown-label" data-i18n="calc_total_payable">Total Amount Payable:</span>
+                  <span class="breakdown-val" id="resTotal">LKR 2,152,500</span>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="calc-disclaimer" data-i18n="calc_disclaimer_text">
+                Note: Rates, fees and approval are subject to the Company’s credit assessment and terms. Hire purchase agreements use a statutory charge formula and loans use standard reducing or flat methodologies. This tool provides indicative estimates only. The binding figures will be set out in your formal Letter of Offer.
+              </div>
+
+              <button class="btn btn-primary" id="calcApplyBtn" style="width: 100%;" data-i18n="calc_btn_apply">
+                Apply for this Amount
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- 1. Call-Back / Apply Modal -->
   <div class="modal-overlay" id="callbackModal">
     <div class="modal-card">
@@ -1525,14 +1525,14 @@
        ========================================================================== -->
   <div class="floating-actions">
     <!-- WhatsApp Direct Link -->
-    <a href="https://wa.me/94637245245?text=Hello%20People's%20Ceylon%20team,%20I%20would%20like%20to%20inquire%20about%20a%20facility" target="_blank" rel="noopener noreferrer" class="fab fab-whatsapp" aria-label="Chat on WhatsApp Business" title="Chat on WhatsApp">
+    <a href="https://wa.me/94637245245?text=Hello%20People's%20Ceylon%20team,%20I%20would%20like%20to%20inquire%20about%20a%20facility" target="_blank" rel="noopener noreferrer" class="fab fab-whatsapp" aria-label="Chat on WhatsApp (063 724 5245)" title="WhatsApp: 063 724 5245">
       <svg viewBox="0 0 24 24" fill="currentColor">
         <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.41a8.188 8.188 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24zM8.53 7.33c-.14 0-.36.05-.55.26-.19.2-.72.7-.72 1.71 0 1.01.74 1.98.84 2.12.1.14 1.43 2.18 3.46 3.06.48.21.86.33 1.15.42.49.15.93.13 1.28.08.39-.06 1.21-.49 1.38-.97.17-.48.17-.89.12-.97-.05-.08-.19-.13-.4-.23-.21-.1-1.21-.6-1.4-.66-.19-.07-.33-.1-.47.1-.14.2-.55.7-.67.84-.12.14-.24.16-.45.05-.21-.1-.89-.33-1.69-1.05-.62-.56-1.04-1.25-1.16-1.46-.12-.21-.01-.32.09-.43.1-.1.21-.24.31-.36.1-.12.14-.21.21-.35.07-.14.03-.26-.02-.36-.05-.1-.47-1.14-.65-1.56-.17-.41-.35-.35-.48-.36z"/>
       </svg>
     </a>
 
     <!-- Direct Call Button -->
-    <a href="tel:+94637245245" class="fab fab-call" aria-label="Direct Call to Ampara Office" title="Call Ampara Branch">
+    <a href="tel:0637245245" class="fab fab-call" aria-label="Call 063 724 5245" title="Call: 063 724 5245">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
       </svg>
@@ -1552,7 +1552,7 @@
   </div>
 
   <!-- JavaScript Files -->
-  <script src="assets/js/translations.js?v=1.5"></script>
-  <script src="assets/js/main.js?v=1.5"></script>
+  <script src="assets/js/translations.js?v=1.6"></script>
+  <script src="assets/js/main.js?v=1.6"></script>
 </body>
 </html>

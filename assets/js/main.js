@@ -175,6 +175,7 @@ function initCalculator() {
   const calcApplyBtn = document.getElementById('calcApplyBtn');
   if (calcApplyBtn) {
     calcApplyBtn.addEventListener('click', () => {
+      closeAllModals();
       openModal('callbackModal', {
         amount: calcState.amount,
         months: calcState.months,
