@@ -728,6 +728,11 @@ body.lang-ta .nav-link {
   line-height: 1.2;
 }
 
+.stat-item:first-child .stat-num {
+  font-size: 1.15rem;
+  line-height: 1.25;
+}
+
 .stat-label {
   font-size: 0.8rem;
   color: rgba(255, 255, 255, 0.75);
