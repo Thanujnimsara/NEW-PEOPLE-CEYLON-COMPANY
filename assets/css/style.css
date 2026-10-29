@@ -1624,11 +1624,11 @@ body.lang-ta .nav-link {
    ========================================================================== */
 .footer {
   position: relative;
-  background: radial-gradient(ellipse at 50% 0%, #151F33 0%, #0D1524 55%, #080D17 100%);
+  background: radial-gradient(ellipse at 50% 0%, #202F49 0%, #18253A 50%, #111B2C 100%);
   color: #FFFFFF;
   padding: 5rem 0 2rem 0;
   border-top: 3px solid var(--color-red);
-  box-shadow: inset 0 1px 0 rgba(245, 166, 35, 0.35);
+  box-shadow: inset 0 1px 0 rgba(245, 166, 35, 0.45), 0 -10px 30px rgba(15, 23, 42, 0.3);
   overflow: hidden;
 }
 
@@ -1643,12 +1643,12 @@ body.lang-ta .nav-link {
   background-image: url('../images/footer-pattern.png');
   background-repeat: repeat;
   background-size: 260px auto;
-  opacity: 0.16;
+  opacity: 0.22;
   pointer-events: none;
   z-index: 1;
 }
 
-/* Soft Ambient Golden & Deep Slate Radial Lighting to eliminate harsh blackness */
+/* Soft Ambient Golden & Warm Navy Lighting to soften and brighten the dark background */
 .footer::after {
   content: '';
   position: absolute;
@@ -1657,8 +1657,8 @@ body.lang-ta .nav-link {
   right: 0;
   bottom: 0;
   background: 
-    radial-gradient(circle at 50% 0%, rgba(245, 166, 35, 0.14) 0%, transparent 65%),
-    linear-gradient(180deg, rgba(15, 23, 42, 0.35) 0%, rgba(8, 13, 23, 0.75) 100%);
+    radial-gradient(circle at 50% 0%, rgba(245, 166, 35, 0.18) 0%, rgba(37, 54, 82, 0.25) 45%, transparent 75%),
+    linear-gradient(180deg, rgba(30, 46, 74, 0.3) 0%, rgba(17, 27, 44, 0.5) 100%);
   pointer-events: none;
   z-index: 1;
 }
@@ -1711,18 +1711,18 @@ body.lang-ta .nav-link {
 }
 
 .footer-legal-bar {
-  background: rgba(15, 23, 42, 0.75);
+  background: rgba(30, 41, 59, 0.7);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(245, 166, 35, 0.22);
+  border: 1px solid rgba(245, 166, 35, 0.28);
   border-left: 4px solid var(--color-accent);
   padding: 1.25rem 1.5rem;
   border-radius: var(--radius-md);
   margin-bottom: 2.5rem;
   font-size: 0.825rem;
   line-height: 1.65;
-  color: rgba(255, 255, 255, 0.85);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
 
 /* ==========================================================================
