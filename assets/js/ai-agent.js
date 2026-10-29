@@ -127,16 +127,6 @@
 
   // 2. Chat Widget HTML Template
   const chatWidgetHtml = `
-    <!-- Floating AI Trigger Button -->
-    <button class="fab fab-ai" id="aiChatTrigger" aria-label="Open People's Ceylon AI Virtual Assistant" title="Ask AI / AI සහයකයා">
-      <div class="ai-sparkle-ring"></div>
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M12 2a3 3 0 0 0-3 3v1H6a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3V9a3 3 0 0 0-3-3h-3V5a3 3 0 0 0-3-3Z"/>
-        <path d="M9 13h.01"/><path d="M15 13h.01"/><path d="M10 17h4"/>
-      </svg>
-      <span class="ai-badge-label">Ask AI</span>
-    </button>
-
     <!-- AI Chat Window -->
     <div class="ai-chat-window" id="aiChatWindow">
       <div class="ai-chat-header">
@@ -251,12 +241,12 @@
     /* Chat Window */
     .ai-chat-window {
       position: fixed;
-      bottom: 96px;
-      right: 1.5rem;
+      bottom: 2rem;
+      right: calc(2rem + 68px);
       width: 390px;
       max-width: calc(100vw - 2rem);
       height: 580px;
-      max-height: calc(100vh - 120px);
+      max-height: calc(100vh - 100px);
       background: #0F172A;
       border: 1px solid rgba(245, 166, 35, 0.3);
       border-radius: 16px;
@@ -550,7 +540,7 @@
       text-decoration: underline;
     }
 
-    @media (max-width: 480px) {
+    @media (max-width: 600px) {
       .ai-chat-window {
         right: 0.75rem;
         bottom: 85px;
@@ -821,15 +811,17 @@ You can type directly into our digital forms, auto-save, print, or send straight
     });
 
     // 5.3 Toggle Chat Window
-    triggerBtn.addEventListener('click', () => {
-      chatWindow.classList.toggle('open');
-      if (chatWindow.classList.contains('open')) {
-        if (messagesEl.children.length === 0) {
-          sendWelcomeMessage();
+    if (triggerBtn) {
+      triggerBtn.addEventListener('click', () => {
+        chatWindow.classList.toggle('open');
+        if (chatWindow.classList.contains('open')) {
+          if (messagesEl.children.length === 0) {
+            sendWelcomeMessage();
+          }
+          setTimeout(() => inputEl.focus(), 200);
         }
-        setTimeout(() => inputEl.focus(), 200);
-      }
-    });
+      });
+    }
 
     closeBtn.addEventListener('click', () => {
       chatWindow.classList.remove('open');
