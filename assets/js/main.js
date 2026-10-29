@@ -91,6 +91,9 @@ function setLanguage(lang) {
 
   // Re-render FAQ list in current language
   renderFaq();
+
+  // Notify AI Agent of language change
+  window.dispatchEvent(new CustomEvent('languageChanged', { detail: { lang } }));
 }
 
 /* ==========================================================================
