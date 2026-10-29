@@ -1,0 +1,4 @@
+*.zip
+pdf_text_dump.txt
+.DS_Store
+Thumbs.db
