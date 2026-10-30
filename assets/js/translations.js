@@ -214,7 +214,7 @@ const siteTranslations = {
     guar_title: "What You Need to Know as a Guarantor",
     guar_desc: "Acting as a guarantor is a serious legal commitment. We believe in educating our clients and their guarantors so decisions are made with complete clarity.",
     guar_pt1: "A guarantor promises to repay the outstanding facility if the principal borrower defaults.",
-    guar_pt2: "Guarantors must be over 21, possess verifiable regular income, and have a healthy credit history.",
+    guar_pt2: "Guarantors must be over 18, possess verifiable regular income, and have a healthy credit history.",
     guar_pt3: "You have the right to receive notice and understand the exact liability amount prior to signing.",
     guar_pt4: "Download our plain-language Guarantor Statement Form below to review all clauses in advance.",
 
@@ -500,7 +500,7 @@ const siteTranslations = {
     guar_title: "ඇපකරුවෙකු ලෙස ඔබ දැනගත යුතු කරුණු",
     guar_desc: "ඇපකරුවෙකු වීම බැරෑරුම් නීතිමය බැඳීමකි. අපගේ පාරිභෝගිකයන් සහ ඇපකරුවන් පූර්ණ අවබෝධයකින් යුතුව තීරණ ගැනීම අප අගය කරමු.",
     guar_pt1: "ණයගැතියා ගෙවීම් පැහැර හරින අවස්ථාවක එම මුදල ගෙවීමට ඇපකරු නීතියෙන් බැඳී සිටී.",
-    guar_pt2: "ඇපකරුවන් වයස අවුරුදු 21 ට වැඩි, ස්ථිර ආදායමක් සහ යහපත් ණය ඉතිහාසයක් ඇති අය විය යුතුය.",
+    guar_pt2: "ඇපකරුවන් වයස අවුරුදු 18 ට වැඩි, ස්ථිර ආදායමක් සහ යහපත් ණය ඉතිහාසයක් ඇති අය විය යුතුය.",
     guar_pt3: "අත්සන් කිරීමට පෙර සම්පූර්ණ ණය මුදල සහ කොන්දේසි පිළිබඳව විමසා දැනගැනීමට ඔබට පූර්ණ අයිතිය ඇත.",
     guar_pt4: "අපගේ සරල ඇපකරු ප්‍රකාශන පත්‍රිකාව බාගත කර පෙරහුරුවක් ලබාගන්න.",
 
@@ -785,7 +785,7 @@ const siteTranslations = {
     guar_title: "ஒரு பிணையாளராக நீங்கள் தெரிந்து கொள்ள வேண்டியவை",
     guar_desc: "பிணையாளராக இருப்பது ஒரு தீவிரமான சட்டப் பொறுப்பாகும். முடிவுகளை முழுத் தெளிவுடன் எடுப்பதை நாங்கள் ஊக்குவிக்கிறோம்.",
     guar_pt1: "கடன் வாங்கியவர் செலுத்தத் தவறினால் அந்த நிலுவையைச் செலுத்த பிணையாளர் சட்டப்படி கடமைப்பட்டுள்ளார்.",
-    guar_pt2: "பிணையாளர் 21 வயதுக்கு மேற்பட்டவராகவும், நிலையான வருமானம் மற்றும் நல்ல கடன் வரலாற்றைக் கொண்டவராகவும் இருக்க வேண்டும்.",
+    guar_pt2: "பிணையாளர் 18 வயதுக்கு மேற்பட்டவராகவும், நிலையான வருமானம் மற்றும் நல்ல கடன் வரலாற்றைக் கொண்டவராகவும் இருக்க வேண்டும்.",
     guar_pt3: "கையொப்பமிடுவதற்கு முன் முழுத் தொகையையும் விதிமுறைகளையும் அறிய உங்களுக்கு முழு உரிமை உண்டு.",
     guar_pt4: "எங்கள் எளிய பிணையாளர் அறிக்கை படிவத்தைப் பதிவிறக்கம் செய்து முன்கூட்டியே பார்வையிடுங்கள்.",
 
