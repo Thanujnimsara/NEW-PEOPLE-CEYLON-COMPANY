@@ -1005,9 +1005,9 @@ const faqData = [
       ta: "11. வணிகக் கடனுக்காகப் பெறக்கூடிய அதிகபட்சத் தொகை எவ்வளவு?"
     },
     a: {
-      en: "Facilities range from LKR 100,000 up to LKR 10,000,000 or higher based on cashflow analysis, historical turnover, and provided collateral or guarantor strength.",
-      si: "ඔබගේ ව්‍යාපාරයේ මාසික පිරිවැටුම සහ ඇපකර මත පදනම්ව රුපියල් 100,000 සිට රුපියල් මිලියන 10 දක්වා හෝ ඊට වැඩි මුදලක් ලබාගත හැකිය.",
-      ta: "உங்கள் வணிக விற்றுமுதல் மற்றும் பிணையத்தைப் பொறுத்து ரூபா 100,000 முதல் ரூபா 10 மில்லியன் அல்லது அதற்கு மேல் கடன் பெறலாம்."
+      en: "Facilities range from LKR 25000 up to LKR 5,000,000 or higher based on cashflow analysis, historical turnover, and provided collateral or guarantor strength.",
+      si: "ඔබගේ ව්‍යාපාරයේ මාසික පිරිවැටුම සහ ඇපකර මත පදනම්ව රුපියල් 25,000 සිට රුපියල් 5,000,000 දක්වා හෝ ඊට වැඩි මුදලක් ලබාගත හැකිය.",
+      ta: "உங்கள் வணிக விற்றுமுதல் மற்றும் பிணையத்தைப் பொறுத்து ரூபா 25,000 முதல் ரூபா 5,000,000 அல்லது அதற்கு மேல் கடன் பெறலாம்."
     }
   },
   {
