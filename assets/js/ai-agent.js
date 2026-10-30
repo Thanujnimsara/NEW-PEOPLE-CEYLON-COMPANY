@@ -16,9 +16,9 @@
       parentGroup: "Global Group of Companies (Group Est. 2007; People's Ceylon Inc. 2026)",
       headOffice: "No. 28/125/1, Weranketagoda, Ampara",
       businessOffice: "Temple Junction, D.S. Senanayake Street, Ampara",
-      hotline: "063 724 5245",
-      internationalHotline: "+94 63 724 5245",
-      whatsapp: "063 724 5245",
+      hotline: "063 7 245 245",
+      internationalHotline: "+94 63 7 245 245",
+      whatsapp: "063 7 245 245",
       email: "info@pcl.lk",
       complaintsEmail: "complaints@peoplesceylon.lk",
       privacyEmail: "privacy@peoplesceylon.lk",
@@ -187,7 +187,7 @@
       <div class="ai-chat-footer">
         <span>Need a human agent?</span>
         <a href="https://wa.me/94637245245?text=Hello%20People's%20Ceylon%20support,%20I%20am%20chatting%20with%20your%20AI%20and%20would%20like%20to%20talk%20to%20an%20officer" target="_blank" rel="noopener">
-          WhatsApp: 063 724 5245 ↗
+          WhatsApp: 063 7 245 245 ↗
         </a>
       </div>
     </div>
@@ -571,25 +571,25 @@
 🏛️ <strong>ව්‍යාපාරික කාර්යාලය (Business Office):</strong><br>Temple Junction, D.S. Senanayake Street, Ampara.<br><br>
 🏢 <strong>ලියාපදිංචි ප්‍රධාන කාර්යාලය (Head Office):</strong><br>නො. 28/125/1, වේරන්කැටගොඩ, අම්පාර.<br><br>
 ⏰ <strong>විවෘත වේලාවන්:</strong> සඳුදා - සිකුරාදා: පෙ.ව. 8:30 – ප.ව. 5:00 | සෙනසුරාදා: පෙ.ව. 8:30 – ප.ව. 1:30.<br>
-📞 <strong>Hotline:</strong> 063 724 5245`;
+📞 <strong>Hotline:</strong> 063 7 245 245`;
       } else if (lang === 'ta') {
         return `<strong>பீப்பிள்ஸ் சிலோன் அலுவலக முகவரிகள்:</strong><br><br>
 🏛️ <strong>வணிக அலுவலகம்:</strong> Temple Junction, D.S. Senanayake Street, அம்பாறை.<br><br>
 🏢 <strong>பிரதான அலுவலகம்:</strong> No. 28/125/1, வேரன்கெடகொட, அம்பாறை.<br><br>
-📞 <strong>Hotline:</strong> 063 724 5245`;
+📞 <strong>Hotline:</strong> 063 7 245 245`;
       }
       return `<strong>People's Ceylon Official Addresses:</strong><br><br>
 🏛️ <strong>Business Office:</strong> Temple Junction, D.S. Senanayake Street, Ampara.<br>
 🏢 <strong>Registered Head Office:</strong> No. 28/125/1, Weranketagoda, Ampara.<br><br>
 ⏰ <strong>Working Hours:</strong> Mon - Fri: 8:30 AM – 5:00 PM | Sat: 8:30 AM – 1:30 PM.<br>
-📞 <strong>Hotline:</strong> 063 724 5245`;
+📞 <strong>Hotline:</strong> 063 7 245 245`;
     }
 
     // 4.3 Phone Number / Contact / WhatsApp
     if (/(phone|call|contact|number|hotline|whatsapp|kathakaranne|anukaya|tele|தொலைபேசி|දුරකථන|ඇමතුම්)/i.test(q)) {
       return `<strong>People's Ceylon Official Contact Details:</strong><br><br>
-📞 <strong>Hotline & Customer Service:</strong> <a href="tel:0637245245" style="color:#FBBF24;font-weight:bold;">063 724 5245</a> (+94 63 724 5245)<br>
-💬 <strong>WhatsApp Official Chat:</strong> <a href="https://wa.me/94637245245" target="_blank" style="color:#25D366;font-weight:bold;">063 724 5245 ↗</a><br>
+📞 <strong>Hotline & Customer Service:</strong> <a href="tel:0637245245" style="color:#FBBF24;font-weight:bold;">063 7 245 245</a><br>
+💬 <strong>WhatsApp Official Chat:</strong> <a href="https://wa.me/94637245245" target="_blank" style="color:#25D366;font-weight:bold;">063 7 245 245 ↗</a><br>
 ✉️ <strong>Email:</strong> info@pcl.lk<br>
 ⚠️ <strong>Complaints & Escalation:</strong> complaints@peoplesceylon.lk`;
     }
@@ -744,17 +744,17 @@ You can type directly into our digital forms, auto-save, print, or send straight
     // Default Fallback Response
     if (lang === 'si') {
       return `ඔබගේ විමසීම පිළිබඳව තවදුරටත් කරුණු දැනගැනීමට කරුණාකර අපගේ නිලධාරියෙකු හා සෘජුව සම්බන්ධ වන්න:<br><br>
-📞 <strong>Hotline:</strong> 063 724 5245<br>
-💬 <strong>WhatsApp:</strong> <a href="https://wa.me/94637245245?text=Hello%20People's%20Ceylon,%20I%20have%20an%20inquiry" target="_blank" style="color:#25D366;font-weight:bold;">063 724 5245 වෙත පණිවිඩයක් එවන්න ↗</a><br>
+📞 <strong>Hotline:</strong> 063 7 245 245<br>
+💬 <strong>WhatsApp:</strong> <a href="https://wa.me/94637245245?text=Hello%20People's%20Ceylon,%20I%20have%20an%20inquiry" target="_blank" style="color:#25D366;font-weight:bold;">063 7 245 245 වෙත පණිවිඩයක් එවන්න ↗</a><br>
 🏛️ <strong>කාර්යාලය:</strong> Temple Junction, D.S. Senanayake Street, Ampara.`;
     } else if (lang === 'ta') {
       return `உங்கள் வினாவுக்கு மேலதிக விபரம் பெற எமது வாடிக்கையாளர் சேவை அதிகாரியுடன் தொடர்பு கொள்ளுங்கள்:<br><br>
-📞 <strong>Hotline:</strong> 063 724 5245<br>
-💬 <strong>WhatsApp:</strong> <a href="https://wa.me/94637245245" target="_blank" style="color:#25D366;font-weight:bold;">063 724 5245 ↗</a>`;
+📞 <strong>Hotline:</strong> 063 7 245 245<br>
+💬 <strong>WhatsApp:</strong> <a href="https://wa.me/94637245245" target="_blank" style="color:#25D366;font-weight:bold;">063 7 245 245 ↗</a>`;
     }
     return `Thank you for your question. For detailed or customized inquiries, please contact our team directly:<br><br>
-📞 <strong>Hotline:</strong> 063 724 5245 (+94 63 724 5245)<br>
-💬 <strong>WhatsApp:</strong> <a href="https://wa.me/94637245245?text=Hello%20People's%20Ceylon,%20I%20have%20an%20inquiry" target="_blank" style="color:#25D366;font-weight:bold;">Chat on WhatsApp 063 724 5245 ↗</a><br>
+📞 <strong>Hotline:</strong> 063 7 245 245<br>
+💬 <strong>WhatsApp:</strong> <a href="https://wa.me/94637245245?text=Hello%20People's%20Ceylon,%20I%20have%20an%20inquiry" target="_blank" style="color:#25D366;font-weight:bold;">Chat on WhatsApp 063 7 245 245 ↗</a><br>
 🏛️ <strong>Office:</strong> Temple Junction, D.S. Senanayake Street, Ampara.`;
   }
 

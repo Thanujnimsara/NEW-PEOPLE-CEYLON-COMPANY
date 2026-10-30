@@ -10,7 +10,7 @@ const siteTranslations = {
     reg_no: "Company No. PV 00354852",
     reg_date: "Inc. 5 Feb 2026",
     office_loc: "Ampara, Sri Lanka",
-    hotline: "Hotline: +94 63 724 5245",
+    hotline: "Hotline: 063 7 245 245",
     
     // Nav
     nav_home: "Home",
@@ -44,7 +44,7 @@ const siteTranslations = {
     hero_title: "Hire purchase and business loans, <span class='highlight'>explained clearly.</span>",
     hero_subtitle: "People’s Ceylon (Private) Limited helps individuals, professionals, and small businesses buy vehicles and grow, offering transparent terms and friendly service through our branches across Sri Lanka.",
     hero_btn_apply: "Apply Now",
-    hero_btn_call: "Call: 063 724 5245",
+    hero_btn_call: "Call: 063 7 245 245",
     hero_btn_calc: "Calculate My Installment",
     stat_group_exp: "Subsidiary of the Global Group",
     stat_group_sub: "Group experience since 2007; People’s Ceylon incorporated on 5 February 2026",
@@ -273,11 +273,11 @@ const siteTranslations = {
     hours_title: "Operating Hours",
     hours_val: "Mon – Fri: 8:30 AM – 5:00 PM | Sat: 8:30 AM – 1:00 PM (Closed Sundays & Mercantile Holidays)",
     phone_title: "Telephone Lines",
-    phone_val: "+94 63 724 5245",
+    phone_val: "063 7 245 245",
     email_title: "Official Email Address",
     email_val: "info@pcl.lk",
     whatsapp_title: "WhatsApp Business Support",
-    whatsapp_val: "+94 63 724 5245 (Chat with an Officer)",
+    whatsapp_val: "063 7 245 245 (Chat with an Officer)",
 
     // Legal & Footer
     legal_privacy: "Privacy Policy (PDPA No. 9 of 2022 Compliant)",
@@ -296,7 +296,7 @@ const siteTranslations = {
     reg_no: "සමාගම් අංකය: PV 00354852",
     reg_date: "සංස්ථාපිත දිනය: 2026 පෙබරවාරි 5",
     office_loc: "අම්පාර, ශ්‍රී ලංකාව",
-    hotline: "ක්ෂණික ඇමතුම්: +94 63 724 5245",
+    hotline: "ක්ෂණික ඇමතුම්: 063 7 245 245",
 
     // Nav
     nav_home: "මුල් පිටුව",
@@ -330,7 +330,7 @@ const siteTranslations = {
     hero_title: "වාහන කුලී සින්නක්කර සහ ව්‍යාපාරික ණය, <span class='highlight'>පැහැදිලිව හා විශ්වාසයෙන්.</span>",
     hero_subtitle: "ශ්‍රී ලංකාව පුරා විසිරුණු අපගේ ශාඛා ජාලය හරහා පුද්ගලයන්ට, වෘත්තිකයන්ට සහ සුළු ව්‍යාපාරිකයන්ට වාහන මිලදී ගැනීමට සහ තම ව්‍යාපාරය දියුණු කර ගැනීමට විනිවිදභාවයෙන් යුත් කොන්දේසි සහ සුහදශීලී සේවාවක්.",
     hero_btn_apply: "දැන්ම අයදුම් කරන්න",
-    hero_btn_call: "අමතන්න: 063 724 5245",
+    hero_btn_call: "අමතන්න: 063 7 245 245",
     hero_btn_calc: "මගේ වාරිකය ගණනය කරන්න",
     stat_group_exp: "Subsidiary of the Global Group",
     stat_group_sub: "Group experience since 2007; People’s Ceylon incorporated on 5 February 2026",
@@ -559,11 +559,11 @@ const siteTranslations = {
     hours_title: "සේවා වේලාවන්",
     hours_val: "සඳුදා – සිකුරාදා: 8:30 AM – 5:00 PM | සෙනසුරාදා: 8:30 AM – 1:00 PM (ඉරිදා සහ වෙළඳ නිවාඩු දිනවල වසා ඇත)",
     phone_title: "දුරකථන අංක",
-    phone_val: "+94 63 724 5245",
+    phone_val: "063 7 245 245",
     email_title: "නිල විද්‍යුත් තැපෑල (Email)",
     email_val: "info@pcl.lk",
     whatsapp_title: "WhatsApp ව්‍යාපාරික සේවාව",
-    whatsapp_val: "+94 63 724 5245 (නිලධාරියෙකු හා කතාබස් කරන්න)",
+    whatsapp_val: "063 7 245 245 (නිලධාරියෙකු හා කතාබස් කරන්න)",
 
     // Legal & Footer
     legal_privacy: "රහස්‍යතා ප්‍රතිපත්තිය (2022 අංක 09 දරන පෞද්ගලික දත්ත ආරක්ෂණ පනත)",
@@ -581,7 +581,7 @@ const siteTranslations = {
     reg_no: "நிறுவன இலக்கம்: PV 00354852",
     reg_date: "பதிவு: 5 பெப்ரவரி 2026",
     office_loc: "அம்பாறை, இலங்கை",
-    hotline: "அவசர அழைப்பு: +94 63 724 5245",
+    hotline: "அவசர அழைப்பு: 063 7 245 245",
 
     // Nav
     nav_home: "முகப்பு",
@@ -615,7 +615,7 @@ const siteTranslations = {
     hero_title: "வாகன வாடகை கொள்முதல் மற்றும் வணிகக் கடன்கள், <span class='highlight'>மிகத் தெளிவாக.</span>",
     hero_subtitle: "இலங்கை முழுவதும் உள்ள எமது கிளைகள் ஊடாக தனிநபர்கள், தொழில் வல்லுநர்கள் மற்றும் சிறு வணிகங்கள் வாகனங்களை வாங்கவும் வளரவும் வெளிப்படையான விதிமுறைகளுடன் கூடிய நட்பு சேவை.",
     hero_btn_apply: "இப்போதே விண்ணப்பிக்கவும்",
-    hero_btn_call: "அழைக்கவும்: 063 724 5245",
+    hero_btn_call: "அழைக்கவும்: 063 7 245 245",
     hero_btn_calc: "என் தவணையைக் கணிக்கவும்",
     stat_group_exp: "Subsidiary of the Global Group",
     stat_group_sub: "Group experience since 2007; People’s Ceylon incorporated on 5 February 2026",
@@ -844,11 +844,11 @@ const siteTranslations = {
     hours_title: "வேலை நேரங்கள்",
     hours_val: "திங்கள் – வெள்ளி: 8:30 AM – 5:00 PM | சனி: 8:30 AM – 1:00 PM (ஞாயிறு மற்றும் விடுமுறை நாட்களில் மூடப்படும்)",
     phone_title: "தொலைபேசி எண்கள்",
-    phone_val: "+94 63 724 5245",
+    phone_val: "063 7 245 245",
     email_title: "உத்தியோகபூர்வ மின்னஞ்சல்",
     email_val: "info@pcl.lk",
     whatsapp_title: "WhatsApp வணிக ஆதரவு",
-    whatsapp_val: "+94 63 724 5245 (அதிகாரியுடன் உரையாடவும்)",
+    whatsapp_val: "063 7 245 245 (அதிகாரியுடன் உரையாடவும்)",
 
     // Legal & Footer
     legal_privacy: "தனியுரிமைக் கொள்கை (2022 ஆம் ஆண்டின் 9 ஆம் இலக்க சட்டம்)",
@@ -989,9 +989,9 @@ const faqData = [
       ta: "10. விசாரணை அல்லது முறைப்பாட்டை எவ்வாறு சமர்ப்பிப்பது?"
     },
     a: {
-      en: "You can reach us in person at our Ampara office, call our hotline +94 63 724 5245, message on WhatsApp +94 63 724 5245, or email complaints@peoplesceylon.lk. Every complaint is assigned a tracking reference and addressed within 7 to 14 business days.",
-      si: "අම්පාර කාර්යාලයට පැමිණීමෙන්, +94 63 724 5245 ක්ෂණික ඇමතුම් අංකයෙන්, +94 63 724 5245 WhatsApp හරහා හෝ complaints@peoplesceylon.lk විද්‍යුත් තැපෑලෙන් ඔබට අප හා සම්බන්ධ විය හැකිය. සෑම පැමිණිල්ලක් සඳහාම ලියාපදිංචි අංකයක් ලබාදී දින 7-14ක් තුළ විසඳුම් ලබාදේ.",
-      ta: "எங்கள் அம்பாறை அலுவலகத்திற்கு நேரடியாக வரலாம், +94 63 724 5245 க்கு அழைக்கலாம், +94 63 724 5245 WhatsApp அல்லது complaints@peoplesceylon.lk மின்னஞ்சல் மூலம் தொடர்பு கொள்ளலாம். 7-14 வேலை நாட்களில் தீர்வு வழங்கப்படும்."
+      en: "You can reach us in person at our Ampara office, call our hotline 063 7 245 245, message on WhatsApp 063 7 245 245, or email complaints@peoplesceylon.lk. Every complaint is assigned a tracking reference and addressed within 7 to 14 business days.",
+      si: "අම්පාර කාර්යාලයට පැමිණීමෙන්, 063 7 245 245 ක්ෂණික ඇමතුම් අංකයෙන්, 063 7 245 245 WhatsApp හරහා හෝ complaints@peoplesceylon.lk විද්‍යුත් තැපෑලෙන් ඔබට අප හා සම්බන්ධ විය හැකිය. සෑම පැමිණිල්ලක් සඳහාම ලියාපදිංචි අංකයක් ලබාදී දින 7-14ක් තුළ විසඳුම් ලබාදේ.",
+      ta: "எங்கள் அம்பாறை அலுவலகத்திற்கு நேரடியாக வரலாம், 063 7 245 245 க்கு அழைக்கலாம், 063 7 245 245 WhatsApp அல்லது complaints@peoplesceylon.lk மின்னஞ்சல் மூலம் தொடர்பு கொள்ளலாம். 7-14 வேலை நாட்களில் தீர்வு வழங்கப்படும்."
     }
   },
   {
