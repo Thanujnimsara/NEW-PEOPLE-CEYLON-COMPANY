@@ -1527,7 +1527,173 @@
     </div>
   </div>
 
+  <!-- 3b. Loan Calculator Modal -->
+  <div class="modal-overlay" id="calculatorModal">
+    <div class="modal-card" style="max-width:1080px; width:97%; padding:0; overflow:hidden;">
+      <button class="modal-close-btn" style="position:absolute;top:14px;right:18px;z-index:10;">&times;</button>
+      <div style="padding:22px 24px 10px 24px; background:linear-gradient(135deg,#0d2a6e 0%,#1a3f9e 100%); color:#fff;">
+        <h3 style="margin:0 0 2px;font-size:1.35rem;font-weight:800;letter-spacing:-0.3px;">Loan &amp; Installment Calculator</h3>
+        <p style="margin:0;font-size:0.85rem;opacity:0.8;">Estimate your monthly installment, total interest and repayment schedule.</p>
+      </div>
+      <div style="padding:22px 24px 24px;overflow-y:auto;max-height:80vh;">
+
+        <style>
+          #calcModal-root { font-family: "Segoe UI", Arial, sans-serif; color: #1d2939; }
+          #calcModal-root .cm-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+          @media(max-width:700px){ #calcModal-root .cm-grid { grid-template-columns:1fr; } }
+          #calcModal-root .cm-card { background:#f7f9fd; border-radius:10px; padding:18px; border:1px solid #d9e0ec; }
+          #calcModal-root .cm-field { margin-bottom:16px; }
+          #calcModal-root .cm-field label { display:block; font-weight:700; margin-bottom:7px; font-size:13px; color:#0d2a6e; }
+          #calcModal-root .cm-row { display:flex; gap:10px; align-items:center; }
+          #calcModal-root .cm-row input[type=number] { width:140px; padding:8px 10px; border:1.5px solid #d9e0ec; border-radius:7px; font-size:14px; }
+          #calcModal-root .cm-row input[type=range] { flex:1; accent-color:#0d2a6e; }
+          #calcModal-root select { padding:8px 10px; border:1.5px solid #d9e0ec; border-radius:7px; font-size:14px; background:#fff; }
+          #calcModal-root .cm-toggle { display:flex; gap:8px; }
+          #calcModal-root .cm-toggle button { flex:1; padding:9px; border:1.5px solid #d9e0ec; background:#fff; border-radius:8px; cursor:pointer; font-size:13px; font-weight:600; transition:all .2s; }
+          #calcModal-root .cm-toggle button.active { background:#0d2a6e; color:#fff; border-color:#0d2a6e; }
+          #calcModal-root .cm-result-main { text-align:center; padding:14px; background:linear-gradient(135deg,#eaf2ff,#f0f6ff); border-radius:10px; margin-bottom:14px; border:1px solid #c5d9f5; }
+          #calcModal-root .cm-result-main small { color:#667085; display:block; margin-bottom:3px; font-size:12px; }
+          #calcModal-root .cm-result-main .cm-amount { font-size:28px; font-weight:800; color:#0d2a6e; }
+          #calcModal-root .cm-stats { display:flex; justify-content:space-between; padding:9px 0; border-bottom:1px solid #e5eaf3; font-size:14px; }
+          #calcModal-root .cm-stats:last-of-type { border-bottom:none; }
+          #calcModal-root .cm-stats span:first-child { color:#667085; }
+          #calcModal-root .cm-stats span:last-child { font-weight:700; color:#1d2939; }
+          #calcModal-root .cm-chart-wrap { display:flex; align-items:center; justify-content:center; gap:18px; margin-top:14px; flex-wrap:wrap; }
+          #calcModal-root .cm-legend div { display:flex; align-items:center; gap:8px; font-size:13px; margin:5px 0; }
+          #calcModal-root .cm-dot { width:11px; height:11px; border-radius:50%; display:inline-block; }
+          #calcModal-root .cm-schedule { margin-top:16px; }
+          #calcModal-root .cm-schedule-head { display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; }
+          #calcModal-root .cm-btn { padding:9px 16px; background:#0d2a6e; color:#fff; border:none; border-radius:8px; cursor:pointer; font-size:13px; font-weight:600; transition:background .2s; }
+          #calcModal-root .cm-btn:hover { background:#1a3f9e; }
+          #calcModal-root .cm-btn.cm-grey { background:#667085; }
+          #calcModal-root .cm-btn.cm-grey:hover { background:#4a5568; }
+          #calcModal-root .cm-btn.cm-small { padding:6px 12px; font-size:12px; }
+          #calcModal-root .cm-table-wrap { max-height:320px; overflow:auto; border:1px solid #d9e0ec; border-radius:8px; }
+          #calcModal-root table { width:100%; border-collapse:collapse; font-size:13px; }
+          #calcModal-root th, #calcModal-root td { padding:8px 10px; text-align:right; }
+          #calcModal-root th:first-child, #calcModal-root td:first-child { text-align:left; }
+          #calcModal-root thead th { position:sticky; top:0; background:#eef2f9; font-size:12px; color:#0d2a6e; }
+          #calcModal-root tbody tr:nth-child(even) { background:#fafbfd; }
+          #calcModal-root .cm-note { font-size:11.5px; color:#667085; margin-top:12px; }
+          #calcModal-root .cm-check { display:flex !important; align-items:center; gap:8px; cursor:pointer; font-weight:600; font-size:13px; }
+          #calcModal-root .cm-check input { width:15px; height:15px; accent-color:#0d2a6e; }
+          #calcModal-root .cm-var-help { font-size:12px; color:#667085; margin:6px 0 8px; }
+          #calcModal-root .cm-var-row { display:flex; align-items:center; gap:8px; margin-bottom:7px; flex-wrap:wrap; background:#fff; border:1.5px solid #d9e0ec; border-radius:8px; padding:8px 10px; }
+          #calcModal-root .cm-var-row span { font-size:12px; color:#667085; }
+          #calcModal-root .cm-var-row input { width:80px; padding:6px 8px; border:1px solid #d9e0ec; border-radius:6px; font-size:13px; }
+          #calcModal-root .cm-var-row .cm-del { margin-left:auto; background:none; border:none; color:#d92d20; cursor:pointer; font-size:17px; line-height:1; }
+          #calcModal-root .cm-b-amt { width:130px !important; }
+          #calcModal-root .cm-hidden { display:none; }
+          #calcModal-root table.cm-no-bulk th:nth-child(4), #calcModal-root table.cm-no-bulk td:nth-child(4),
+          #calcModal-root table.cm-no-bulk th:nth-child(5), #calcModal-root table.cm-no-bulk td:nth-child(5) { display:none; }
+        </style>
+
+        <div id="calcModal-root">
+          <div class="cm-grid">
+            <!-- INPUTS -->
+            <div class="cm-card">
+              <div class="cm-field">
+                <label>Interest Type</label>
+                <div class="cm-toggle">
+                  <button type="button" id="cm-btnReducing" class="active">Reducing Balance</button>
+                  <button type="button" id="cm-btnFlat">Flat Rate</button>
+                </div>
+              </div>
+              <div class="cm-field">
+                <label for="cm-amount">Loan Amount (LKR)</label>
+                <div class="cm-row">
+                  <input type="number" id="cm-amount" min="10000" max="50000000" step="10000" value="1000000">
+                  <input type="range" id="cm-amountRange" min="10000" max="50000000" step="10000" value="1000000">
+                </div>
+              </div>
+              <div class="cm-field">
+                <label for="cm-rate">Annual Interest Rate (%)</label>
+                <div class="cm-row">
+                  <input type="number" id="cm-rate" min="1" max="50" step="0.1" value="12">
+                  <input type="range" id="cm-rateRange" min="1" max="50" step="0.1" value="12">
+                </div>
+              </div>
+              <div class="cm-field">
+                <label for="cm-tenure">Loan Period</label>
+                <div class="cm-row">
+                  <input type="number" id="cm-tenure" min="1" max="360" step="1" value="5">
+                  <select id="cm-tenureUnit">
+                    <option value="years" selected>Years</option>
+                    <option value="months">Months</option>
+                  </select>
+                </div>
+                <div class="cm-row" style="margin-top:8px">
+                  <input type="range" id="cm-tenureRange" min="1" max="30" step="1" value="5" style="width:100%">
+                </div>
+              </div>
+              <div class="cm-field" id="cm-varSection">
+                <label class="cm-check"><input type="checkbox" id="cm-varEnabled"> Variable Interest Rates</label>
+                <div id="cm-varBox" class="cm-hidden">
+                  <div class="cm-var-help">Set a new annual rate from a given month onward.</div>
+                  <div id="cm-varRows"></div>
+                  <button class="cm-btn cm-small" type="button" id="cm-addVarRow">+ Add Rate Change</button>
+                </div>
+              </div>
+              <div class="cm-field" id="cm-bulkSection">
+                <label class="cm-check"><input type="checkbox" id="cm-bulkEnabled"> Structured Rental (Bulk Payments)</label>
+                <div id="cm-bulkBox" class="cm-hidden">
+                  <div class="cm-var-help">Plan lump-sum payments at specific months.</div>
+                  <div id="cm-bulkRows"></div>
+                  <button class="cm-btn cm-small" type="button" id="cm-addBulkRow">+ Add Bulk Payment</button>
+                </div>
+              </div>
+              <button class="cm-btn cm-grey" type="button" id="cm-resetBtn">Reset</button>
+            </div>
+
+            <!-- RESULTS -->
+            <div class="cm-card">
+              <div class="cm-result-main">
+                <small>Monthly Installment</small>
+                <div class="cm-amount" id="cm-emi">LKR 0.00</div>
+              </div>
+              <div class="cm-stats"><span>Loan Amount</span><span id="cm-rPrincipal">-</span></div>
+              <div class="cm-stats"><span>Total Interest</span><span id="cm-rInterest">-</span></div>
+              <div class="cm-stats"><span>Total Payment</span><span id="cm-rTotal">-</span></div>
+              <div class="cm-stats"><span>Number of Installments</span><span id="cm-rMonths">-</span></div>
+              <div class="cm-stats cm-hidden" id="cm-rLastRow"><span>Final Installment</span><span id="cm-rLast">-</span></div>
+              <div class="cm-stats cm-hidden" id="cm-rBulkRow"><span>Total Bulk Payments</span><span id="cm-rBulk">-</span></div>
+              <div class="cm-stats cm-hidden" id="cm-rNoBulkRow"><span>Installment without Bulk Plan</span><span id="cm-rNoBulk">-</span></div>
+              <div class="cm-chart-wrap">
+                <canvas id="cm-chart" width="160" height="160"></canvas>
+                <div class="cm-legend">
+                  <div><span class="cm-dot" style="background:#0d2a6e"></span>Principal <b id="cm-pPrincipal"></b></div>
+                  <div><span class="cm-dot" style="background:#f59e0b"></span>Interest <b id="cm-pInterest"></b></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SCHEDULE -->
+          <div class="cm-schedule">
+            <div class="cm-schedule-head">
+              <h4 style="margin:0;color:#0d2a6e;font-size:1rem;">Repayment Schedule</h4>
+              <button class="cm-btn cm-small" type="button" id="cm-toggleSchedule">Show Schedule</button>
+            </div>
+            <div id="cm-scheduleBox" class="cm-hidden">
+              <div class="cm-table-wrap">
+                <table id="cm-scheduleTable" class="cm-no-bulk">
+                  <thead>
+                    <tr><th>Month</th><th>Rate %</th><th>Installment</th><th>Bulk Payment</th><th>Total Payment</th><th>Principal</th><th>Interest</th><th>Balance</th></tr>
+                  </thead>
+                  <tbody id="cm-scheduleBody"></tbody>
+                </table>
+              </div>
+            </div>
+            <p class="cm-note">This calculator gives an estimate only. Actual figures may differ based on the lender's terms, fees and rounding methods.</p>
+          </div>
+        </div><!-- /calcModal-root -->
+
+      </div><!-- /padding wrapper -->
+    </div>
+  </div>
+
   <!-- 4. Document Viewer & Print Modal -->
+
   <div class="modal-overlay" id="docPreviewModal">
     <div class="modal-card" style="max-width: 1000px; width: 95%;">
       <button class="modal-close-btn">&times;</button>
@@ -1629,5 +1795,206 @@
   <script src="assets/js/translations.js?v=3.6"></script>
   <script src="assets/js/main.js?v=3.6"></script>
   <script src="assets/js/ai-agent.js?v=3.6"></script>
+  <script>
+  /* ── Loan Calculator Modal Logic ── */
+  (function () {
+    const cm = id => document.getElementById(id);
+    let cmMode = 'reducing';
+
+    const cmAmount = cm('cm-amount'), cmAmountRange = cm('cm-amountRange');
+    const cmRate = cm('cm-rate'), cmRateRange = cm('cm-rateRange');
+    const cmTenure = cm('cm-tenure'), cmTenureRange = cm('cm-tenureRange'), cmTenureUnit = cm('cm-tenureUnit');
+
+    if (!cmAmount) return; // guard if modal not in DOM
+
+    const cmFmt = n => 'LKR ' + n.toLocaleString('en-LK', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+    function cmGetMonths() {
+      const t = parseFloat(cmTenure.value) || 0;
+      return Math.round(cmTenureUnit.value === 'years' ? t * 12 : t);
+    }
+
+    function cmGetChanges(n) {
+      if (cmMode !== 'reducing' || !cm('cm-varEnabled').checked) return [];
+      const list = [];
+      document.querySelectorAll('#cm-varRows .cm-var-row').forEach(row => {
+        const m = parseInt(row.querySelector('.cmv-month').value, 10);
+        const rt = parseFloat(row.querySelector('.cmv-rate').value);
+        if (m >= 2 && m <= n && rt >= 0) list.push({ month: m, rate: rt });
+      });
+      return list.sort((a, b) => a.month - b.month);
+    }
+
+    function cmGetBulks(n) {
+      if (cmMode !== 'reducing' || !cm('cm-bulkEnabled').checked) return [];
+      const list = [];
+      document.querySelectorAll('#cm-bulkRows .cmb-row').forEach(row => {
+        const m = parseInt(row.querySelector('.cmb-month').value, 10);
+        const a = parseFloat(row.querySelector('.cmb-amt').value);
+        if (m >= 1 && m <= n && a > 0) list.push({ month: m, amt: a });
+      });
+      return list.sort((a, b) => a.month - b.month);
+    }
+
+    function cmCalculate() {
+      const P = parseFloat(cmAmount.value) || 0;
+      const annual = parseFloat(cmRate.value) || 0;
+      const n = cmGetMonths();
+      if (P <= 0 || n <= 0) return null;
+      const rows = [];
+      let emi, totalInterest, emiNoBulk, bulkTotal = 0;
+
+      if (cmMode === 'reducing') {
+        const pmt = (bal, rr, months) =>
+          rr === 0 ? bal / months : bal * rr * Math.pow(1 + rr, months) / (Math.pow(1 + rr, months) - 1);
+        const changes = cmGetChanges(n);
+        const bulks = cmGetBulks(n);
+        const emiFor = (bal, rr, i) => {
+          let pv = 0;
+          bulks.forEach(b => { if (b.month >= i) pv += b.amt / Math.pow(1 + rr, b.month - i + 1); });
+          return pmt(Math.max(bal - pv, 0), rr, n - i + 1);
+        };
+        let r = annual / 12 / 100;
+        emiNoBulk = pmt(P, r, n);
+        let balance = P;
+        let curEmi = emiFor(balance, r, 1);
+        emi = curEmi;
+        totalInterest = 0;
+        for (let i = 1; i <= n; i++) {
+          let changed = false;
+          changes.forEach(c => { if (c.month === i) { r = c.rate / 12 / 100; changed = true; } });
+          if (changed) curEmi = emiFor(balance, r, i);
+          const bulkPlanned = bulks.filter(b => b.month === i).reduce((s, b) => s + b.amt, 0);
+          const interest = balance * r;
+          let principal = curEmi + bulkPlanned - interest;
+          if (i === n || principal > balance) principal = balance;
+          const payment = principal + interest;
+          const bulkApplied = Math.min(bulkPlanned, Math.max(payment - curEmi, 0));
+          balance = Math.max(balance - principal, 0);
+          totalInterest += interest;
+          rows.push({ i, rate: r * 12 * 100, emi: payment - bulkApplied, bulk: bulkApplied, total: payment, principal, interest, balance });
+        }
+        bulkTotal = rows.reduce((s, x) => s + x.bulk, 0);
+      } else {
+        totalInterest = P * (annual / 100) * (n / 12);
+        emi = (P + totalInterest) / n;
+        const principalPer = P / n, interestPer = totalInterest / n;
+        let balance = P;
+        for (let i = 1; i <= n; i++) {
+          balance = Math.max(balance - principalPer, 0);
+          rows.push({ i, rate: annual, emi, bulk: 0, total: emi, principal: principalPer, interest: interestPer, balance });
+        }
+        emiNoBulk = emi;
+      }
+      return { P, n, emi, emiNoBulk, bulkTotal, lastEmi: rows[rows.length - 1].emi, totalInterest, total: P + totalInterest, rows };
+    }
+
+    function cmDrawChart(principal, interest) {
+      const c = cm('cm-chart'), ctx = c.getContext('2d');
+      const total = principal + interest, cx = 80, cy = 80, R = 76, r = 48;
+      ctx.clearRect(0, 0, c.width, c.height);
+      let start = -Math.PI / 2;
+      [[principal, '#0d2a6e'], [interest, '#f59e0b']].forEach(([v, color]) => {
+        const ang = total ? (v / total) * Math.PI * 2 : 0;
+        ctx.beginPath(); ctx.moveTo(cx, cy);
+        ctx.arc(cx, cy, R, start, start + ang); ctx.closePath();
+        ctx.fillStyle = color; ctx.fill(); start += ang;
+      });
+      ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI * 2);
+      ctx.fillStyle = '#fff'; ctx.fill();
+    }
+
+    function cmUpdate() {
+      const res = cmCalculate();
+      if (!res) { cm('cm-emi').textContent = 'LKR 0.00'; return; }
+      cm('cm-emi').textContent = cmFmt(res.emi);
+      const hasVar = cmGetChanges(res.n).length > 0;
+      cm('cm-rLastRow').classList.toggle('cm-hidden', !hasVar);
+      if (hasVar) cm('cm-rLast').textContent = cmFmt(res.lastEmi);
+      cm('cm-varSection').classList.toggle('cm-hidden', cmMode !== 'reducing');
+      cm('cm-bulkSection').classList.toggle('cm-hidden', cmMode !== 'reducing');
+      const hasBulk = res.bulkTotal > 0;
+      cm('cm-rBulkRow').classList.toggle('cm-hidden', !hasBulk);
+      cm('cm-rNoBulkRow').classList.toggle('cm-hidden', !hasBulk);
+      if (hasBulk) { cm('cm-rBulk').textContent = cmFmt(res.bulkTotal); cm('cm-rNoBulk').textContent = cmFmt(res.emiNoBulk); }
+      cm('cm-scheduleTable').classList.toggle('cm-no-bulk', !hasBulk);
+      cm('cm-rPrincipal').textContent = cmFmt(res.P);
+      cm('cm-rInterest').textContent = cmFmt(res.totalInterest);
+      cm('cm-rTotal').textContent = cmFmt(res.total);
+      cm('cm-rMonths').textContent = res.n;
+      cm('cm-pPrincipal').textContent = '(' + (res.P / res.total * 100).toFixed(1) + '%)';
+      cm('cm-pInterest').textContent = '(' + (res.totalInterest / res.total * 100).toFixed(1) + '%)';
+      cmDrawChart(res.P, res.totalInterest);
+      cm('cm-scheduleBody').innerHTML = res.rows.map(r =>
+        `<tr><td>${r.i}</td><td>${r.rate.toFixed(2)}</td><td>${r.emi.toFixed(2)}</td><td>${r.bulk.toFixed(2)}</td><td>${r.total.toFixed(2)}</td><td>${r.principal.toFixed(2)}</td><td>${r.interest.toFixed(2)}</td><td>${r.balance.toFixed(2)}</td></tr>`
+      ).join('');
+    }
+
+    function cmLink(num, range) {
+      num.addEventListener('input', () => { range.value = num.value; cmUpdate(); });
+      range.addEventListener('input', () => { num.value = range.value; cmUpdate(); });
+    }
+    cmLink(cmAmount, cmAmountRange);
+    cmLink(cmRate, cmRateRange);
+    cmLink(cmTenure, cmTenureRange);
+
+    cmTenureUnit.addEventListener('change', () => {
+      if (cmTenureUnit.value === 'years') {
+        cmTenure.max = 30; cmTenureRange.max = 30; cmTenureRange.min = 1;
+        cmTenure.value = Math.max(1, Math.round(cmTenure.value / 12));
+      } else {
+        cmTenure.max = 360; cmTenureRange.max = 360; cmTenureRange.min = 1;
+        cmTenure.value = Math.round(cmTenure.value * 12);
+      }
+      cmTenureRange.value = cmTenure.value; cmUpdate();
+    });
+
+    cm('cm-btnReducing').addEventListener('click', () => { cmMode = 'reducing'; cm('cm-btnReducing').classList.add('active'); cm('cm-btnFlat').classList.remove('active'); cmUpdate(); });
+    cm('cm-btnFlat').addEventListener('click', () => { cmMode = 'flat'; cm('cm-btnFlat').classList.add('active'); cm('cm-btnReducing').classList.remove('active'); cmUpdate(); });
+
+    function cmAddVarRow() {
+      const rows = document.querySelectorAll('#cm-varRows .cm-var-row');
+      let month = 13, rt = parseFloat(cmRate.value) || 12;
+      if (rows.length) { const last = rows[rows.length-1]; month = (parseInt(last.querySelector('.cmv-month').value,10)||1)+12; rt = parseFloat(last.querySelector('.cmv-rate').value)||rt; }
+      const div = document.createElement('div'); div.className = 'cm-var-row';
+      div.innerHTML = '<span>From month</span><input type="number" class="cmv-month" min="2" step="1" value="'+month+'"><span>New rate (%)</span><input type="number" class="cmv-rate" min="0" max="60" step="0.1" value="'+rt+'"><button type="button" class="cm-del">&times;</button>';
+      cm('cm-varRows').appendChild(div);
+    }
+    function cmAddBulkRow() {
+      const rows = document.querySelectorAll('#cm-bulkRows .cmb-row');
+      let month = 12, amt = 500000;
+      if (rows.length) { const last = rows[rows.length-1]; month = (parseInt(last.querySelector('.cmb-month').value,10)||0)+12; amt = parseFloat(last.querySelector('.cmb-amt').value)||amt; }
+      const div = document.createElement('div'); div.className = 'cm-var-row cmb-row';
+      div.innerHTML = '<span>At month</span><input type="number" class="cmb-month" min="1" step="1" value="'+month+'"><span>Amount (LKR)</span><input type="number" class="cmb-amt cm-b-amt" min="0" step="10000" value="'+amt+'"><button type="button" class="cm-del">&times;</button>';
+      cm('cm-bulkRows').appendChild(div);
+    }
+
+    cm('cm-varEnabled').addEventListener('change', () => { const on = cm('cm-varEnabled').checked; cm('cm-varBox').classList.toggle('cm-hidden', !on); if (on && !document.querySelector('#cm-varRows .cm-var-row')) cmAddVarRow(); cmUpdate(); });
+    cm('cm-addVarRow').addEventListener('click', () => { cmAddVarRow(); cmUpdate(); });
+    cm('cm-varRows').addEventListener('input', cmUpdate);
+    cm('cm-varRows').addEventListener('click', e => { if (e.target.classList.contains('cm-del')) { e.target.closest('.cm-var-row').remove(); cmUpdate(); } });
+
+    cm('cm-bulkEnabled').addEventListener('change', () => { const on = cm('cm-bulkEnabled').checked; cm('cm-bulkBox').classList.toggle('cm-hidden', !on); if (on && !document.querySelector('#cm-bulkRows .cmb-row')) cmAddBulkRow(); cmUpdate(); });
+    cm('cm-addBulkRow').addEventListener('click', () => { cmAddBulkRow(); cmUpdate(); });
+    cm('cm-bulkRows').addEventListener('input', cmUpdate);
+    cm('cm-bulkRows').addEventListener('click', e => { if (e.target.classList.contains('cm-del')) { e.target.closest('.cmb-row').remove(); cmUpdate(); } });
+
+    cm('cm-toggleSchedule').addEventListener('click', () => { const hidden = cm('cm-scheduleBox').classList.toggle('cm-hidden'); cm('cm-toggleSchedule').textContent = hidden ? 'Show Schedule' : 'Hide Schedule'; });
+
+    cm('cm-resetBtn').addEventListener('click', () => {
+      cmAmount.value = cmAmountRange.value = 1000000;
+      cmRate.value = cmRateRange.value = 12;
+      cmTenureUnit.value = 'years'; cmTenure.max = 30; cmTenureRange.max = 30;
+      cmTenure.value = cmTenureRange.value = 5;
+      cm('cm-varEnabled').checked = false; cm('cm-varBox').classList.add('cm-hidden'); cm('cm-varRows').innerHTML = '';
+      cm('cm-bulkEnabled').checked = false; cm('cm-bulkBox').classList.add('cm-hidden'); cm('cm-bulkRows').innerHTML = '';
+      cmMode = 'reducing'; cm('cm-btnReducing').classList.add('active'); cm('cm-btnFlat').classList.remove('active');
+      cmUpdate();
+    });
+
+    cmUpdate();
+  })();
+  </script>
 </body>
+
 </html>
