@@ -13,13 +13,13 @@
       regNo: "PV 00354852",
       incorpDate: "5 February 2026",
       act: "Companies Act No. 7 of 2007",
-      parentGroup: "Global Group of Companies (Established 2007)",
+      parentGroup: "Global Group of Companies (Group Est. 2007; People's Ceylon Inc. 2026)",
       headOffice: "No. 28/125/1, Weranketagoda, Ampara",
       businessOffice: "Temple Junction, D.S. Senanayake Street, Ampara",
       hotline: "063 724 5245",
       internationalHotline: "+94 63 724 5245",
       whatsapp: "063 724 5245",
-      email: "info@peoplesceylon.lk",
+      email: "info@pcl.lk",
       complaintsEmail: "complaints@peoplesceylon.lk",
       privacyEmail: "privacy@peoplesceylon.lk",
       domain: "www.pcl.lk",
@@ -39,7 +39,7 @@
         period: "12 to 60 Months (වසර 1 සිට 5 දක්වා)",
         summaryEn: "We purchase your chosen vehicle and you pay in fixed monthly installments. Full legal ownership passes to you after the final payment.",
         summarySi: "ඔබ කැමති වාහනය අප මිලදී ගෙන ඔබට මාසික ස්ථාවර වාරික මඟින් ගෙවීමට පහසුකම් සලසයි. අවසාන වාරිකය ගෙවූ පසු වාහනයේ පූර්ණ අයිතිය ඔබට ලැබේ.",
-        features: ["Doorstep vehicle inspection", "Affordable down payments", "Immediate Purchase Order (PO) release"],
+        features: ["Doorstep vehicle inspection", "Affordable down payments", "Prompt Purchase Order (PO) release"],
         formLink: "hp-application-form.html"
       },
       {
@@ -62,7 +62,7 @@
         period: "Short tenure from 30 days to 365 days with revolving options",
         summaryEn: "Short-term funding for stock, inventory, wages, and festive supplies to bridge cashflow cycles smoothly.",
         summarySi: "තොග රැස්කිරීම, වැටුප් ගෙවීම් සහ එදිනෙදා ව්‍යාපාරික වියදම් සඳහා දින 30 සිට 365 දක්වා කෙටි කාලීන මුල්‍ය විසඳුම්.",
-        features: ["Instant liquidity for festive rush & bulk stock", "Minimal documentation", "Rapid 48-hour disbursement"],
+        features: ["Instant liquidity for festive rush & bulk stock", "Minimal documentation", "Expedited disbursement upon underwriting completion"],
         formLink: "loan-application-form.html"
       },
       {
@@ -72,9 +72,9 @@
         nameTa: "நுண் வணிகக் கடன்கள் (Micro Loans)",
         limit: "LKR 25,000 to LKR 500,000 (රු. 25,000 සිට 500,000 දක්වා)",
         repayment: "Flexible daily, weekly or monthly installments (දිනපතා, සතිපතා හෝ මාසික)",
-        summaryEn: "Empowering grassroots entrepreneurs, retail shops, traders, and self-employed individuals with quick, hassle-free credit.",
-        summarySi: "සුළු වෙළඳුන්, ස්වයං රැකියාලාභීන් සහ කුඩා ව්‍යවසායකයින් සඳහා රු. 25,000 සිට රු. 500,000 දක්වා පැය 24 කින් මුදාහරින ක්ෂුද්‍ර ණය.",
-        features: ["No complex financial audit required", "Doorstep advisory", "Disbursement within 24 hours"],
+        summaryEn: "Empowering grassroots entrepreneurs, retail shops, traders, and self-employed individuals with quick, accessible credit.",
+        summarySi: "සුළු වෙළඳුන්, ස්වයං රැකියාලාභීන් සහ කුඩා ව්‍යවසායකයින් සඳහා රු. 25,000 සිට රු. 500,000 දක්වා ක්ෂුද්‍ර ණය.",
+        features: ["No complex financial audit required", "Doorstep advisory", "Structured disbursement"],
         formLink: "loan-application-form.html"
       },
       {
@@ -82,8 +82,8 @@
         nameEn: "Gold Coin Purchase Loan",
         nameSi: "රන් කාසි මිලදී ගැනීමේ ණය (Gold Coin Purchase Loan)",
         nameTa: "தங்க நாணயம் கொள்முதல் கடன்",
-        summaryEn: "Convenient, secure financing to purchase gold coins and precious bullion assets with maximum advance value.",
-        summarySi: "පූර්ණ විනිවිදභාවය සහ උපරිම ප්‍රතිලාභ සහිතව රන් කාසි මිලදී ගැනීම සඳහා පහසු සහ සුරක්ෂිත මූල්‍ය පහසුකම්.",
+        summaryEn: "Convenient, secure financing to purchase gold coins and precious bullion assets with transparent terms.",
+        summarySi: "පූර්ණ විනිවිදභාවය සහ සාධාරණ තක්සේරුවක් සහිතව රන් කාසි මිලදී ගැනීම සඳහා පහසු සහ සුරක්ෂිත මූල්‍ය පහසුකම්.",
         features: ["Instant appraisal with calibrated precision digital scales", "Bank vault custody and full insurance", "Partial redemption options"]
       },
       {
@@ -104,7 +104,7 @@
         limit: "Unsecured or low-collateral options up to LKR 10 Million (රුපියල් මිලියන 10 දක්වා)",
         summaryEn: "Tailored for doctors, engineers, accountants, lawyers, and corporate executives for private clinics, equipment, or office expansion.",
         summarySi: "වෛද්‍යවරුන්, ඉංජිනේරුවන්, ගණකාධිකාරීවරුන්, නීතිඥයන් සහ විධායකයින් සඳහා රුපියල් මිලියන 10 දක්වා ඇප රහිත හෝ අවම ඇප පහසුකම්.",
-        features: ["Privileged interest rates", "Personalized executive handling", "Expedited 24-hour fast-track verification"]
+        features: ["Privileged interest rates", "Personalized executive handling", "Expedited underwriting and priority verification"]
       },
       {
         id: "revolving",
@@ -590,7 +590,7 @@
       return `<strong>People's Ceylon Official Contact Details:</strong><br><br>
 📞 <strong>Hotline & Customer Service:</strong> <a href="tel:0637245245" style="color:#FBBF24;font-weight:bold;">063 724 5245</a> (+94 63 724 5245)<br>
 💬 <strong>WhatsApp Official Chat:</strong> <a href="https://wa.me/94637245245" target="_blank" style="color:#25D366;font-weight:bold;">063 724 5245 ↗</a><br>
-✉️ <strong>Email:</strong> info@peoplesceylon.lk<br>
+✉️ <strong>Email:</strong> info@pcl.lk<br>
 ⚠️ <strong>Complaints & Escalation:</strong> complaints@peoplesceylon.lk`;
     }
 
@@ -618,13 +618,13 @@
         return `<strong>ක්ෂුද්‍ර ව්‍යාපාරික ණය (Micro Business Loans):</strong><br><br>
 💰 <strong>ණය මුදල:</strong> රුපියල් 25,000 සිට රුපියල් 500,000 දක්වා (LKR 25,000 – LKR 500,000).<br>
 🔄 <strong>ආපසු ගෙවීම්:</strong> දිනපතා, සතිපතා හෝ මාසික නම්‍යශීලී වාරික.<br>
-⚡ <strong>විශේෂ වාසි:</strong> සංකීර්ණ විගණන ලේඛන අවශ්‍ය නොවේ, පැය 24 කින් මුදල් මුදාහැරීම.<br><br>
+⚡ <strong>විශේෂ වාසි:</strong> සංකීර්ණ විගණන ලේඛන අවශ්‍ය නොවේ, විධිමත් ලිපිගොනු පරීක්ෂාවෙන් පසු කඩිනම් පහසුකම් සැලසීම.<br><br>
 <a href="loan-application-form.html" target="_blank" class="ai-btn-link">📄 Open Loan Application Form ↗</a>`;
       }
       return `<strong>Micro Business Loans:</strong><br><br>
 💰 <strong>Facility Amount:</strong> Fast micro credit from LKR 25,000 to LKR 500,000.<br>
 🔄 <strong>Repayment:</strong> Flexible daily, weekly or monthly installments.<br>
-⚡ <strong>Highlights:</strong> Simple documentation with no complex audit, doorstep advisory, and rapid 24-hour loan disbursement.<br><br>
+⚡ <strong>Highlights:</strong> Simple documentation with no complex audit, doorstep advisory, and prompt processing upon verification.<br><br>
 <a href="loan-application-form.html" target="_blank" class="ai-btn-link">📄 Open Loan Application Form ↗</a>`;
     }
 
@@ -650,12 +650,12 @@
         return `<strong>කාරක ප්‍රාග්ධන ණය (Working Capital Loans):</strong><br><br>
 ⏱️ <strong>කාල සීමාව:</strong> දින 30 සිට 365 දක්වා කෙටි කාලීන පහසුකම් (Short tenure from 30 days to 365 days).<br>
 📦 <strong>අරමුණ:</strong> උත්සව සමයේ තොග මිලදී ගැනීම්, වැටුප් ගෙවීම් සහ සැපයුම්කරුවන්ගේ බිල්පත් ගෙවීම.<br>
-⚡ <strong>වේගය:</strong> අවම ලියකියවිලි සමඟ පැය 48ක් ඇතුළත මුදල් මුදාහැරීම.`;
+⚡ <strong>වේගය:</strong> අවම ලියකියවිලි සමඟ සම්පූර්ණ ලේඛන ලැබීමෙන් පසු කඩිනම් අනුමැතිය සහ මුදල් මුදාහැරීම.`;
       }
       return `<strong>Working Capital Loans:</strong><br><br>
 ⏱️ <strong>Tenure:</strong> Short tenure from 30 days to 365 days with revolving options.<br>
 📦 <strong>Purpose:</strong> Instant liquidity for festive inventory, bulk stock purchases, wages, and uninterrupted supplier payments.<br>
-⚡ <strong>Speed:</strong> Minimal documentation with rapid 48-hour disbursement.`;
+⚡ <strong>Speed:</strong> Minimal documentation with streamlined verification and swift disbursement.`;
     }
 
     // 4.8 Professional Loans
@@ -664,12 +664,12 @@
         return `<strong>වෘත්තීයවේදීන්ගේ ණය (Professional Loans):</strong><br><br>
 💼 <strong>සුදුසු අය:</strong> වෛද්‍යවරුන්, ඉංජිනේරුවන්, ගණකාධිකාරීවරුන්, නීතිඥයන් සහ ආයතනික විධායක නිලධාරීන්.<br>
 💰 <strong>පහසුකම:</strong> රුපියල් මිලියන 10 දක්වා ඇප රහිත හෝ අවම ඇප පහසුකම් (Up to LKR 10 Million).<br>
-⚡ <strong>විශේෂතා:</strong> සායන, පුද්ගලික සේවා ස්ථාන හා නවීන උපකරණ මිලදී ගැනීමට පැය 24 කින් අනුමැතිය.`;
+⚡ <strong>විශේෂතා:</strong> සායන, පුද්ගලික සේවා ස්ථාන හා නවීන උපකරණ මිලදී ගැනීමට ප්‍රමුඛතා පදනම මත කඩිනම් සේවාව.`;
       }
       return `<strong>Professional Loans:</strong><br><br>
 💼 <strong>Eligibility:</strong> Specially designed for doctors, engineers, accountants, lawyers, and corporate executives.<br>
 💰 <strong>Facility Limit:</strong> Unsecured or low-collateral options up to LKR 10 Million.<br>
-⚡ <strong>Features:</strong> Private practice and clinic setup, equipment purchases, privileged rates, and 24-hour fast-track approval.`;
+⚡ <strong>Features:</strong> Private practice and clinic setup, equipment purchases, privileged rates, and prioritized executive processing.`;
     }
 
     // 4.9 Higher Education Loans
@@ -738,7 +738,7 @@ You can type directly into our digital forms, auto-save, print, or send straight
 🏛️ <strong>Company:</strong> People's Ceylon (Private) Limited<br>
 📜 <strong>Registration No:</strong> PV 00354852<br>
 ⚖️ <strong>Incorporated:</strong> 5 February 2026 under the Companies Act No. 7 of 2007.<br>
-🌐 <strong>Group:</strong> Proud subsidiary of the Global Group of Companies (Established 2007).`;
+🌐 <strong>Group:</strong> Affiliated Member of Global Group of Companies (Group Operating History Since 2007; Company Incorporated 2026).`;
     }
 
     // Default Fallback Response

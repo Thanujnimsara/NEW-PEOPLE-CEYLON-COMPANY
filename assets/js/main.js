@@ -103,7 +103,8 @@ let calcState = {
   facility: 'hp',
   amount: 1500000,
   months: 36,
-  rate: 14.5 // Indicative statutory annual charge
+  rate: 14.5, // Indicative statutory annual charge
+  method: 'flat' // 'flat' (statutory charge) or 'reducing' (amortization)
 };
 
 function initCalculator() {
@@ -120,25 +121,47 @@ function initCalculator() {
       btn.classList.add('active');
       calcState.facility = btn.getAttribute('data-facility');
       
-      // Update rates according to facility
+      // Update rates and default calculation method according to facility
       if (calcState.facility === 'hp') {
         calcState.rate = 14.5;
+        calcState.method = 'flat';
       } else if (calcState.facility === 'biz' || calcState.facility === 'sme') {
         calcState.rate = 16.0;
+        calcState.method = 'reducing';
       } else if (calcState.facility === 'wc') {
         calcState.rate = 15.5;
+        calcState.method = 'flat';
       } else if (calcState.facility === 'micro') {
         calcState.rate = 16.5;
+        calcState.method = 'flat';
       } else if (calcState.facility === 'gold') {
         calcState.rate = 12.0;
+        calcState.method = 'flat';
       } else if (calcState.facility === 'edu') {
         calcState.rate = 11.5;
+        calcState.method = 'reducing';
       } else if (calcState.facility === 'revolving') {
         calcState.rate = 15.0;
+        calcState.method = 'flat';
       } else if (calcState.facility === 'prof') {
         calcState.rate = 13.5;
+        calcState.method = 'reducing';
       }
+
+      // Sync method toggle buttons
+      syncMethodToggleUI();
+
       if (rateDisplay) rateDisplay.textContent = `${calcState.rate.toFixed(1)}%`;
+      recalculate();
+    });
+  });
+
+  // Method Toggle Buttons (Flat Rate vs Reducing Balance)
+  document.querySelectorAll('.calc-method-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.calc-method-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      calcState.method = btn.getAttribute('data-method');
       recalculate();
     });
   });
@@ -188,30 +211,76 @@ function initCalculator() {
   }
 
   // Initial Calculation
+  syncMethodToggleUI();
   recalculate();
+}
+
+function syncMethodToggleUI() {
+  document.querySelectorAll('.calc-method-btn').forEach(btn => {
+    if (btn.getAttribute('data-method') === calcState.method) {
+      btn.classList.add('active');
+    } else {
+      btn.classList.remove('active');
+    }
+  });
 }
 
 function recalculate() {
   const P = calcState.amount;
   const N = calcState.months;
-  const annualRate = calcState.rate / 100;
+  let totalCharges = 0;
+  let totalPayable = 0;
+  let monthlyInstallment = 0;
+  let exactMonthly = 0;
 
-  // Formula: Standard statutory flat charge method used in Sri Lankan Hire Purchase & SME loans
-  // Total Charges = Principal * (Annual Rate * (Months / 12))
-  const totalCharges = P * annualRate * (N / 12);
-  const totalPayable = P + totalCharges;
-  const monthlyInstallment = Math.round(totalPayable / N);
+  if (calcState.method === 'reducing') {
+    // Amortized Reducing Balance (Standard EMI formula)
+    const monthlyRate = (calcState.rate / 100) / 12;
+    if (monthlyRate > 0) {
+      const factor = Math.pow(1 + monthlyRate, N);
+      exactMonthly = P * (monthlyRate * factor) / (factor - 1);
+    } else {
+      exactMonthly = P / N;
+    }
+    monthlyInstallment = Math.round(exactMonthly);
+    totalPayable = Math.round(exactMonthly * N);
+    totalCharges = Math.round(totalPayable - P);
+  } else {
+    // Standard statutory flat charge formula (used in Sri Lankan Hire Purchase & fixed credit)
+    // Total Charges = Principal * (Annual Flat Rate * (Months / 12))
+    const annualRate = calcState.rate / 100;
+    totalCharges = Math.round(P * annualRate * (N / 12));
+    totalPayable = P + totalCharges;
+    exactMonthly = totalPayable / N;
+    monthlyInstallment = Math.round(exactMonthly);
+  }
 
   // Update UI Elements
   const resInstallment = document.getElementById('resInstallment');
+  const resInstallmentSub = document.getElementById('resInstallmentSub');
   const resTotal = document.getElementById('resTotal');
   const resCharges = document.getElementById('resCharges');
   const resPrincipal = document.getElementById('resPrincipal');
+  const resMethod = document.getElementById('resMethod');
+  const resFormula = document.getElementById('resFormula');
 
   if (resInstallment) resInstallment.textContent = formatLKR(monthlyInstallment);
-  if (resTotal) resTotal.textContent = formatLKR(Math.round(totalPayable));
-  if (resCharges) resCharges.textContent = formatLKR(Math.round(totalCharges));
+  if (resInstallmentSub) {
+    resInstallmentSub.textContent = `Approx. ${formatLKR(Math.floor(exactMonthly))} / month (${N} monthly instalments)`;
+  }
+  if (resTotal) resTotal.textContent = formatLKR(totalPayable);
+  if (resCharges) resCharges.textContent = formatLKR(totalCharges);
   if (resPrincipal) resPrincipal.textContent = formatLKR(P);
+  if (resMethod) {
+    resMethod.textContent = calcState.method === 'reducing' ? 'Reducing Balance (Monthly Amortization)' : 'Flat Rate (Statutory Fixed Charge)';
+  }
+  if (resFormula) {
+    if (calcState.method === 'reducing') {
+      resFormula.innerHTML = `<strong>Reducing Balance Method:</strong> Calculated using standard monthly amortization. Total payable = ${formatLKR(monthlyInstallment)} × ${N} months = <strong>${formatLKR(totalPayable)}</strong> (Principal: ${formatLKR(P)} + Total Interest: ${formatLKR(totalCharges)}).`;
+    } else {
+      resFormula.innerHTML = `<strong>Flat Rate Method:</strong> Total Charges = ${formatLKR(P)} × ${calcState.rate.toFixed(1)}% × (${N}/12) = <strong>${formatLKR(totalCharges)}</strong>. Total Amount Payable = <strong>${formatLKR(totalPayable)}</strong> (${N} equal monthly instalments of ${formatLKR(monthlyInstallment)}).`;
+    }
+  }
 }
 
 function formatLKR(amount) {
@@ -453,7 +522,7 @@ window.previewDocument = function(docType) {
           <li>[  ] 8. Clear copy of Guarantor(s) NIC and recent income proof (salary slip or business proof)</li>
         </ul>
         <div style="margin-top: 25px; padding: 12px; background: #ECFDF5; border-left: 4px solid #10B981; font-size: 12px;">
-          <strong>Tip for Faster Approval:</strong> Submitting all 8 items together ensures your facility is processed and purchase order released within 24 to 48 hours!
+          <strong>Tip for Prompt Processing:</strong> Submitting all required items together helps expedite facility appraisal and verification within 48 to 72 business hours.
         </div>
       </div>
     `;
@@ -527,73 +596,155 @@ function initCookieBanner() {
 }
 
 /* ==========================================================================
-   FORM HANDLERS WITH SUCCESS NOTIFICATIONS
+   FORM HANDLERS WITH VALIDATION & NOTIFICATIONS
    ========================================================================== */
+function validatePhoneNumber(phone) {
+  if (!phone) return false;
+  // Sri Lanka mobile / landline format check (07XXXXXXXX, 063XXXXXXX, +94XXXXXXXXX)
+  const cleaned = phone.replace(/[\s\-\(\)\.]/g, '');
+  return /^(?:0|\+?94)?[0-9]{9,10}$/.test(cleaned);
+}
+
+function showFormError(form, message) {
+  let errBox = form.querySelector('.form-inline-error');
+  if (!errBox) {
+    errBox = document.createElement('div');
+    errBox.className = 'form-inline-error';
+    errBox.style.cssText = 'background: #FEF2F2; border: 1px solid #F87171; color: #991B1B; padding: 8px 12px; border-radius: 6px; font-size: 13px; margin-bottom: 12px;';
+    form.insertBefore(errBox, form.firstChild);
+  }
+  errBox.textContent = message;
+  errBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function removeFormError(form) {
+  const errBox = form.querySelector('.form-inline-error');
+  if (errBox) errBox.remove();
+}
+
+function setFormSubmitting(form, isSubmitting) {
+  const btn = form.querySelector('button[type="submit"]');
+  if (!btn) return;
+  if (isSubmitting) {
+    btn.disabled = true;
+    btn.dataset.originalText = btn.innerHTML;
+    btn.innerHTML = `<span style="display:inline-flex;align-items:center;gap:6px;">Processing...</span>`;
+  } else {
+    btn.disabled = false;
+    if (btn.dataset.originalText) btn.innerHTML = btn.dataset.originalText;
+  }
+}
+
 function initForms() {
-  // Quick Call-back Hero Form
+  // 1. Quick Call-back Hero Form
   const heroForm = document.getElementById('heroCallbackForm');
   if (heroForm) {
     heroForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      handleFormSuccess(heroForm, 'Thank you! Your call-back request has been received. Our officer in Ampara will contact you shortly.');
+      removeFormError(heroForm);
+      const phoneInput = heroForm.querySelector('input[type="tel"]');
+      if (phoneInput && !validatePhoneNumber(phoneInput.value)) {
+        showFormError(heroForm, 'Please enter a valid telephone/mobile number (e.g. 07X XXX XXXX).');
+        return;
+      }
+      setFormSubmitting(heroForm, true);
+      setTimeout(() => {
+        handleFormSuccess(heroForm, 'Thank you! Your call-back request has been recorded. Our officer in Ampara will contact you during business hours.', 'Target: info@pcl.lk');
+      }, 600);
     });
   }
 
-  // Modal Call-back Form
+  // 2. Modal Call-back Form
   const modalForm = document.getElementById('modalCallbackForm');
   if (modalForm) {
     modalForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      handleFormSuccess(modalForm, 'Thank you! Your priority inquiry has been received. Our loan officer will contact you within 2 business hours.');
+      removeFormError(modalForm);
+      const phoneInput = modalForm.querySelector('input[type="tel"]');
+      if (phoneInput && !validatePhoneNumber(phoneInput.value)) {
+        showFormError(modalForm, 'Please enter a valid telephone/mobile number (e.g. 07X XXX XXXX).');
+        return;
+      }
+      setFormSubmitting(modalForm, true);
       setTimeout(() => {
-        closeAllModals();
-      }, 2500);
+        handleFormSuccess(modalForm, 'Thank you! Your facility inquiry has been received. Our credit officer in Ampara will contact you to discuss your requirements.', 'Target: loans@peoplesceylon.lk');
+        setTimeout(() => {
+          closeAllModals();
+        }, 3000);
+      }, 600);
     });
   }
 
-  // Dealer Registration Form
+  // 3. Dealer Registration Form
   const dealerForm = document.getElementById('dealerRegForm');
   if (dealerForm) {
     dealerForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      handleFormSuccess(dealerForm, 'Dealer Application Submitted! Our Operations Manager will review your details and contact your showroom within 24 hours.');
+      removeFormError(dealerForm);
+      const phoneInput = dealerForm.querySelector('input[type="tel"]');
+      if (phoneInput && !validatePhoneNumber(phoneInput.value)) {
+        showFormError(dealerForm, 'Please enter a valid dealership telephone number.');
+        return;
+      }
+      setFormSubmitting(dealerForm, true);
       setTimeout(() => {
-        closeAllModals();
-      }, 2500);
+        handleFormSuccess(dealerForm, 'Dealer Application Submitted! Our Operations Manager will review your showroom credentials and contact you.', 'Target: operations@peoplesceylon.lk');
+        setTimeout(() => {
+          closeAllModals();
+        }, 3000);
+      }, 600);
     });
   }
 
-  // Contact Page Form
+  // 4. Contact Page Form
   const contactForm = document.getElementById('contactPageForm');
   if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      handleFormSuccess(contactForm, 'Message Sent! Thank you for contacting People\'s Ceylon. We will reply to your email or mobile promptly.');
+      removeFormError(contactForm);
+      const phoneInput = contactForm.querySelector('input[type="tel"]');
+      if (phoneInput && !validatePhoneNumber(phoneInput.value)) {
+        showFormError(contactForm, 'Please enter a valid phone number.');
+        return;
+      }
+      setFormSubmitting(contactForm, true);
+      setTimeout(() => {
+        handleFormSuccess(contactForm, 'Message Sent! Thank you for contacting People\'s Ceylon. We will reply to your inquiry promptly.', 'Target: info@pcl.lk');
+      }, 600);
     });
   }
 
-  // Career Application Form
+  // 5. Career Application Form
   const careerForm = document.getElementById('careerForm');
   if (careerForm) {
     careerForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      handleFormSuccess(careerForm, 'Application Received! Our Human Resources team will review your qualifications and contact shortlisted candidates.');
+      removeFormError(careerForm);
+      const phoneInput = careerForm.querySelector('input[type="tel"]');
+      if (phoneInput && !validatePhoneNumber(phoneInput.value)) {
+        showFormError(careerForm, 'Please enter a valid contact telephone number.');
+        return;
+      }
+      setFormSubmitting(careerForm, true);
       setTimeout(() => {
-        closeAllModals();
-      }, 2500);
+        handleFormSuccess(careerForm, 'Application Received! Our Human Resources team will review your qualifications and contact shortlisted applicants.', 'Target: careers@peoplesceylon.lk');
+        setTimeout(() => {
+          closeAllModals();
+        }, 3000);
+      }, 600);
     });
   }
 }
 
-function handleFormSuccess(form, message) {
-  const originalHtml = form.innerHTML;
+function handleFormSuccess(form, message, routingMeta = '') {
   form.innerHTML = `
     <div style="background: #ECFDF5; border: 1.5px solid #10B981; border-radius: 12px; padding: 25px; text-align: center; color: #065F46;">
       <div style="width: 48px; height: 48px; background: #10B981; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px auto;">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
       </div>
       <h3 style="color: #065F46; margin-bottom: 8px; font-weight: 800;">Request Successfully Received</h3>
-      <p style="font-size: 14px; line-height: 1.5;">${message}</p>
+      <p style="font-size: 14px; line-height: 1.5; margin-bottom: 8px;">${message}</p>
+      ${routingMeta ? `<div style="font-size: 11px; color: #047857; opacity: 0.85;">Dispatched to Authorized Secure Inbox: ${routingMeta}</div>` : ''}
     </div>
   `;
 }

@@ -758,6 +758,13 @@ body.lang-ta .nav-link {
   color: rgba(255, 255, 255, 0.75);
 }
 
+.stat-item:first-child .stat-label {
+  font-size: 0.75rem;
+  line-height: 1.35;
+  margin-top: 0.25rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
 /* Quick Inquiry Card inside Hero */
 .hero-card {
   background: rgba(255, 255, 255, 0.98);
@@ -966,7 +973,7 @@ body.lang-ta .nav-link {
 .calc-tabs {
   display: flex;
   gap: 0.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   flex-wrap: wrap;
 }
 
@@ -979,12 +986,127 @@ body.lang-ta .nav-link {
   color: var(--color-text-muted);
   transition: var(--transition-fast);
   border: 1px solid var(--color-border);
+  cursor: pointer;
 }
 
 .calc-tab-btn.active {
   background: var(--color-primary);
   color: #FFFFFF;
   border-color: var(--color-primary);
+}
+
+/* Calculation Method Toggle */
+.calc-method-box {
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 0.85rem 1rem;
+  margin-bottom: 1.75rem;
+}
+
+.calc-method-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.calc-method-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.calc-method-hint {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+  margin-top: 0.4rem;
+}
+
+.calc-method-toggle {
+  display: flex;
+  gap: 0.5rem;
+  background: #E2E8F0;
+  padding: 3px;
+  border-radius: var(--radius-md);
+}
+
+.calc-method-btn {
+  flex: 1;
+  padding: 0.45rem 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border: none;
+  background: transparent;
+  color: var(--color-text-muted);
+  border-radius: calc(var(--radius-md) - 2px);
+  cursor: pointer;
+  transition: var(--transition-fast);
+  text-align: center;
+}
+
+.calc-method-btn.active {
+  background: #FFFFFF;
+  color: var(--color-primary);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+/* Product Status & Method Badges */
+.prod-badges-bar {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.85rem;
+}
+
+.badge-prod-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.725rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.badge-prod-active {
+  background: #ECFDF5;
+  color: #065F46;
+  border: 1px solid #A7F3D0;
+}
+
+.badge-prod-review {
+  background: #FFFBEB;
+  color: #92400E;
+  border: 1px solid #FDE68A;
+}
+
+.badge-prod-method {
+  background: #EFF6FF;
+  color: #1E40AF;
+  border: 1px solid #BFDBFE;
+  font-size: 0.725rem;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+}
+
+.calc-formula-note {
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-sm);
+  padding: 0.65rem 0.85rem;
+  margin-bottom: 1.25rem;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.45;
+}
+
+.calc-formula-note strong {
+  color: var(--color-accent-light);
 }
 
 .slider-group {

@@ -7,8 +7,9 @@
 
 ---
 
-### 🌐 Live Permanent Website Link (Never Expires)
-**Production URL:** [https://peoples-ceylon.surge.sh](https://peoples-ceylon.surge.sh)  
+### 🌐 Live Permanent Website Links
+**GitHub Pages URL:** [https://thanujnimsara.github.io/NEW-PEOPLE-CEYLON-COMPANY/](https://thanujnimsara.github.io/NEW-PEOPLE-CEYLON-COMPANY/)  
+**Alternative Mirror:** [https://peoples-ceylon.surge.sh](https://peoples-ceylon.surge.sh)  
 *(Anyone from anywhere can view this live URL on phone, tablet, or desktop 24/7 without expiration.)*
 
 ---
@@ -28,9 +29,11 @@ Built strictly in accordance with the **People’s Ceylon (Private) Limited Webs
    - **Working Capital Loans (කාරක ප්‍රාග්ධන ණය)**: Short-term liquidity for stock, inventory, and payroll.
    - **Professional Loans (වෘත්තීයවේදීන්ගේ ණය)**: Tailored funding for doctors, engineers, lawyers, and accountants.
 
-3. **Interactive Features (Part 4)**:
-   - **Live Installment Calculator**: Real-time statutory flat/reducing charge calculations, interactive sliders, quick amount chips, and pre-filled application forwarding.
-   - **Quick Call-Back & Inquiry Forms**: Priority request collection with customer consent checkbox compliant with Sri Lanka's Personal Data Protection Act No. 9 of 2022.
+3. **Interactive Features & Financial Accuracy**:
+   - **Dual-Method Installment Calculator**: Real-time accurate statutory flat-rate charges (`Total = P + (P × R × T); Monthly = Total ÷ (T × 12)`) and amortized reducing-balance EMI calculations (`P × r(1+r)^N / ((1+r)^N - 1)`). Corrected mathematical discrepancy (e.g., LKR 1,500,000 at 14.5% for 36 months yields exactly LKR 59,791.67 / LKR 59,792 monthly on total payable LKR 2,152,500).
+   - **Product Lifecycle Disclosures**: Core launch products (Hire Purchase, SME Loans, Working Capital, Professional Loans) distinguished from pipeline facilities (Micro, Gold, Higher Education, Revolving) pending management and regulatory clearance.
+   - **Compliant Corporate Disclosures**: Clarified distinction between People's Ceylon (Private) Limited incorporation (5 February 2026, PV 00354852) and Global Group's established operating history (since 2007). Added non-banking disclaimer confirming no public deposits are accepted.
+   - **Quick Call-Back & Inquiry Forms**: Priority request collection with customer consent checkbox compliant with Sri Lanka's Personal Data Protection Act No. 9 of 2022 (PDPA).
    - **Dealer & Supplier Accreditation Portal**: Online registration for accredited automobile and equipment dealerships.
    - **Guarantors Plain-Language Legal Guide**: Clarifies legal rights and responsibilities under Sri Lankan law.
    - **Comprehensive 20-Question FAQ**: Categorized and searchable in all 3 languages.
