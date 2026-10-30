@@ -81,6 +81,7 @@ const siteTranslations = {
     prod_badge: "Financial Facilities",
     prod_title: "Tailored Solutions for Your Growth",
     prod_sub: "Transparent terms, competitive statutory charges, and flexible repayment periods to fuel your aspirations.",
+    sec_policy: "Security: Applicable based on Company Credit Policy",
     
     hp_title: "Hire Purchase",
     hp_desc: "Drive your vehicle sooner. We buy the vehicle you choose and you pay in fixed monthly installments. Ownership passes to you after the final installment is paid.",
@@ -367,6 +368,7 @@ const siteTranslations = {
     prod_badge: "අපගේ මුල්‍ය විසඳුම්",
     prod_title: "ඔබේ ඉදිරි ගමනට සරිලන සුවිශේෂී මුල්‍ය පහසුකම්",
     prod_sub: "විනිවිදභාවයෙන් යුතු කොන්දේසි, සහනදායී වාරික සහ නම්‍යශීලී ආපසු ගෙවීමේ කාල සීමාවන්.",
+    sec_policy: "ඇපකර: සමාගමේ ණය ප්‍රතිපත්තිය මත පදනම් වේ",
 
     hp_title: "වාහන කුලී සින්නක්කර (Hire Purchase)",
     hp_desc: "ඔබ කැමති වාහනය ඉක්මනින් පදවන්න. ඔබ තෝරාගන්නා වාහනය අප මිලදී ගෙන ඔබට මාසික ස්ථාවර වාරික මඟින් ගෙවීමට පහසුකම් සලසයි. අවසාන වාරිකය ගෙවූ පසු වාහනයේ පූර්ණ අයිතිය ඔබට හිමිවේ.",
@@ -652,6 +654,7 @@ const siteTranslations = {
     prod_badge: "நிதி வசதிகள்",
     prod_title: "உங்கள் வளர்ச்சிக்கான நிதித் தீர்வுகள்",
     prod_sub: "வெளிப்படையான விதிமுறைகள், மலிவான தவணைகள் மற்றும் நெகிழ்வான மீள்செலுத்தல் காலங்கள்.",
+    sec_policy: "பிணை: நிறுவனத்தின் கடன் கொள்கையின் அடிப்படையில் பொருந்தும்",
 
     hp_title: "வாகன வாடகை கொள்முதல் (Hire Purchase)",
     hp_desc: "உங்கள் வாகனத்தை விரைவாக ஓட்டுங்கள். நீங்கள் தெரிவு செய்யும் வாகனத்தை நாம் வாங்கி, நிலையான மாதாந்த தவணைகளில் செலுத்த உதவுகிறோம். இறுதி தவணைக்குப் பின் முழு உரிமை உங்களுக்கே.",
