@@ -888,9 +888,9 @@ const faqData = [
       ta: "2. வாகன வாடகை கொள்முதல் வசதிக்கு யார் விண்ணப்பிக்கலாம்?"
     },
     a: {
-      en: "Any Sri Lankan citizen aged 21 to 65 with a steady and verifiable monthly income can apply. This includes salaried employees in private and public sectors, self-employed businessmen, agriculturalists/farmers with regular seasonal income, transport operators, and professionals.",
-      si: "වයස අවුරුදු 21 ත් 65 ත් අතර, තහවුරු කළ හැකි මාසික හෝ සෘතුමය ආදායමක් ඇති ඕනෑම ශ්‍රී ලාංකික පුරවැසියෙකුට අයදුම් කළ හැකිය. රාජ්‍ය හෝ පෞද්ගලික අංශයේ වැටුප් ලබන්නන්, ව්‍යාපාරිකයන්, ගොවීන් සහ වෘත්තිකයන් මේ සඳහා සුදුසුකම් ලබයි.",
-      ta: "21 முதல் 65 வயதுக்குட்பட்ட, நிலையான மாத வருமானம் கொண்ட எந்தவொரு இலங்கை பிரஜையும் விண்ணப்பிக்கலாம். இதில் சம்பளம் பெறுவோர், சுயதொழில் செய்பவர்கள், விவசாயிகள் மற்றும் தொழில் வல்லுநர்கள் அடங்குவர்."
+      en: "Any Sri Lankan citizen aged 18 to 65 with a steady and verifiable monthly income can apply. This includes salaried employees in private and public sectors, self-employed businessmen, agriculturalists/farmers with regular seasonal income, transport operators, and professionals.",
+      si: "වයස අවුරුදු 18 ත් 65 ත් අතර, තහවුරු කළ හැකි මාසික හෝ සෘතුමය ආදායමක් ඇති ඕනෑම ශ්‍රී ලාංකික පුරවැසියෙකුට අයදුම් කළ හැකිය. රාජ්‍ය හෝ පෞද්ගලික අංශයේ වැටුප් ලබන්නන්, ව්‍යාපාරිකයන්, ගොවීන් සහ වෘත්තිකයන් මේ සඳහා සුදුසුකම් ලබයි.",
+      ta: "18 முதல் 65 வயதுக்குட்பட்ட, நிலையான மாத வருமானம் கொண்ட எந்தவொரு இலங்கை பிரஜையும் விண்ணப்பிக்கலாம். இதில் சம்பளம் பெறுவோர், சுயதொழில் செய்பவர்கள், விவசாயிகள் மற்றும் தொழில் வல்லுநர்கள் அடங்குவர்."
     }
   },
   {
