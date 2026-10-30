@@ -84,7 +84,7 @@ const siteTranslations = {
     
     hp_title: "Hire Purchase",
     hp_desc: "Drive your vehicle sooner. We buy the vehicle you choose and you pay in fixed monthly installments. Ownership passes to you after the final installment is paid.",
-    hp_f1: "Cars, vans, 3-wheelers, trucks, agricultural vehicles & dual-purpose vehicles",
+    hp_f1: "Registered / Unregistered vehicles: Motorbikes, cars, vans, 3-wheelers, dual-purpose vehicles, buses, long vehicles, trucks & agricultural vehicles etc.",
     hp_f2: "Flexible repayment from 12 to 60 months",
     hp_f3: "Affordable down payments & statutory charges formula",
     hp_f4: "Doorstep inspection & immediate purchase order release",
@@ -100,7 +100,7 @@ const siteTranslations = {
     sme_desc: "Tailored growth capital for expanding Sri Lankan manufacturing, agricultural and commercial enterprises with flexible collateral.",
     sme_f1: "Facility amounts up to LKR 5 Million with flexible terms",
     sme_f2: "Tenures from 12 to 60 months with seasonal structured plans",
-    sme_f3: "Custom grace periods for machinery & asset installations",
+    sme_f3: "",
     sme_f4: "Fast corporate underwriting with dedicated relationship manager",
 
     wc_title: "Working Capital Loans",
@@ -125,7 +125,7 @@ const siteTranslations = {
     gold_f4: "Flexible settlement terms with partial redemption options",
 
     edu_title: "Higher Education Loans",
-    edu_desc: "Invest in academic and professional futures. Finance local and foreign university degrees, postgraduate diplomas, and professional qualifications.",
+    edu_desc: "For universities registered with our company, we provide loans at a concessionary interest rate to cover the costs of higher education courses.",
     edu_f1: "Covers university tuition, course materials & exam fees",
     edu_f2: "Repayment tenures up to 2 years with moratorium while studying",
     edu_f3: "Low preferential interest rates for students and parents",
@@ -141,7 +141,7 @@ const siteTranslations = {
     prof_title: "Professional Loans",
     prof_desc: "Finance designed specifically for doctors, engineers, accountants, lawyers, and executives for their work-related and expansion needs.",
     prof_f1: "Private practice, clinic setup & equipment purchases",
-    prof_f2: "Unsecured or low-collateral options up to LKR 10 Million",
+    prof_f2: "Unsecured or low-collateral options up to LKR 5,000,000/=",
     prof_f3: "Privileged interest rates and personalized executive handling",
     prof_f4: "Expedited underwriting and priority executive verification",
     btn_view_details: "Inquire Now",
@@ -370,7 +370,7 @@ const siteTranslations = {
 
     hp_title: "වාහන කුලී සින්නක්කර (Hire Purchase)",
     hp_desc: "ඔබ කැමති වාහනය ඉක්මනින් පදවන්න. ඔබ තෝරාගන්නා වාහනය අප මිලදී ගෙන ඔබට මාසික ස්ථාවර වාරික මඟින් ගෙවීමට පහසුකම් සලසයි. අවසාන වාරිකය ගෙවූ පසු වාහනයේ පූර්ණ අයිතිය ඔබට හිමිවේ.",
-    hp_f1: "මෝටර් රථ, වෑන්, ත්‍රිරෝද රථ, කෘෂිකාර්මික වාහන සහ ලොරි රථ",
+    hp_f1: "ලියාපදිංචි කළ / නොකළ වාහන: මෝටර් බයිසිකල්, කාර්, වෑන්, ත්‍රිරෝද රථ, ද්විත්ව කාර්ය වාහන, බස් රථ, දිගු වාහන (Long vehicles) ඇතුළු සියලුම වාහන",
     hp_f2: "මාස 12 සිට 60 දක්වා ආපසු ගෙවීමේ කාලය",
     hp_f3: "අවම මූලික ගෙවීම සහ ව්‍යවස්ථාපිත ගාස්තු ක්‍රමවේදය",
     hp_f4: "ඔබේ නිවසටම පැමිණ පරීක්ෂා කර ඇණවුම් ලිපිය (PO) නිකුත් කිරීම",
@@ -386,7 +386,7 @@ const siteTranslations = {
     sme_desc: "ශ්‍රී ලාංකීය නිෂ්පාදන, කෘෂිකාර්මික හා වාණිජ්‍ය ව්‍යාපාර දියුණු කිරීම සඳහා විශේෂයෙන් සැලසුම් කළ ප්‍රාග්ධන ණය පහසුකම්.",
     sme_f1: "රුපියල් මිලියන 5 දක්වා නම්‍යශීලී කොන්දේසි සහිත ණය",
     sme_f2: "මාස 12 සිට 60 දක්වා වාරික සැලසුම්",
-    sme_f3: "යන්ත්‍රෝපකරණ සවි කිරීම සඳහා විශේෂ සහන කාල සීමාවන්",
+    sme_f3: "",
     sme_f4: "කැපවූ සබඳතා නිලධාරියෙකුගේ මඟපෙන්වීම යටතේ කඩිනම් අනුමැතිය",
 
     wc_title: "කාරක ප්‍රාග්ධන ණය",
@@ -411,7 +411,7 @@ const siteTranslations = {
     gold_f4: "කොටස් වශයෙන් බේරාගැනීමේ පහසුකම් සහ නම්‍යශීලී පියවීම්",
 
     edu_title: "උසස් අධ්‍යාපන ණය (Education Loans)",
-    edu_desc: "දේශීය හා විදේශීය විශ්වවිද්‍යාල උපාධි, පශ්චාත් උපාධි ඩිප්ලෝමා සහ වෘත්තීය පාඨමාලා සඳහා ආයෝජනය කරන්න.",
+    edu_desc: "අප සමාගම සමඟ ලියාපදිංචි වී ඇති විශ්වවිද්‍යාල සඳහා උසස් අධ්‍යාපන පාඨමාලා ගාස්තු ආවරණය වන පරිදි සහනදායී පොලී අනුපාත යටතේ අපි ණය පහසුකම් ලබා දෙන්නෙමු.",
     edu_f1: "පාඨමාලා ගාස්තු, අධ්‍යයන ද්‍රව්‍ය සහ විභාග ගාස්තු ආවරණය",
     edu_f2: "අධ්‍යාපනය හදාරන කාලය තුළ සහන කාලයක් සමඟ වසර 2 දක්වා ආපසු ගෙවීම්",
     edu_f3: "සිසුන් සහ දෙමාපියන් සඳහා විශේෂ සහන පොලී අනුපාත",
@@ -427,7 +427,7 @@ const siteTranslations = {
     prof_title: "වෘත්තීයවේදීන්ගේ ණය",
     prof_desc: "වෛද්‍යවරුන්, ඉංජිනේරුවන්, ගණකාධිකාරීවරුන්, නීතිඥයන් සහ විධායක නිලධාරීන් සඳහාම විශේෂයෙන් සකස් කළ මුල්‍ය පහසුකම්.",
     prof_f1: "පුද්ගලික සේවා ස්ථාන, සායන සහ නවීන උපකරණ මිලදී ගැනීම",
-    prof_f2: "රුපියල් මිලියන 10 දක්වා ඇප රහිත හෝ අවම ඇප පහසුකම්",
+    prof_f2: "රු. 5,000,000/= දක්වා ඇප රහිත හෝ අවම ඇප පහසුකම්",
     prof_f3: "විශේෂ සහන පොලී අනුපාත සහ සුවිශේෂී පාරිභෝගික සත්කාරය",
     prof_f4: "කඩිනම් ඇගයීම සහ ප්‍රමුඛතා සහතික කිරීම",
     btn_view_details: "විස්තර විමසන්න",
@@ -655,7 +655,7 @@ const siteTranslations = {
 
     hp_title: "வாகன வாடகை கொள்முதல் (Hire Purchase)",
     hp_desc: "உங்கள் வாகனத்தை விரைவாக ஓட்டுங்கள். நீங்கள் தெரிவு செய்யும் வாகனத்தை நாம் வாங்கி, நிலையான மாதாந்த தவணைகளில் செலுத்த உதவுகிறோம். இறுதி தவணைக்குப் பின் முழு உரிமை உங்களுக்கே.",
-    hp_f1: "கார்கள், வான்கள், முச்சக்கர வண்டிகள், விவசாய வாகனங்கள் மற்றும் லொரிகள்",
+    hp_f1: "பதிவு செய்யப்பட்ட / செய்யப்படாத வாகனங்கள்: மோட்டார் சைக்கிள்கள், கார்கள், வான்கள், முச்சக்கர வண்டிகள், இரட்டை நோக்கு வாகனங்கள், பஸ்கள், நீளமான வாகனங்கள் போன்றவை",
     hp_f2: "12 முதல் 60 மாதங்கள் வரையான மீள்செலுத்தல் காலம்",
     hp_f3: "குறைந்த முற்பணம் மற்றும் சட்டபூர்வ கட்டண முறை",
     hp_f4: "இடத்துக்கே வந்து பார்வையிட்டு கொள்முதல் ஆணை (PO) வழங்குதல்",
@@ -671,7 +671,7 @@ const siteTranslations = {
     sme_desc: "இலங்கையின் உற்பத்தி, விவசாயம் மற்றும் வர்த்தக நிறுவனங்களை விரிவாக்குவதற்கான மூலதனக் கடன்.",
     sme_f1: "ரூபா 5 மில்லியன் வரை நெகிழ்வான விதிமுறைகளுடன் கூடிய கடன்",
     sme_f2: "12 முதல் 60 மாதங்கள் வரையிலான திட்டமிட்ட தவணைகள்",
-    sme_f3: "இயந்திரங்கள் மற்றும் உபகரணங்கள் நிறுவலுக்கு விசேட சலுகைக் காலம்",
+    sme_f3: "",
     sme_f4: "அர்ப்பணிப்புள்ள அதிகாரியின் வழிகாட்டலில் விரைவான அனுமதி",
 
     wc_title: "தொழிற்படு மூலதனக் கடன்",
@@ -696,7 +696,7 @@ const siteTranslations = {
     gold_f4: "பகுதி மீட்டெடுப்பு வசதியுடன் கூடிய நெகிழ்வான தீர்வு",
 
     edu_title: "உயர் கல்விக் கடன்கள் (Education Loans)",
-    edu_desc: "உள்நாட்டு மற்றும் வெளிநாட்டு பல்கலைக்கழக பட்டங்கள் மற்றும் தொழில்சார் படிப்புகளுக்கான நிதி வசதி.",
+    edu_desc: "எமது நிறுவனத்தில் பதிவு செய்யப்பட்ட பல்கலைக்கழகங்களுக்கு, உயர்கல்வி கற்கைநெறிகளின் செலவுகளை ஈடுசெய்ய சலுகை வட்டி விகிதத்தில் கடன் வழங்குகிறோம்.",
     edu_f1: "பல்கலைக்கழக கட்டணம், புத்தகங்கள் மற்றும் பரீட்சை கட்டணங்கள் உள்ளடக்கம்",
     edu_f2: "படிக்கும் காலத்தில் சலுகையுடன் 2 ஆண்டுகள் வரை மீள்செலுத்தல்",
     edu_f3: "மாணவர்கள் மற்றும் பெற்றோருக்கான குறைந்த சலுகை வட்டி",
@@ -712,7 +712,7 @@ const siteTranslations = {
     prof_title: "தொழில் வல்லுநர் கடன்",
     prof_desc: "வைத்தியர்கள், பொறியியலாளர்கள், கணக்காளர்கள், சட்டத்தரணிகள் மற்றும் நிறைவேற்று அதிகாரிகளுக்கான விசேட கடன்.",
     prof_f1: "தனியார் சிகிச்சை நிலையங்கள் மற்றும் உபகரணங்கள் வாங்குதல்",
-    prof_f2: "ரூபா 10 மில்லியன் வரை பிணையற்ற அல்லது குறைந்த பிணை வசதிகள்",
+    prof_f2: "ரூ. 5,000,000/= வரை பிணையற்ற அல்லது குறைந்த பிணை வசதிகள்",
     prof_f3: "விசேட வட்டி விகிதங்கள் மற்றும் தனிப்பயனாக்கப்பட்ட சேவை",
     prof_f4: "முன்னுரிமை அடிப்படையிலான துரித சரிபார்ப்பு",
     btn_view_details: "விபரம் கோரவும்",

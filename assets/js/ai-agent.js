@@ -51,7 +51,7 @@
         period: "12 to 60 Months",
         summaryEn: "Tailored growth capital for expanding Sri Lankan manufacturing, agricultural and commercial enterprises with flexible collateral.",
         summarySi: "නිෂ්පාදන, කෘෂිකාර්මික හා වාණිජ්‍ය ව්‍යාපාර දියුණු කිරීම සඳහා රුපියල් මිලියන 5 දක්වා නම්‍යශීලී කොන්දේසි සහිත ණය පහසුකම්.",
-        features: ["Custom grace periods for machinery & asset setup", "Dedicated relationship manager", "Seasonal structured installment plans"],
+        features: ["Dedicated relationship manager", "Seasonal structured installment plans"],
         formLink: "loan-application-form.html"
       },
       {
@@ -92,8 +92,8 @@
         nameSi: "උසස් අධ්‍යාපන ණය (Higher Education Loans)",
         nameTa: "உயர் கல்விக் கடன்கள் (Education Loans)",
         period: "Repayment tenures up to 2 years with moratorium while studying (වසර 2 දක්වා සහන කාල සහිතව)",
-        summaryEn: "Finance local and foreign university degrees, postgraduate diplomas, and professional qualifications.",
-        summarySi: "දේශීය හා විදේශීය විශ්වවිද්‍යාල උපාධි, පශ්චාත් උපාධි ඩිප්ලෝමා සහ වෘත්තීය පාඨමාලා ගාස්තු සඳහා වසර 2 ක ගෙවීම් කාලයක් සහිත ණය.",
+        summaryEn: "For universities registered with our company, we provide loans at a concessionary interest rate to cover the costs of higher education courses.",
+        summarySi: "අප සමාගම සමඟ ලියාපදිංචි වී ඇති විශ්වවිද්‍යාල සඳහා උසස් අධ්‍යාපන පාඨමාලා ගාස්තු ආවරණය වන පරිදි සහනදායී පොලී අනුපාත යටතේ අපි ණය පහසුකම් ලබා දෙන්නෙමු.",
         features: ["Covers university tuition, course materials & exam fees", "Low preferential interest rates for students & parents", "Direct institutional payment settlement"]
       },
       {
@@ -101,9 +101,9 @@
         nameEn: "Professional Loans",
         nameSi: "වෘත්තීයවේදීන්ගේ ණය (Professional Loans)",
         nameTa: "தொழில் வல்லுநர் கடன்",
-        limit: "Unsecured or low-collateral options up to LKR 10 Million (රුපියල් මිලියන 10 දක්වා)",
+        limit: "Unsecured or low-collateral options up to LKR 5,000,000/= (රුපියල් 5,000,000/= දක්වා)",
         summaryEn: "Tailored for doctors, engineers, accountants, lawyers, and corporate executives for private clinics, equipment, or office expansion.",
-        summarySi: "වෛද්‍යවරුන්, ඉංජිනේරුවන්, ගණකාධිකාරීවරුන්, නීතිඥයන් සහ විධායකයින් සඳහා රුපියල් මිලියන 10 දක්වා ඇප රහිත හෝ අවම ඇප පහසුකම්.",
+        summarySi: "වෛද්‍යවරුන්, ඉංජිනේරුවන්, ගණකාධිකාරීවරුන්, නීතිඥයන් සහ විධායකයින් සඳහා රුපියල් 5,000,000/= දක්වා ඇප රහිත හෝ අවම ඇප පහසුකම්.",
         features: ["Privileged interest rates", "Personalized executive handling", "Expedited underwriting and priority verification"]
       },
       {
@@ -634,13 +634,13 @@
         return `<strong>සුළු හා මධ්‍ය පරිමාණ ණය (SME Business Loans):</strong><br><br>
 💰 <strong>ණය සීමාව:</strong> රුපියල් මිලියන 5 දක්වා (Up to LKR 5 Million).<br>
 📅 <strong>කාල සීමාව:</strong> මාස 12 සිට 60 දක්වා.<br>
-🏭 <strong>සුදුසුකම්:</strong> නිෂ්පාදන, කෘෂිකාර්මික හා වාණිජ්‍ය ව්‍යාපාර පුළුල් කිරීම සඳහා. යන්ත්‍රෝපකරණ සවි කිරීම සඳහා විශේෂ සහන කාල සීමාවන් සහිතයි.<br><br>
+🏭 <strong>සුදුසුකම්:</strong> නිෂ්පාදන, කෘෂිකාර්මික හා වාණිජ්‍ය ව්‍යාපාර පුළුල් කිරීම සඳහා කැපවූ සබඳතා කළමනාකරණය සමඟින්.<br><br>
 <a href="loan-application-form.html" target="_blank" class="ai-btn-link">📄 Open Loan Application Form ↗</a>`;
       }
       return `<strong>SME Business Loans:</strong><br><br>
 💰 <strong>Facility Limit:</strong> Facility amounts up to LKR 5 Million with flexible terms.<br>
 📅 <strong>Tenures:</strong> 12 to 60 months with seasonal structured plans.<br>
-🏭 <strong>Highlights:</strong> Tailored growth capital for manufacturing and agriculture, custom grace periods for machinery setup, and dedicated relationship management.<br><br>
+🏭 <strong>Highlights:</strong> Tailored growth capital for manufacturing and agriculture with dedicated relationship management.<br><br>
 <a href="loan-application-form.html" target="_blank" class="ai-btn-link">📄 Open Loan Application Form ↗</a>`;
     }
 
@@ -663,12 +663,12 @@
       if (lang === 'si') {
         return `<strong>වෘත්තීයවේදීන්ගේ ණය (Professional Loans):</strong><br><br>
 💼 <strong>සුදුසු අය:</strong> වෛද්‍යවරුන්, ඉංජිනේරුවන්, ගණකාධිකාරීවරුන්, නීතිඥයන් සහ ආයතනික විධායක නිලධාරීන්.<br>
-💰 <strong>පහසුකම:</strong> රුපියල් මිලියන 10 දක්වා ඇප රහිත හෝ අවම ඇප පහසුකම් (Up to LKR 10 Million).<br>
+💰 <strong>පහසුකම:</strong> රුපියල් 5,000,000/= දක්වා ඇප රහිත හෝ අවම ඇප පහසුකම් (Up to LKR 5,000,000/=).<br>
 ⚡ <strong>විශේෂතා:</strong> සායන, පුද්ගලික සේවා ස්ථාන හා නවීන උපකරණ මිලදී ගැනීමට ප්‍රමුඛතා පදනම මත කඩිනම් සේවාව.`;
       }
       return `<strong>Professional Loans:</strong><br><br>
 💼 <strong>Eligibility:</strong> Specially designed for doctors, engineers, accountants, lawyers, and corporate executives.<br>
-💰 <strong>Facility Limit:</strong> Unsecured or low-collateral options up to LKR 10 Million.<br>
+💰 <strong>Facility Limit:</strong> Unsecured or low-collateral options up to LKR 5,000,000/=.<br>
 ⚡ <strong>Features:</strong> Private practice and clinic setup, equipment purchases, privileged rates, and prioritized executive processing.`;
     }
 
@@ -676,12 +676,12 @@
     if (/(education|higher education|degree|campus|university|study|school|diploma|moratorium|2 years|අධ්‍යාපන|උපාධි|විශ්වවිද්‍යාල)/i.test(q)) {
       if (lang === 'si') {
         return `<strong>උසස් අධ්‍යාපන ණය (Higher Education Loans):</strong><br><br>
-🎓 <strong>අරමුණ:</strong> දේශීය හා විදේශීය විශ්වවිද්‍යාල උපාධි, පශ්චාත් උපාධි ඩිප්ලෝමා සහ වෘත්තීය පාඨමාලා ගාස්තු.<br>
+🎓 <strong>අරමුණ:</strong> අප සමාගම සමඟ ලියාපදිංචි වී ඇති විශ්වවිද්‍යාල සඳහා උසස් අධ්‍යාපන පාඨමාලා ගාස්තු ආවරණය වන පරිදි සහනදායී පොලී අනුපාත යටතේ අපි ණය පහසුකම් ලබා දෙන්නෙමු.<br>
 📅 <strong>කාල සීමාව:</strong> අධ්‍යාපනය හදාරන කාලය තුළ සහන කාලයක් (Moratorium) සමඟ වසර 2 දක්වා ආපසු ගෙවීම් (Repayment tenures up to 2 years).<br>
 ✨ <strong>විශේෂතා:</strong> සිසුන් සහ දෙමාපියන් සඳහා විශේෂ සහන පොලී අනුපාත යටතේ සෘජුවම අධ්‍යාපන ආයතනයට ගෙවීම්.`;
       }
       return `<strong>Higher Education Loans:</strong><br><br>
-🎓 <strong>Purpose:</strong> Finance local and overseas university degrees, postgraduate diplomas, and professional qualifications.<br>
+🎓 <strong>Purpose:</strong> For universities registered with our company, we provide loans at a concessionary interest rate to cover the costs of higher education courses.<br>
 📅 <strong>Tenure:</strong> Repayment tenures up to 2 years with moratorium while studying.<br>
 ✨ <strong>Features:</strong> Covers tuition and examination fees with low preferential rates and direct institutional settlements.`;
     }
