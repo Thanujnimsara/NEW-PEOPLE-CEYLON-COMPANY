@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Loan & Installment Calculator | People's Ceylon</title>
+<meta name="description" content="Calculate your monthly installment, total interest and full repayment schedule for People's Ceylon hire purchase and loan facilities.">
+<link rel="icon" href="assets/images/logo.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #0d2a6e;
+    --primary-mid: #1a3f9e;
+    --primary-light: #eaf2ff;
+    --accent: #f59e0b;
+    --bg: #f3f6fb;
+    --card: #ffffff;
+    --text: #1d2939;
+    --muted: #667085;
+    --border: #d9e0ec;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+  }
+
+  /* ── NAV BAR ── */
+  .top-nav {
+    background: var(--primary);
+    padding: 14px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 12px rgba(13,42,110,.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .top-nav .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+  }
+  .top-nav .brand img {
+    height: 36px;
+    border-radius: 6px;
+  }
+  .top-nav .brand-name {
+    color: #fff;
+    font-size: 1.05rem;
+    font-weight: 800;
+    letter-spacing: -0.3px;
+    line-height: 1.2;
+  }
+  .top-nav .brand-name span {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 500;
+    opacity: 0.75;
+    letter-spacing: 0.3px;
+  }
+  .back-btn {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 600;
+    padding: 8px 14px;
+    border: 1.5px solid rgba(255,255,255,0.25);
+    border-radius: 8px;
+    transition: all .2s;
+  }
+  .back-btn:hover {
+    background: rgba(255,255,255,0.12);
+    color: #fff;
+    border-color: rgba(255,255,255,0.5);
+  }
+
+  /* ── HERO HEADER ── */
+  .page-hero {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-mid) 100%);
+    padding: 36px 28px 32px;
+    text-align: center;
+    color: #fff;
+  }
+  .page-hero .badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 20px;
+    padding: 5px 16px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .page-hero h1 {
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    font-weight: 800;
+    margin-bottom: 10px;
+    letter-spacing: -0.5px;
+  }
+  .page-hero p {
+    font-size: 0.95rem;
+    opacity: 0.82;
+    max-width: 520px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* ── MAIN CONTAINER ── */
+  .container {
+    max-width: 1060px;
+    margin: 0 auto;
+    padding: 32px 20px 60px;
+  }
+
+  /* ── GRID ── */
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+    margin-bottom: 22px;
+  }
+  @media (max-width: 720px) { .grid { grid-template-columns: 1fr; } }
+
+  /* ── CARD ── */
+  .card {
+    background: var(--card);
+    border-radius: 14px;
+    padding: 24px;
+    box-shadow: 0 2px 14px rgba(13,42,110,.07);
+    border: 1px solid var(--border);
+  }
+  .card-title {
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--primary-light);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* ── FIELDS ── */
+  .field { margin-bottom: 20px; }
+  .field label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 8px;
+    font-size: 13px;
+    color: var(--primary);
+  }
+  .row { display: flex; gap: 12px; align-items: center; }
+  .row input[type=number] {
+    width: 150px;
+    padding: 10px 12px;
+    border: 1.5px solid var(--border);
+    border-radius: 9px;
+    font-size: 14px;
+    font-family: inherit;
+    transition: border-color .2s;
+  }
+  .row input[type=number]:focus {
+    outline: none;
+    border-color: var(--primary-mid);
+    box-shadow: 0 0 0 3px rgba(26,63,158,0.12);
+  }
+  input[type=range] {
+    flex: 1;
+    accent-color: var(--primary);
+    height: 6px;
+  }
+  select {
+    padding: 10px 12px;
+    border: 1.5px solid var(--border);
+    border-radius: 9px;
+    font-size: 14px;
+    background: #fff;
+    font-family: inherit;
+    cursor: pointer;
+  }
+  select:focus { outline: 2px solid var(--primary-mid); }
+
+  /* ── TOGGLE ── */
+  .toggle { display: flex; gap: 8px; }
+  .toggle button {
+    flex: 1;
+    padding: 10px;
+    border: 1.5px solid var(--border);
+    background: #fff;
+    border-radius: 9px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    font-family: inherit;
+    transition: all .2s;
+    color: var(--muted);
+  }
+  .toggle button.active {
+    background: var(--primary);
+    color: #fff;
+    border-color: var(--primary);
+    box-shadow: 0 3px 10px rgba(13,42,110,.25);
+  }
+  .toggle button:hover:not(.active) { background: var(--primary-light); color: var(--primary); }
+
+  /* ── RESULT PANEL ── */
+  .result-main {
+    text-align: center;
+    padding: 20px 16px;
+    background: linear-gradient(135deg, #eaf2ff, #f0f6ff);
+    border-radius: 12px;
+    margin-bottom: 16px;
+    border: 1px solid #c5d9f5;
+  }
+  .result-main small {
+    color: var(--muted);
+    display: block;
+    margin-bottom: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+  }
+  .result-main .amount {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--primary);
+    letter-spacing: -1px;
+  }
+
+  .stats {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #eef2f9;
+    font-size: 14px;
+  }
+  .stats:last-of-type { border-bottom: none; }
+  .stats span:first-child { color: var(--muted); }
+  .stats span:last-child { font-weight: 700; color: var(--text); }
+
+  .chart-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+    margin-top: 18px;
+    flex-wrap: wrap;
+  }
+  .legend div {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 13px;
+    margin: 6px 0;
+    font-weight: 600;
+  }
+  .dot {
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0;
+  }
+
+  /* ── SCHEDULE ── */
+  .schedule-card {
+    background: var(--card);
+    border-radius: 14px;
+    padding: 22px 24px;
+    box-shadow: 0 2px 14px rgba(13,42,110,.07);
+    border: 1px solid var(--border);
+  }
+  .schedule-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+  }
+  .schedule-head h3 {
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--primary);
+  }
+
+  /* ── BUTTONS ── */
+  .btn {
+    padding: 10px 20px;
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    border-radius: 9px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: inherit;
+    transition: all .2s;
+    box-shadow: 0 3px 10px rgba(13,42,110,.2);
+  }
+  .btn:hover { background: var(--primary-mid); transform: translateY(-1px); }
+  .btn.grey { background: var(--muted); box-shadow: none; }
+  .btn.grey:hover { background: #4a5568; transform: translateY(-1px); }
+  .btn.small { padding: 7px 14px; font-size: 12px; }
+
+  /* ── TABLE ── */
+  .table-wrap {
+    max-height: 400px;
+    overflow: auto;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    margin-top: 10px;
+  }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th, td { padding: 10px 12px; text-align: right; }
+  th:first-child, td:first-child { text-align: left; }
+  thead th {
+    position: sticky;
+    top: 0;
+    background: #eef2f9;
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 12px;
+  }
+  tbody tr:nth-child(even) { background: #fafbfd; }
+  tbody tr:hover { background: #f0f4ff; }
+
+  /* ── VARIABLE / BULK ROWS ── */
+  .check {
+    display: flex !important;
+    align-items: center;
+    gap: 9px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--primary);
+  }
+  .check input { width: 16px; height: 16px; accent-color: var(--primary); }
+  .var-help { font-size: 12px; color: var(--muted); margin: 7px 0 10px; line-height: 1.5; }
+  .var-row {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+    background: #f7f9fd;
+    border: 1.5px solid var(--border);
+    border-radius: 9px;
+    padding: 9px 12px;
+  }
+  .var-row span { font-size: 12px; color: var(--muted); font-weight: 600; }
+  .var-row input {
+    width: 80px;
+    padding: 7px 8px;
+    border: 1.5px solid var(--border);
+    border-radius: 7px;
+    font-size: 13px;
+    font-family: inherit;
+  }
+  .var-row .del {
+    margin-left: auto;
+    background: none;
+    border: none;
+    color: #d92d20;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 1;
+    padding: 0 4px;
+    transition: transform .2s;
+  }
+  .var-row .del:hover { transform: scale(1.2); }
+  .b-amt { width: 130px !important; }
+
+  .note {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 14px;
+    line-height: 1.5;
+  }
+  .hidden { display: none; }
+
+  table.no-bulk th:nth-child(4),
+  table.no-bulk td:nth-child(4),
+  table.no-bulk th:nth-child(5),
+  table.no-bulk td:nth-child(5) { display: none; }
+
+  /* ── APPLY CTA ── */
+  .apply-cta {
+    margin-top: 28px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-mid) 100%);
+    border-radius: 14px;
+    padding: 28px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    box-shadow: 0 4px 20px rgba(13,42,110,.25);
+  }
+  .apply-cta .cta-text h4 {
+    color: #fff;
+    font-size: 1.15rem;
+    font-weight: 800;
+    margin-bottom: 5px;
+  }
+  .apply-cta .cta-text p {
+    color: rgba(255,255,255,0.8);
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
+  .apply-cta .cta-btns {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .cta-btn {
+    padding: 12px 22px;
+    border-radius: 9px;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all .2s;
+    display: inline-block;
+  }
+  .cta-btn.solid {
+    background: var(--accent);
+    color: #1d2939;
+    border: none;
+    box-shadow: 0 3px 10px rgba(245,158,11,.35);
+  }
+  .cta-btn.solid:hover { background: #fbbf24; transform: translateY(-2px); }
+  .cta-btn.outline {
+    background: transparent;
+    color: #fff;
+    border: 2px solid rgba(255,255,255,0.5);
+  }
+  .cta-btn.outline:hover { border-color: #fff; background: rgba(255,255,255,0.1); }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="top-nav">
+  <a href="index.html" class="brand">
+    <img src="assets/images/logo.png" alt="People's Ceylon Logo" onerror="this.style.display='none'">
+    <div class="brand-name">
+      People's Ceylon
+      <span>Private Limited</span>
+    </div>
+  </a>
+  <a href="index.html" class="back-btn">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    Back to Home
+  </a>
+</nav>
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="badge">💰 Financial Tool</div>
+  <h1>Loan &amp; Installment Calculator</h1>
+  <p>Estimate your monthly installment, total interest, and full repayment schedule for any loan or hire purchase facility.</p>
+</div>
+
+<!-- MAIN -->
+<div class="container">
+
+  <div class="grid">
+    <!-- INPUTS -->
+    <div class="card">
+      <div class="card-title">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        Loan Parameters
+      </div>
+
+      <div class="field">
+        <label>Interest Type</label>
+        <div class="toggle">
+          <button type="button" id="btnReducing" class="active">Reducing Balance</button>
+          <button type="button" id="btnFlat">Flat Rate</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="amount">Loan Amount (LKR)</label>
+        <div class="row">
+          <input type="number" id="amount" min="10000" max="50000000" step="10000" value="1000000">
+          <input type="range" id="amountRange" min="10000" max="50000000" step="10000" value="1000000">
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="rate">Annual Interest Rate (%)</label>
+        <div class="row">
+          <input type="number" id="rate" min="1" max="50" step="0.1" value="12">
+          <input type="range" id="rateRange" min="1" max="50" step="0.1" value="12">
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="tenure">Loan Period</label>
+        <div class="row">
+          <input type="number" id="tenure" min="1" max="360" step="1" value="5">
+          <select id="tenureUnit">
+            <option value="years" selected>Years</option>
+            <option value="months">Months</option>
+          </select>
+        </div>
+        <div class="row" style="margin-top:10px">
+          <input type="range" id="tenureRange" min="1" max="30" step="1" value="5" style="width:100%">
+        </div>
+      </div>
+
+      <div class="field" id="varSection">
+        <label class="check"><input type="checkbox" id="varEnabled"> Variable Interest Rates</label>
+        <div id="varBox" class="hidden">
+          <div class="var-help">Set a new annual rate from a given month onward. The installment is recalculated on the remaining balance and remaining months.</div>
+          <div id="varRows"></div>
+          <button class="btn small" type="button" id="addVarRow">+ Add Rate Change</button>
+        </div>
+      </div>
+
+      <div class="field" id="bulkSection">
+        <label class="check"><input type="checkbox" id="bulkEnabled"> Structured Rental (Bulk Payments)</label>
+        <div id="bulkBox" class="hidden">
+          <div class="var-help">Plan lump-sum payments at specific months (e.g. LKR 500,000 at month 12).</div>
+          <div id="bulkRows"></div>
+          <button class="btn small" type="button" id="addBulkRow">+ Add Bulk Payment</button>
+        </div>
+      </div>
+
+      <button class="btn grey" type="button" id="resetBtn">Reset</button>
+    </div>
+
+    <!-- RESULTS -->
+    <div class="card">
+      <div class="card-title">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        Results
+      </div>
+
+      <div class="result-main">
+        <small>Monthly Installment</small>
+        <div class="amount" id="emi">LKR 0.00</div>
+      </div>
+      <div class="stats"><span>Loan Amount</span><span id="rPrincipal">-</span></div>
+      <div class="stats"><span>Total Interest</span><span id="rInterest">-</span></div>
+      <div class="stats"><span>Total Payment</span><span id="rTotal">-</span></div>
+      <div class="stats"><span>Number of Installments</span><span id="rMonths">-</span></div>
+      <div class="stats hidden" id="rLastRow"><span>Final Installment</span><span id="rLast">-</span></div>
+      <div class="stats hidden" id="rBulkRow"><span>Total Bulk Payments</span><span id="rBulk">-</span></div>
+      <div class="stats hidden" id="rNoBulkRow"><span>Installment without Bulk Plan</span><span id="rNoBulk">-</span></div>
+
+      <div class="chart-wrap">
+        <canvas id="chart" width="170" height="170"></canvas>
+        <div class="legend">
+          <div><span class="dot" style="background:var(--primary)"></span>Principal <b id="pPrincipal"></b></div>
+          <div><span class="dot" style="background:var(--accent)"></span>Interest <b id="pInterest"></b></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCHEDULE -->
+  <div class="schedule-card">
+    <div class="schedule-head">
+      <h3>Repayment Schedule</h3>
+      <button class="btn small" type="button" id="toggleSchedule">Show Schedule</button>
+    </div>
+    <div id="scheduleBox" class="hidden">
+      <div class="table-wrap">
+        <table id="scheduleTable" class="no-bulk">
+          <thead>
+            <tr>
+              <th>Month</th><th>Rate %</th><th>Installment</th>
+              <th>Bulk Payment</th><th>Total Payment</th>
+              <th>Principal</th><th>Interest</th><th>Balance</th>
+            </tr>
+          </thead>
+          <tbody id="scheduleBody"></tbody>
+        </table>
+      </div>
+    </div>
+    <p class="note">⚠️ This calculator gives an estimate only. Actual figures may differ based on the lender's terms, fees and rounding methods.</p>
+  </div>
+
+  <!-- APPLY CTA -->
+  <div class="apply-cta">
+    <div class="cta-text">
+      <h4>Ready to Apply?</h4>
+      <p>Submit your inquiry and our team will contact you within 24 hours with a formal assessment.</p>
+    </div>
+    <div class="cta-btns">
+      <a href="index.html#contact" class="cta-btn solid">Apply Now</a>
+      <a href="index.html" class="cta-btn outline">Back to Home</a>
+    </div>
+  </div>
+
+</div><!-- /container -->
+
+<script>
+(function () {
+  const $ = id => document.getElementById(id);
+  let mode = 'reducing';
+
+  const amount = $('amount'), amountRange = $('amountRange');
+  const rate = $('rate'), rateRange = $('rateRange');
+  const tenure = $('tenure'), tenureRange = $('tenureRange'), tenureUnit = $('tenureUnit');
+
+  const fmt = n => 'LKR ' + n.toLocaleString('en-LK', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+  function getMonths() {
+    const t = parseFloat(tenure.value) || 0;
+    return Math.round(tenureUnit.value === 'years' ? t * 12 : t);
+  }
+
+  function calculate() {
+    const P = parseFloat(amount.value) || 0;
+    const annual = parseFloat(rate.value) || 0;
+    const n = getMonths();
+    if (P <= 0 || n <= 0) return null;
+
+    const rows = [];
+    let emi, totalInterest, emiNoBulk, bulkTotal = 0;
+
+    if (mode === 'reducing') {
+      const pmt = (bal, rr, months) =>
+        rr === 0 ? bal / months : bal * rr * Math.pow(1 + rr, months) / (Math.pow(1 + rr, months) - 1);
+      const changes = getChanges(n);
+      const bulks = getBulks(n);
+      const emiFor = (bal, rr, i) => {
+        let pv = 0;
+        bulks.forEach(b => { if (b.month >= i) pv += b.amt / Math.pow(1 + rr, b.month - i + 1); });
+        return pmt(Math.max(bal - pv, 0), rr, n - i + 1);
+      };
+      let r = annual / 12 / 100;
+      emiNoBulk = pmt(P, r, n);
+      let balance = P;
+      let curEmi = emiFor(balance, r, 1);
+      emi = curEmi;
+      totalInterest = 0;
+      for (let i = 1; i <= n; i++) {
+        let changed = false;
+        changes.forEach(c => { if (c.month === i) { r = c.rate / 12 / 100; changed = true; } });
+        if (changed) curEmi = emiFor(balance, r, i);
+        const bulkPlanned = bulks.filter(b => b.month === i).reduce((s, b) => s + b.amt, 0);
+        const interest = balance * r;
+        let principal = curEmi + bulkPlanned - interest;
+        if (i === n || principal > balance) principal = balance;
+        const payment = principal + interest;
+        const bulkApplied = Math.min(bulkPlanned, Math.max(payment - curEmi, 0));
+        balance = Math.max(balance - principal, 0);
+        totalInterest += interest;
+        rows.push({ i, rate: r * 12 * 100, emi: payment - bulkApplied, bulk: bulkApplied, total: payment, principal, interest, balance });
+      }
+      bulkTotal = rows.reduce((s, x) => s + x.bulk, 0);
+    } else {
+      totalInterest = P * (annual / 100) * (n / 12);
+      emi = (P + totalInterest) / n;
+      const principalPer = P / n, interestPer = totalInterest / n;
+      let balance = P;
+      for (let i = 1; i <= n; i++) {
+        balance = Math.max(balance - principalPer, 0);
+        rows.push({ i, rate: annual, emi, bulk: 0, total: emi, principal: principalPer, interest: interestPer, balance });
+      }
+      emiNoBulk = emi;
+    }
+    return { P, n, emi, emiNoBulk, bulkTotal, lastEmi: rows[rows.length - 1].emi, totalInterest, total: P + totalInterest, rows };
+  }
+
+  function getChanges(n) {
+    if (mode !== 'reducing' || !$('varEnabled').checked) return [];
+    const list = [];
+    document.querySelectorAll('#varRows .var-row').forEach(row => {
+      const m = parseInt(row.querySelector('.v-month').value, 10);
+      const rt = parseFloat(row.querySelector('.v-rate').value);
+      if (m >= 2 && m <= n && rt >= 0) list.push({ month: m, rate: rt });
+    });
+    return list.sort((a, b) => a.month - b.month);
+  }
+
+  function addVarRow(month, rt) {
+    const div = document.createElement('div');
+    div.className = 'var-row';
+    div.innerHTML =
+      '<span>From month</span><input type="number" class="v-month" min="2" step="1" value="' + month + '">' +
+      '<span>New rate (%)</span><input type="number" class="v-rate" min="0" max="60" step="0.1" value="' + rt + '">' +
+      '<button type="button" class="del" title="Remove">&times;</button>';
+    $('varRows').appendChild(div);
+  }
+
+  function nextVarDefaults() {
+    const rows = document.querySelectorAll('#varRows .var-row');
+    let month = 13, rt = parseFloat(rate.value) || 12;
+    if (rows.length) {
+      const last = rows[rows.length - 1];
+      month = (parseInt(last.querySelector('.v-month').value, 10) || 1) + 12;
+      rt = parseFloat(last.querySelector('.v-rate').value) || rt;
+    }
+    return [month, rt];
+  }
+
+  function getBulks(n) {
+    if (mode !== 'reducing' || !$('bulkEnabled').checked) return [];
+    const list = [];
+    document.querySelectorAll('#bulkRows .b-row').forEach(row => {
+      const m = parseInt(row.querySelector('.b-month').value, 10);
+      const a = parseFloat(row.querySelector('.b-amt').value);
+      if (m >= 1 && m <= n && a > 0) list.push({ month: m, amt: a });
+    });
+    return list.sort((a, b) => a.month - b.month);
+  }
+
+  function addBulkRow(month, amt) {
+    const div = document.createElement('div');
+    div.className = 'var-row b-row';
+    div.innerHTML =
+      '<span>At month</span><input type="number" class="b-month" min="1" step="1" value="' + month + '">' +
+      '<span>Amount (LKR)</span><input type="number" class="b-amt" min="0" step="10000" value="' + amt + '">' +
+      '<button type="button" class="del" title="Remove">&times;</button>';
+    $('bulkRows').appendChild(div);
+  }
+
+  function nextBulkDefaults() {
+    const rows = document.querySelectorAll('#bulkRows .b-row');
+    let month = 12, amt = 500000;
+    if (rows.length) {
+      const last = rows[rows.length - 1];
+      month = (parseInt(last.querySelector('.b-month').value, 10) || 0) + 12;
+      amt = parseFloat(last.querySelector('.b-amt').value) || amt;
+    }
+    return [month, amt];
+  }
+
+  function drawChart(principal, interest) {
+    const c = $('chart'), ctx = c.getContext('2d');
+    const total = principal + interest, cx = 85, cy = 85, R = 80, r = 50;
+    ctx.clearRect(0, 0, c.width, c.height);
+    const slices = [[principal, '#0d2a6e'], [interest, '#f59e0b']];
+    let start = -Math.PI / 2;
+    slices.forEach(([v, color]) => {
+      const ang = total ? (v / total) * Math.PI * 2 : 0;
+      ctx.beginPath();
+      ctx.moveTo(cx, cy);
+      ctx.arc(cx, cy, R, start, start + ang);
+      ctx.closePath();
+      ctx.fillStyle = color;
+      ctx.fill();
+      start += ang;
+    });
+    ctx.beginPath();
+    ctx.arc(cx, cy, r, 0, Math.PI * 2);
+    ctx.fillStyle = '#fff';
+    ctx.fill();
+  }
+
+  function update() {
+    const res = calculate();
+    if (!res) { $('emi').textContent = 'LKR 0.00'; return; }
+    $('emi').textContent = fmt(res.emi);
+    const hasVar = getChanges(res.n).length > 0;
+    $('rLastRow').classList.toggle('hidden', !hasVar);
+    if (hasVar) $('rLast').textContent = fmt(res.lastEmi);
+    $('varSection').classList.toggle('hidden', mode !== 'reducing');
+    $('bulkSection').classList.toggle('hidden', mode !== 'reducing');
+    const hasBulk = res.bulkTotal > 0;
+    $('rBulkRow').classList.toggle('hidden', !hasBulk);
+    $('rNoBulkRow').classList.toggle('hidden', !hasBulk);
+    if (hasBulk) {
+      $('rBulk').textContent = fmt(res.bulkTotal);
+      $('rNoBulk').textContent = fmt(res.emiNoBulk);
+    }
+    $('scheduleTable').classList.toggle('no-bulk', !hasBulk);
+    $('rPrincipal').textContent = fmt(res.P);
+    $('rInterest').textContent = fmt(res.totalInterest);
+    $('rTotal').textContent = fmt(res.total);
+    $('rMonths').textContent = res.n;
+    $('pPrincipal').textContent = '(' + (res.P / res.total * 100).toFixed(1) + '%)';
+    $('pInterest').textContent = '(' + (res.totalInterest / res.total * 100).toFixed(1) + '%)';
+    drawChart(res.P, res.totalInterest);
+    $('scheduleBody').innerHTML = res.rows.map(r =>
+      `<tr><td>${r.i}</td><td>${r.rate.toFixed(2)}</td><td>${r.emi.toFixed(2)}</td><td>${r.bulk.toFixed(2)}</td><td>${r.total.toFixed(2)}</td><td>${r.principal.toFixed(2)}</td><td>${r.interest.toFixed(2)}</td><td>${r.balance.toFixed(2)}</td></tr>`
+    ).join('');
+  }
+
+  function link(num, range) {
+    num.addEventListener('input', () => { range.value = num.value; update(); });
+    range.addEventListener('input', () => { num.value = range.value; update(); });
+  }
+  link(amount, amountRange);
+  link(rate, rateRange);
+  link(tenure, tenureRange);
+
+  tenureUnit.addEventListener('change', () => {
+    if (tenureUnit.value === 'years') {
+      tenure.max = 30; tenureRange.max = 30; tenureRange.min = 1;
+      tenure.value = Math.max(1, Math.round(tenure.value / 12));
+    } else {
+      tenure.max = 360; tenureRange.max = 360; tenureRange.min = 1;
+      tenure.value = Math.round(tenure.value * 12);
+    }
+    tenureRange.value = tenure.value;
+    update();
+  });
+
+  $('btnReducing').addEventListener('click', () => {
+    mode = 'reducing';
+    $('btnReducing').classList.add('active');
+    $('btnFlat').classList.remove('active');
+    update();
+  });
+  $('btnFlat').addEventListener('click', () => {
+    mode = 'flat';
+    $('btnFlat').classList.add('active');
+    $('btnReducing').classList.remove('active');
+    update();
+  });
+
+  $('varEnabled').addEventListener('change', () => {
+    const on = $('varEnabled').checked;
+    $('varBox').classList.toggle('hidden', !on);
+    if (on && !document.querySelector('#varRows .var-row')) {
+      const [m, rt] = nextVarDefaults();
+      addVarRow(m, rt);
+    }
+    update();
+  });
+  $('addVarRow').addEventListener('click', () => {
+    const [m, rt] = nextVarDefaults();
+    addVarRow(m, rt);
+    update();
+  });
+  $('varRows').addEventListener('input', update);
+  $('varRows').addEventListener('click', e => {
+    if (e.target.classList.contains('del')) { e.target.closest('.var-row').remove(); update(); }
+  });
+
+  $('bulkEnabled').addEventListener('change', () => {
+    const on = $('bulkEnabled').checked;
+    $('bulkBox').classList.toggle('hidden', !on);
+    if (on && !document.querySelector('#bulkRows .b-row')) {
+      const [m, a] = nextBulkDefaults();
+      addBulkRow(m, a);
+    }
+    update();
+  });
+  $('addBulkRow').addEventListener('click', () => {
+    const [m, a] = nextBulkDefaults();
+    addBulkRow(m, a);
+    update();
+  });
+  $('bulkRows').addEventListener('input', update);
+  $('bulkRows').addEventListener('click', e => {
+    if (e.target.classList.contains('del')) { e.target.closest('.b-row').remove(); update(); }
+  });
+
+  $('toggleSchedule').addEventListener('click', () => {
+    const hidden = $('scheduleBox').classList.toggle('hidden');
+    $('toggleSchedule').textContent = hidden ? 'Show Schedule' : 'Hide Schedule';
+  });
+
+  $('resetBtn').addEventListener('click', () => {
+    amount.value = amountRange.value = 1000000;
+    rate.value = rateRange.value = 12;
+    tenureUnit.value = 'years';
+    tenure.max = 30; tenureRange.max = 30;
+    tenure.value = tenureRange.value = 5;
+    $('varEnabled').checked = false;
+    $('varBox').classList.add('hidden');
+    $('varRows').innerHTML = '';
+    $('bulkEnabled').checked = false;
+    $('bulkBox').classList.add('hidden');
+    $('bulkRows').innerHTML = '';
+    mode = 'reducing';
+    $('btnReducing').classList.add('active');
+    $('btnFlat').classList.remove('active');
+    update();
+  });
+
+  update();
+})();
+</script>
+</body>
+</html>
