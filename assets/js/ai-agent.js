@@ -20,7 +20,7 @@
       internationalHotline: "+94 63 7 245 245",
       whatsapp: "063 7 245 245",
       email: "info@pcl.lk",
-      complaintsEmail: "complaints@peoplesceylon.lk",
+      complaintsEmail: "complaints@pcl.lk",
       privacyEmail: "privacy@peoplesceylon.lk",
       domain: "www.pcl.lk",
       hours: {
@@ -591,7 +591,7 @@
 📞 <strong>Hotline & Customer Service:</strong> <a href="tel:0637245245" style="color:#FBBF24;font-weight:bold;">063 7 245 245</a><br>
 💬 <strong>WhatsApp Official Chat:</strong> <a href="https://wa.me/94637245245" target="_blank" style="color:#25D366;font-weight:bold;">063 7 245 245 ↗</a><br>
 ✉️ <strong>Email:</strong> info@pcl.lk<br>
-⚠️ <strong>Complaints & Escalation:</strong> complaints@peoplesceylon.lk`;
+⚠️ <strong>Complaints & Escalation:</strong> complaints@pcl.lk`;
     }
 
     // 4.4 Hire Purchase / Vehicle Leasing

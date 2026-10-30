@@ -234,7 +234,7 @@ const siteTranslations = {
     complaints_title: "Customer Grievance & Complaints Procedure",
     complaints_sub: "We are dedicated to resolving any grievance promptly and fairly.",
     comp_step1: "Step 1: Contact your loan officer or Ampara branch customer desk directly.",
-    comp_step2: "Step 2: If unresolved within 3 business days, escalate to our Grievance Officer at complaints@peoplesceylon.lk.",
+    comp_step2: "Step 2: If unresolved within 3 business days, escalate to our Grievance Officer at complaints@pcl.lk.",
     comp_step3: "Step 3: Formal written investigation report provided within 7 to 14 working days.",
 
     // Careers
@@ -521,7 +521,7 @@ const siteTranslations = {
     complaints_title: "පාරිභෝගික පැමිණිලි සහ විසඳුම් ක්‍රියාවලිය",
     complaints_sub: "ඕනෑම ගැටලුවක් හෝ පැමිණිල්ලක් කඩිනමින් හා සාධාරණව විසඳීමට අප කැපවී සිටිමු.",
     comp_step1: "පියවර 1: අම්පාර ශාඛාවේ පාරිභෝගික සේවා කවුළුව හෝ ඔබේ ණය නිලධාරියා අමතන්න.",
-    comp_step2: "පියවර 2: දින 3ක් තුළ විසඳුමක් නොලැබුණහොත් complaints@peoplesceylon.lk වෙත යොමු කරන්න.",
+    comp_step2: "පියවර 2: දින 3ක් තුළ විසඳුමක් නොලැබුණහොත් complaints@pcl.lk වෙත යොමු කරන්න.",
     comp_step3: "පියවර 3: වැඩ කරන දින 7 සිට 14ක් ඇතුළත ලිඛිත පරීක්ෂණ වාර්තාවක් සහ විසඳුමක් ලබාදෙනු ඇත.",
 
     // Careers
@@ -807,7 +807,7 @@ const siteTranslations = {
     complaints_title: "வாடிக்கையாளர் குறைதீர்ப்பு நடைமுறை",
     complaints_sub: "எந்தவொரு முறைப்பாட்டையும் விரைவாகவும் நியாயமாகவும் தீர்க்க நாங்கள் கடமைப்பட்டுள்ளோம்.",
     comp_step1: "படி 1: உங்கள் கடன் அதிகாரியை அல்லது அம்பாறை கிளை வாடிக்கையாளர் மேசையைத் தொடர்பு கொள்ளவும்.",
-    comp_step2: "படி 2: 3 வேலை நாட்களுக்குள் தீர்வு கிடைக்காவிட்டால் complaints@peoplesceylon.lk முகவரிக்கு அனுப்பவும்.",
+    comp_step2: "படி 2: 3 வேலை நாட்களுக்குள் தீர்வு கிடைக்காவிட்டால் complaints@pcl.lk முகவரிக்கு அனுப்பவும்.",
     comp_step3: "படி 3: 7 முதல் 14 வேலை நாட்களுக்குள் எழுத்துப்பூர்வ விசாரணை அறிக்கை மற்றும் தீர்வு வழங்கப்படும்.",
 
     // Careers
@@ -901,9 +901,9 @@ const faqData = [
       ta: "3. தேவைப்படும் குறைந்தபட்ச முற்பணம் (Deposit) எவ்வளவு?"
     },
     a: {
-      en: "The down payment typically ranges between 15% and 30% of the vehicle’s agreed valuation or purchase invoice, depending on vehicle category (registered or unregistered, car, van, three-wheeler, or commercial truck) and your credit profile.",
-      si: "සාමාන්‍යයෙන් වාහනයේ තක්සේරු වටිනාකමින් 15% සිට 30% දක්වා මුදලක් මූලික ගෙවීම ලෙස අවශ්‍ය වේ. මෙය වාහනයේ වර්ගය (ලියාපදිංචි කළ හෝ නොකළ, මෝටර් රථ, ත්‍රිරෝද රථ හෝ ලොරි රථ) අනුව තීරණය වේ.",
-      ta: "வாகன வகையைப் பொறுத்து (கார், வேன், முச்சக்கர வண்டி அல்லது லொரி) வாகனத்தின் பெறுமதியில் 15% முதல் 30% வரை ஆரம்ப முற்பணமாக செலுத்த வேண்டும்."
+      en: "The down payment typically ranges between 30% of the vehicle’s agreed valuation or purchase invoice, depending on vehicle category (registered or unregistered, car, van, three-wheeler, or commercial truck) and your credit profile.",
+      si: "සාමාන්‍යයෙන් වාහනයේ තක්සේරු වටිනාකමින් 30% ක මුදලක් මූලික ගෙවීම ලෙස අවශ්‍ය වේ. මෙය වාහනයේ වර්ගය (ලියාපදිංචි කළ හෝ නොකළ, මෝටර් රථ, ත්‍රිරෝද රථ හෝ ලොරි රථ) අනුව තීරණය වේ.",
+      ta: "வாகன வகையைப் பொறுத்து (கார், வேன், முச்சக்கர வண்டி அல்லது லொரி) வாகனத்தின் பெறுமதியில் 30% ஆரம்ப முற்பணமாக செலுத்த வேண்டும்."
     }
   },
   {
@@ -992,9 +992,9 @@ const faqData = [
       ta: "10. விசாரணை அல்லது முறைப்பாட்டை எவ்வாறு சமர்ப்பிப்பது?"
     },
     a: {
-      en: "You can reach us in person at our Ampara office, call our hotline 063 7 245 245, message on WhatsApp 063 7 245 245, or email complaints@peoplesceylon.lk. Every complaint is assigned a tracking reference and addressed within 7 to 14 business days.",
-      si: "අම්පාර කාර්යාලයට පැමිණීමෙන්, 063 7 245 245 ක්ෂණික ඇමතුම් අංකයෙන්, 063 7 245 245 WhatsApp හරහා හෝ complaints@peoplesceylon.lk විද්‍යුත් තැපෑලෙන් ඔබට අප හා සම්බන්ධ විය හැකිය. සෑම පැමිණිල්ලක් සඳහාම ලියාපදිංචි අංකයක් ලබාදී දින 7-14ක් තුළ විසඳුම් ලබාදේ.",
-      ta: "எங்கள் அம்பாறை அலுவலகத்திற்கு நேரடியாக வரலாம், 063 7 245 245 க்கு அழைக்கலாம், 063 7 245 245 WhatsApp அல்லது complaints@peoplesceylon.lk மின்னஞ்சல் மூலம் தொடர்பு கொள்ளலாம். 7-14 வேலை நாட்களில் தீர்வு வழங்கப்படும்."
+      en: "You can reach us in person at our Ampara office, call our hotline 063 7 245 245, message on WhatsApp 063 7 245 245, or email complaints@pcl.lk. Every complaint is assigned a tracking reference and addressed within 7 to 14 business days.",
+      si: "අම්පාර කාර්යාලයට පැමිණීමෙන්, 063 7 245 245 ක්ෂණික ඇමතුම් අංකයෙන්, 063 7 245 245 WhatsApp හරහා හෝ complaints@pcl.lk විද්‍යුත් තැපෑලෙන් ඔබට අප හා සම්බන්ධ විය හැකිය. සෑම පැමිණිල්ලක් සඳහාම ලියාපදිංචි අංකයක් ලබාදී දින 7-14ක් තුළ විසඳුම් ලබාදේ.",
+      ta: "எங்கள் அம்பாறை அலுவலகத்திற்கு நேரடியாக வரலாம், 063 7 245 245 க்கு அழைக்கலாம், 063 7 245 245 WhatsApp அல்லது complaints@pcl.lk மின்னஞ்சல் மூலம் தொடர்பு கொள்ளலாம். 7-14 வேலை நாட்களில் தீர்வு வழங்கப்படும்."
     }
   },
   {
