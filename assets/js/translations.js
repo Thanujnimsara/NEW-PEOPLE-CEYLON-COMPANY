@@ -266,7 +266,7 @@ const siteTranslations = {
     // Contact
     contact_badge: "Visit or Call",
     contact_title: "Head Office & Contact Details",
-    contact_sub: "Our team in Weranketagoda, Ampara is ready to assist you Monday through Saturday.",
+    contact_sub: "Our team is ready to assist you Monday through Saturday.",
     addr_title: "Registered Head Office",
     addr_val: "No. 28/125/1, Weranketagoda, Ampara, Sri Lanka",
     business_office_title: "Business Office",
@@ -1122,7 +1122,7 @@ const faqData = [
       ta: "20. வாடிக்கையாளர் தனிப்பட்ட தகவல்கள் எவ்வாறு பாதுகாக்கப்படுகின்றன?"
     },
     a: {
-      en: "People's Ceylon complies strictly with the Personal Data Protection Act No. 9 of 2022 of Sri Lanka. All personal information and financial documents collected are securely encrypted and never shared without legal consent.",
+      en: "People's Ceylon complies strictly with the Personal Data Protection Act of Sri Lanka. All personal information and financial documents collected are securely encrypted and never shared without legal consent.",
       si: "පීපල්ස් සිලෝන් ආයතනය 2022 අංක 09 දරන ශ්‍රී ලංකා පෞද්ගලික දත්ත ආරක්ෂණ පනතට පූර්ණ වශයෙන් අනුකූල වේ. ඔබගේ සියලු ලියකියවිලි දැඩි ආරක්ෂාව යටතේ රහසිගතව තබාගනු ලැබේ.",
       ta: "2022 ஆம் ஆண்டின் 9 ஆம் இலக்க தனிநபர் தரவுப் பாதுகாப்புச் சட்டத்திற்கு அமைய உங்களது அனைத்துத் தகவல்களும் அதியுயர் பாதுகாப்புடன் பேணப்படும்."
     }
