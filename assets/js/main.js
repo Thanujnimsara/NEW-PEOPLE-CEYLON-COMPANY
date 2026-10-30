@@ -447,7 +447,11 @@ window.previewDocument = function(docType) {
   } else if (docType === 'guar_stmt') {
     title = "Guarantor's Legal Statement & Consent Form";
     html = `
-      <div style="border: 2px solid #0A2540; padding: 25px; border-radius: 8px; font-family: sans-serif; color: #1E293B;">
+      <div class="no-print" style="background: #EFF6FF; border: 1px solid #BFDBFE; border-radius: 6px; padding: 10px 14px; margin-bottom: 16px; font-size: 13px; color: #1E40AF; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
+        <span>✏️ <strong>Fillable Form:</strong> You can type directly into the fields below before printing or saving as PDF.</span>
+        <span style="font-size: 12px; color: #475569;">(පහත කොටු මත කෙලින්ම Type කළ හැක)</span>
+      </div>
+      <div style="border: 2px solid #0A2540; padding: 25px; border-radius: 8px; font-family: sans-serif; color: #1E293B; background: #FFFFFF;">
         <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #C59B27; padding-bottom: 15px; margin-bottom: 20px;">
           <div>
             <h2 style="color: #0A2540; margin: 0; font-size: 20px;">PEOPLE'S CEYLON (PRIVATE) LIMITED</h2>
@@ -461,28 +465,59 @@ window.previewDocument = function(docType) {
         </p>
         <table style="width: 100%; border-collapse: collapse; margin-bottom: 15px; font-size: 13px;">
           <tr>
-            <td style="padding: 8px; border: 1px solid #CBD5E1; background: #F8FAFC; width: 30%;">Guarantor's Full Name:</td>
-            <td style="padding: 8px; border: 1px solid #CBD5E1;">____________________________________________________</td>
+            <td style="padding: 10px; border: 1px solid #CBD5E1; background: #F8FAFC; width: 28%; font-weight: 600;">Guarantor's Full Name:</td>
+            <td style="padding: 6px 10px; border: 1px solid #CBD5E1;">
+              <input type="text" placeholder="Type guarantor's full name..." style="width: 100%; border: none; border-bottom: 1px solid #94A3B8; background: transparent; padding: 6px 4px; font-size: 13px; font-family: inherit; outline: none; box-sizing: border-box;" oninput="this.setAttribute('value', this.value)">
+            </td>
           </tr>
           <tr>
-            <td style="padding: 8px; border: 1px solid #CBD5E1; background: #F8FAFC;">NIC / Passport Number:</td>
-            <td style="padding: 8px; border: 1px solid #CBD5E1;">________________________ Relationship to Borrower: _________</td>
+            <td style="padding: 10px; border: 1px solid #CBD5E1; background: #F8FAFC; font-weight: 600;">Guarantor's Phone Number:</td>
+            <td style="padding: 6px 10px; border: 1px solid #CBD5E1;">
+              <div style="display: flex; gap: 15px; align-items: center; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 180px;">
+                  <input type="tel" placeholder="07X XXXXXXX / 063 X XXXXXX" style="width: 100%; border: none; border-bottom: 1px solid #94A3B8; background: transparent; padding: 6px 4px; font-size: 13px; font-family: inherit; outline: none; box-sizing: border-box;" oninput="this.setAttribute('value', this.value)">
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px; flex: 1; min-width: 220px;">
+                  <span style="font-weight: 600; white-space: nowrap; color: #475569;">Relationship to Borrower:</span>
+                  <input type="text" placeholder="e.g. Spouse / Brother" style="flex: 1; border: none; border-bottom: 1px solid #94A3B8; background: transparent; padding: 6px 4px; font-size: 13px; font-family: inherit; outline: none; box-sizing: border-box;" oninput="this.setAttribute('value', this.value)">
+                </div>
+              </div>
+            </td>
           </tr>
           <tr>
-            <td style="padding: 8px; border: 1px solid #CBD5E1; background: #F8FAFC;">Residential Address:</td>
-            <td style="padding: 8px; border: 1px solid #CBD5E1;">____________________________________________________</td>
+            <td style="padding: 10px; border: 1px solid #CBD5E1; background: #F8FAFC; font-weight: 600;">Residential Address:</td>
+            <td style="padding: 6px 10px; border: 1px solid #CBD5E1;">
+              <input type="text" placeholder="Type residential address..." style="width: 100%; border: none; border-bottom: 1px solid #94A3B8; background: transparent; padding: 6px 4px; font-size: 13px; font-family: inherit; outline: none; box-sizing: border-box;" oninput="this.setAttribute('value', this.value)">
+            </td>
           </tr>
           <tr>
-            <td style="padding: 8px; border: 1px solid #CBD5E1; background: #F8FAFC;">Primary Borrower Name:</td>
-            <td style="padding: 8px; border: 1px solid #CBD5E1;">________________________ Facility Amount: LKR _____________</td>
+            <td style="padding: 10px; border: 1px solid #CBD5E1; background: #F8FAFC; font-weight: 600;">Primary Borrower Name:</td>
+            <td style="padding: 6px 10px; border: 1px solid #CBD5E1;">
+              <div style="display: flex; gap: 15px; align-items: center; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 180px;">
+                  <input type="text" placeholder="Type borrower full name..." style="width: 100%; border: none; border-bottom: 1px solid #94A3B8; background: transparent; padding: 6px 4px; font-size: 13px; font-family: inherit; outline: none; box-sizing: border-box;" oninput="this.setAttribute('value', this.value)">
+                </div>
+                <div style="display: flex; align-items: center; gap: 6px; flex: 1; min-width: 200px;">
+                  <span style="font-weight: 600; white-space: nowrap; color: #475569;">Facility Amount:</span>
+                  <span style="font-weight: 600; color: #64748B;">LKR</span>
+                  <input type="text" placeholder="e.g. 500,000" style="flex: 1; border: none; border-bottom: 1px solid #94A3B8; background: transparent; padding: 6px 4px; font-size: 13px; font-family: inherit; outline: none; box-sizing: border-box;" oninput="this.setAttribute('value', this.value)">
+                </div>
+              </div>
+            </td>
           </tr>
         </table>
         <div style="background: #FFFBEB; border-left: 4px solid #F59E0B; padding: 12px; font-size: 11px; line-height: 1.5; margin-top: 15px;">
           I confirm that I have read and understood the liability I undertake. I have not been pressured into signing this guarantee and have been provided with an opportunity to seek independent advice.
         </div>
-        <div style="display: flex; justify-content: space-between; margin-top: 40px; font-size: 12px;">
-          <div>Guarantor Signature: __________________________</div>
-          <div>Date: __________________________</div>
+        <div style="display: flex; justify-content: space-between; margin-top: 35px; font-size: 12px; gap: 20px; flex-wrap: wrap;">
+          <div style="flex: 1; min-width: 240px; display: flex; align-items: center; gap: 8px;">
+            <span style="font-weight: 600; white-space: nowrap;">Guarantor Signature:</span>
+            <input type="text" placeholder="(Type full name or sign on paper)" style="flex: 1; border: none; border-bottom: 1px solid #94A3B8; background: transparent; padding: 4px; font-size: 12px; font-family: inherit; outline: none;" oninput="this.setAttribute('value', this.value)">
+          </div>
+          <div style="display: flex; align-items: center; gap: 8px; width: 220px;">
+            <span style="font-weight: 600; white-space: nowrap;">Date:</span>
+            <input type="date" style="flex: 1; border: none; border-bottom: 1px solid #94A3B8; background: transparent; padding: 4px; font-size: 12px; font-family: inherit; outline: none;" oninput="this.setAttribute('value', this.value)">
+          </div>
         </div>
       </div>
     `;
@@ -540,6 +575,11 @@ window.printCurrentDoc = function() {
     iframe.contentWindow.print();
     return;
   }
+  // Sync all inputs into DOM attributes so innerHTML captures what user typed
+  const inputs = document.querySelectorAll('#docPreviewContent input, #docPreviewContent textarea');
+  inputs.forEach(inp => {
+    inp.setAttribute('value', inp.value);
+  });
   const content = document.getElementById('docPreviewContent').innerHTML;
   const printWindow = window.open('', '_blank');
   printWindow.document.write(`
@@ -547,9 +587,14 @@ window.printCurrentDoc = function() {
       <head>
         <title>People's Ceylon (Private) Limited - Official Document</title>
         <style>
-          body { font-family: sans-serif; padding: 20px; }
+          body { font-family: sans-serif; padding: 20px; color: #1E293B; }
+          input { border: none !important; border-bottom: 1px solid #0A2540 !important; font-family: inherit; font-size: 13px; color: #000; background: transparent; }
+          input::placeholder { color: transparent !important; }
+          .no-print { display: none !important; }
           @media print {
             body { margin: 0; padding: 10px; }
+            .no-print { display: none !important; }
+            input { border: none !important; border-bottom: 1px solid #0A2540 !important; }
           }
         </style>
       </head>
