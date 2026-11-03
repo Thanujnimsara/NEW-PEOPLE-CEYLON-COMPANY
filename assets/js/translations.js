@@ -140,7 +140,7 @@ const siteTranslations = {
     revolving_f4: "Ideal for seasonal trade cycles, bulk orders & emergencies",
 
     prof_title: "Professional Loans",
-    prof_desc: "Finance designed specifically for doctors, engineers, accountants, lawyers, and executives for their work-related and expansion needs.",
+    prof_desc: "Designed specifically for medical professionals, engineers, accountants, lawyers, senior public sector officials, and corporate executives. This facility evaluates eligibility based on your stable remuneration scales and monthly repayment capability, offering seamless financial support for career growth, clinic setups, asset acquisition, or personal milestones.",
     prof_f1: "Private practice, clinic setup & equipment purchases",
     prof_f2: "",
     prof_f3: "Privileged interest rates and personalized executive handling",
@@ -427,7 +427,7 @@ const siteTranslations = {
     revolving_f4: "හදිසි අවශ්‍යතා, තොග ඇණවුම් සහ වෙළඳ චක්‍ර සඳහා වඩාත් යෝග්‍ය වේ",
 
     prof_title: "වෘත්තීයවේදීන්ගේ ණය",
-    prof_desc: "වෛද්‍යවරුන්, ඉංජිනේරුවන්, ගණකාධිකාරීවරුන්, නීතිඥයන් සහ විධායක නිලධාරීන් සඳහාම විශේෂයෙන් සකස් කළ මුල්‍ය පහසුකම්.",
+    prof_desc: "වෛද්‍ය වෘත්තිකයන්, ඉංජිනේරුවන්, ගණකාධිකාරීවරුන්, නීතිඥයන්, රාජ්‍ය අංශයේ ජ්‍යෙෂ්ඨ නිලධාරීන් සහ ආයතනික විධායක නිලධාරීන් සඳහාම විශේෂයෙන් සකස් කර ඇත. ඔබගේ ස්ථාවර වැටුප් පරිමාණයන් සහ මාසික ආපසු ගෙවීමේ හැකියාව මත සුදුසුකම් තක්සේරු කරමින්, වෘත්තීය දියුණුව, සායන පිහිටුවීම්, වත්කම් අත්පත් කර ගැනීම් හෝ පුද්ගලික අභිලාෂයන් සඳහා පහසු මූල්‍ය සහාය ලබා දේ.",
     prof_f1: "පුද්ගලික සේවා ස්ථාන, සායන සහ නවීන උපකරණ මිලදී ගැනීම",
     prof_f2: "රු. 500,000/= දක්වා ඇප රහිත හෝ අවම ඇප පහසුකම්",
     prof_f3: "විශේෂ සහන පොලී අනුපාත සහ සුවිශේෂී පාරිභෝගික සත්කාරය",
@@ -713,7 +713,7 @@ const siteTranslations = {
     revolving_f4: "பண்டிகைக் கால வணிகம் மற்றும் அவசர தேவைகளுக்கு மிகச் சிறந்தது",
 
     prof_title: "தொழில் வல்லுநர் கடன்",
-    prof_desc: "வைத்தியர்கள், பொறியியலாளர்கள், கணக்காளர்கள், சட்டத்தரணிகள் மற்றும் நிறைவேற்று அதிகாரிகளுக்கான விசேட கடன்.",
+    prof_desc: "மருத்துவ வல்லுநர்கள், பொறியியலாளர்கள், கணக்காளர்கள், சட்டத்தரணிகள், சிரேஷ்ட அரச உத்தியோகத்தர்கள் மற்றும் நிறுவன நிறைவேற்று அதிகாரிகளுக்காக பிரத்யேகமாக வடிவமைக்கப்பட்டது. உங்களின் நிலையான ஊதிய அளவு மற்றும் மாதாந்த மீள்செலுத்தும் திறனை அடிப்படையாகக் கொண்டு தகைமை மதிப்பீடு செய்யப்பட்டு, தொழில் வளர்ச்சி, சிகிச்சை நிலைய அமைப்புகள், சொத்து கொள்முதல் அல்லது தனிப்பட்ட மைல்கற்களுக்கு தடையற்ற நிதி ஆதரவை வழங்குகிறது.",
     prof_f1: "தனியார் சிகிச்சை நிலையங்கள் மற்றும் உபகரணங்கள் வாங்குதல்",
     prof_f2: "ரூ. 500,000/= வரை பிணையற்ற அல்லது குறைந்த பிணை வசதிகள்",
     prof_f3: "விசேட வட்டி விகிதங்கள் மற்றும் தனிப்பயனாக்கப்பட்ட சேவை",

@@ -102,7 +102,7 @@
         nameSi: "වෘත්තීයවේදීන්ගේ ණය (Professional Loans)",
         nameTa: "தொழில் வல்லுநர் கடன்",
         limit: "Unsecured or low-collateral options up to LKR 500,000/= (රුපියල් 500,000/= දක්වා)",
-        summaryEn: "Tailored for doctors, engineers, accountants, lawyers, and corporate executives for private clinics, equipment, or office expansion.",
+        summaryEn: "Designed specifically for medical professionals, engineers, accountants, lawyers, senior public sector officials, and corporate executives for career growth, clinic setups, and asset acquisition.",
         summarySi: "වෛද්‍යවරුන්, ඉංජිනේරුවන්, ගණකාධිකාරීවරුන්, නීතිඥයන් සහ විධායකයින් සඳහා රුපියල් 500,000/= දක්වා ඇප රහිත හෝ අවම ඇප පහසුකම්.",
         features: ["Privileged interest rates", "Personalized executive handling", "Expedited underwriting and priority verification"]
       },
