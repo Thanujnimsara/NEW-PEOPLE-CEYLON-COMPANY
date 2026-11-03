@@ -92,8 +92,34 @@ function setLanguage(lang) {
   // Re-render FAQ list in current language
   renderFaq();
 
+  // Update Live Dynamic Date
+  updateLiveDate(lang);
+
   // Notify AI Agent of language change
   window.dispatchEvent(new CustomEvent('languageChanged', { detail: { lang } }));
+}
+
+function updateLiveDate(lang = 'en') {
+  const el = document.getElementById('currentDateDisplay');
+  if (!el) return;
+
+  const now = new Date();
+  const day = now.getDate();
+  const year = now.getFullYear();
+
+  if (lang === 'si') {
+    const siMonths = ['ජනවාරි', 'පෙබරවාරි', 'මාර්තු', 'අප්‍රේල්', 'මැයි', 'ජූනි', 'ජූලි', 'අගෝස්තු', 'සැප්තැම්බර්', 'ඔක්තෝබර්', 'නොවැම්බර්', 'දෙසැම්බර්'];
+    const siDays = ['ඉරිදා', 'සඳුදා', 'අඟහරුවාදා', 'බදාදා', 'බ්‍රහස්පතින්දා', 'සිකුරාදා', 'සෙනසුරාදා'];
+    el.textContent = `${siDays[now.getDay()]}, ${year} ${siMonths[now.getMonth()]} ${day}`;
+  } else if (lang === 'ta') {
+    const taMonths = ['ஜனவரி', 'பிப்ரவரி', 'மார்ச்', 'ஏப்ரல்', 'மே', 'ஜூன்', 'ஜூலை', 'ஆகஸ்ட்', 'செப்டம்பர்', 'அக்டோபர்', 'நவம்பர்', 'டிசம்பர்'];
+    const taDays = ['ஞாயிறு', 'திங்கள்', 'செவ்வாய்', 'புதன்', 'வியாழன்', 'வெள்ளி', 'சனி'];
+    el.textContent = `${taDays[now.getDay()]}, ${day} ${taMonths[now.getMonth()]} ${year}`;
+  } else {
+    const enDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    const enMonths = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    el.textContent = `${enDays[now.getDay()]}, ${day} ${enMonths[now.getMonth()]} ${year}`;
+  }
 }
 
 /* ==========================================================================
