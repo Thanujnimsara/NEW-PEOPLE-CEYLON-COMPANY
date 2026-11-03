@@ -85,7 +85,7 @@ const siteTranslations = {
     
     hp_title: "Hire Purchase",
     hp_desc: "Drive your vehicle sooner. We buy the vehicle you choose and you pay in fixed monthly installments. Ownership passes to you after the final installment is paid.",
-    hp_f1: "Registered / Unregistered vehicles: Motorbikes, cars, vans, 3-wheelers, dual-purpose vehicles, buses, long vehicles, trucks & agricultural vehicles etc.",
+    hp_f1: "Registered / Unregistered vehicles: Motorbikes, cars, vans, Three-wheelers, dual-purpose vehicles, buses, long vehicles, trucks & agricultural vehicles etc.",
     hp_f2: "Flexible repayment from 12 to 60 months",
     hp_f3: "Affordable down payments & statutory charges formula",
     hp_f4: "Doorstep inspection & immediate purchase order release",

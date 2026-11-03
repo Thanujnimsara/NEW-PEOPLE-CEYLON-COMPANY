@@ -24,7 +24,7 @@ Built strictly in accordance with the **People’s Ceylon (Private) Limited Webs
    - Instant language switching engine with persistent state across all pages, forms, and calculators.
 
 2. **Core Financial Products (Part 3, Annex 5)**:
-   - **Hire Purchase (වාහන කුලී සින්නක්කර)**: Cars, vans, 3-wheelers, trucks, and dual-purpose vehicles with 12 to 60-month terms and statutory charge formulas.
+   - **Hire Purchase (වාහන කුලී සින්නක්කර)**: Cars, vans, Three-wheelers, trucks, and dual-purpose vehicles with 12 to 60-month terms and statutory charge formulas.
    - **Business Loans (ව්‍යාපාරික ණය)**: Expansion capital matching seasonal cashflow.
    - **Working Capital Loans (කාරක ප්‍රාග්ධන ණය)**: Short-term liquidity for stock, inventory, and payroll.
    - **Professional Loans (වෘත්තීයවේදීන්ගේ ණය)**: Tailored funding for doctors, engineers, lawyers, and accountants.

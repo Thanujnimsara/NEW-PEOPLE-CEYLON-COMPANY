@@ -35,7 +35,7 @@
         nameEn: "Vehicle Hire Purchase",
         nameSi: "වාහන කුලී සින්නක්කර (Hire Purchase)",
         nameTa: "வாகன வாடகை கொள்முதல் (Hire Purchase)",
-        vehicles: "Cars, vans, 3-wheelers, trucks, agricultural vehicles (ට්‍රැක්ටර් / ගොවිතැන් වාහන) & dual-purpose vehicles",
+        vehicles: "Cars, vans, Three-wheelers, trucks, agricultural vehicles (ට්‍රැක්ටර් / ගොවිතැන් වාහන) & dual-purpose vehicles",
         period: "12 to 60 Months (වසර 1 සිට 5 දක්වා)",
         summaryEn: "We purchase your chosen vehicle and you pay in fixed monthly installments. Full legal ownership passes to you after the final payment.",
         summarySi: "ඔබ කැමති වාහනය අප මිලදී ගෙන ඔබට මාසික ස්ථාවර වාරික මඟින් ගෙවීමට පහසුකම් සලසයි. අවසාන වාරිකය ගෙවූ පසු වාහනයේ පූර්ණ අයිතිය ඔබට ලැබේ.",
@@ -605,7 +605,7 @@
 <a href="#calculator" onclick="openModal('calculatorModal');return false;" class="ai-btn-link">💰 Calculate Monthly Installment ↗</a>`;
       }
       return `<strong>Vehicle Hire Purchase Facility:</strong><br><br>
-🚗 <strong>Eligible Vehicles:</strong> Cars, vans, 3-wheelers, trucks, agricultural vehicles & dual-purpose vehicles.<br>
+🚗 <strong>Eligible Vehicles:</strong> Cars, vans, Three-wheelers, trucks, agricultural vehicles & dual-purpose vehicles.<br>
 📅 <strong>Tenure:</strong> Flexible repayment from 12 to 60 months.<br>
 ✨ <strong>Key Benefits:</strong> Doorstep inspection, affordable down payments, transparent statutory charges, and immediate PO release.<br><br>
 <a href="hp-application-form.html" target="_blank" class="ai-btn-link">📄 Open HP Application Form ↗</a>
