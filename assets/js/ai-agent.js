@@ -73,7 +73,7 @@
         limit: "LKR 25,000 to LKR 500,000 (රු. 25,000 සිට 500,000 දක්වා)",
         repayment: "Flexible daily, weekly or monthly installments (දිනපතා, සතිපතා හෝ මාසික)",
         summaryEn: "Empowering grassroots entrepreneurs, retail shops, traders, and self-employed individuals with quick, accessible credit.",
-        summarySi: "සුළු වෙළඳුන්, ස්වයං රැකියාලාභීන් සහ කුඩා ව්‍යවසායකයින් සඳහා රු. 25,000 සිට රු. 500,000 දක්වා ක්ෂුද්‍ර ණය.",
+        summarySi: "සුළු වෙළඳුන්, ස්වයං රැකියාලාභීන් සහ කුඩා ව්‍යවසායකයින් සඳහා ක්ෂුද්‍ර ණය.",
         features: ["No complex financial audit required", "Doorstep advisory", "Structured disbursement"],
         formLink: "loan-application-form.html"
       },
@@ -622,7 +622,7 @@
 <a href="loan-application-form.html" target="_blank" class="ai-btn-link">📄 Open Loan Application Form ↗</a>`;
       }
       return `<strong>Micro Business Loans:</strong><br><br>
-💰 <strong>Facility Amount:</strong> Fast micro credit from LKR 25,000 to LKR 500,000.<br>
+💰 <strong>Facility Type:</strong> Accessible micro credit for small businesses and self-employed individuals.<br>
 🔄 <strong>Repayment:</strong> Flexible daily, weekly or monthly installments.<br>
 ⚡ <strong>Highlights:</strong> Simple documentation with no complex audit, doorstep advisory, and prompt processing upon verification.<br><br>
 <a href="loan-application-form.html" target="_blank" class="ai-btn-link">📄 Open Loan Application Form ↗</a>`;
@@ -632,13 +632,13 @@
     if (/(sme|business loan|5 million|5million|vyaparika|production|factory|ව්‍යාපාරික|සුළු හා මධ්‍ය පරිමාණ)/i.test(q)) {
       if (lang === 'si') {
         return `<strong>සුළු හා මධ්‍ය පරිමාණ ණය (SME Business Loans):</strong><br><br>
-💰 <strong>ණය සීමාව:</strong> රුපියල් මිලියන 5 දක්වා (Up to LKR 5 Million).<br>
+💰 <strong>ණය පහසුකම:</strong> නම්‍යශීලී කොන්දේසි සහිත ව්‍යාපාරික මූල්‍ය පහසුකම්.<br>
 📅 <strong>කාල සීමාව:</strong> මාස 12 සිට 60 දක්වා.<br>
 🏭 <strong>සුදුසුකම්:</strong> නිෂ්පාදන, කෘෂිකාර්මික හා වාණිජ්‍ය ව්‍යාපාර පුළුල් කිරීම සඳහා කැපවූ සබඳතා කළමනාකරණය සමඟින්.<br><br>
 <a href="loan-application-form.html" target="_blank" class="ai-btn-link">📄 Open Loan Application Form ↗</a>`;
       }
       return `<strong>SME Business Loans:</strong><br><br>
-💰 <strong>Facility Limit:</strong> Facility amounts up to LKR 5 Million with flexible terms.<br>
+💰 <strong>Facility:</strong> Flexible financing terms tailored for business growth.<br>
 📅 <strong>Tenures:</strong> 12 to 60 months with seasonal structured plans.<br>
 🏭 <strong>Highlights:</strong> Tailored growth capital for manufacturing and agriculture with dedicated relationship management.<br><br>
 <a href="loan-application-form.html" target="_blank" class="ai-btn-link">📄 Open Loan Application Form ↗</a>`;
@@ -663,12 +663,12 @@
       if (lang === 'si') {
         return `<strong>වෘත්තීයවේදීන්ගේ ණය (Professional Loans):</strong><br><br>
 💼 <strong>සුදුසු අය:</strong> වෛද්‍යවරුන්, ඉංජිනේරුවන්, ගණකාධිකාරීවරුන්, නීතිඥයන් සහ ආයතනික විධායක නිලධාරීන්.<br>
-💰 <strong>පහසුකම:</strong> රුපියල් 500,000/= දක්වා ඇප රහිත හෝ අවම ඇප පහසුකම් (Up to LKR 500,000/=).<br>
+💰 <strong>පහසුකම:</strong> ඇප රහිත හෝ අවම ඇප විකල්ප සහ සහනදායී පොලී අනුපාත.<br>
 ⚡ <strong>විශේෂතා:</strong> සායන, පුද්ගලික සේවා ස්ථාන හා නවීන උපකරණ මිලදී ගැනීමට ප්‍රමුඛතා පදනම මත කඩිනම් සේවාව.`;
       }
       return `<strong>Professional Loans:</strong><br><br>
 💼 <strong>Eligibility:</strong> Specially designed for doctors, engineers, accountants, lawyers, and corporate executives.<br>
-💰 <strong>Facility Limit:</strong> Unsecured or low-collateral options up to LKR 500,000/=.<br>
+💰 <strong>Facility:</strong> Unsecured or low-collateral options with privileged rates.<br>
 ⚡ <strong>Features:</strong> Private practice and clinic setup, equipment purchases, privileged rates, and prioritized executive processing.`;
     }
 

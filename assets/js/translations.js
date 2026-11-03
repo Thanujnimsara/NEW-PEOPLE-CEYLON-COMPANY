@@ -99,7 +99,7 @@ const siteTranslations = {
 
     sme_title: "SME Business Loans",
     sme_desc: "Tailored growth capital for expanding Sri Lankan manufacturing, agricultural and commercial enterprises with flexible collateral.",
-    sme_f1: "Facility amounts up to LKR 5 Million with flexible terms",
+    sme_f1: "",
     sme_f2: "Tenures from 12 to 60 months with seasonal structured plans",
     sme_f3: "",
     sme_f4: "Fast corporate underwriting with dedicated relationship manager",
@@ -113,7 +113,7 @@ const siteTranslations = {
 
     micro_title: "Micro Business Loans",
     micro_desc: "Empowering grassroots entrepreneurs, retail shops, traders, and self-employed individuals with accessible, structured credit.",
-    micro_f1: "Fast micro credit from LKR 25,000 to LKR 500,000",
+    micro_f1: "",
     micro_f2: "Simple documentation with no complex financial audit needed",
     micro_f3: "Flexible daily, weekly or monthly repayment options",
     micro_f4: "Doorstep advisory with prompt appraisal and structured disbursement",
@@ -142,7 +142,7 @@ const siteTranslations = {
     prof_title: "Professional Loans",
     prof_desc: "Finance designed specifically for doctors, engineers, accountants, lawyers, and executives for their work-related and expansion needs.",
     prof_f1: "Private practice, clinic setup & equipment purchases",
-    prof_f2: "Unsecured or low-collateral options up to LKR 500,000/=",
+    prof_f2: "",
     prof_f3: "Privileged interest rates and personalized executive handling",
     prof_f4: "Expedited underwriting and priority executive verification",
     btn_view_details: "Inquire Now",
@@ -386,7 +386,7 @@ const siteTranslations = {
 
     sme_title: "සුළු හා මධ්‍ය පරිමාණ ණය (SME Loans)",
     sme_desc: "ශ්‍රී ලාංකීය නිෂ්පාදන, කෘෂිකාර්මික හා වාණිජ්‍ය ව්‍යාපාර දියුණු කිරීම සඳහා විශේෂයෙන් සැලසුම් කළ ප්‍රාග්ධන ණය පහසුකම්.",
-    sme_f1: "රුපියල් මිලියන 5 දක්වා නම්‍යශීලී කොන්දේසි සහිත ණය",
+    sme_f1: "",
     sme_f2: "මාස 12 සිට 60 දක්වා වාරික සැලසුම්",
     sme_f3: "",
     sme_f4: "කැපවූ සබඳතා නිලධාරියෙකුගේ මඟපෙන්වීම යටතේ කඩිනම් අනුමැතිය",
@@ -400,7 +400,7 @@ const siteTranslations = {
 
     micro_title: "ක්ෂුද්‍ර ව්‍යාපාරික ණය (Micro Loans)",
     micro_desc: "සුළු වෙළඳුන්, ස්වයං රැකියාලාභීන් සහ කුඩා ව්‍යවසායකයින් බලගන්වන කඩිනම් සහ පහසු ණය පහසුකම්.",
-    micro_f1: "රුපියල් 25,000 සිට 500,000 දක්වා කඩිනම් ක්ෂුද්‍ර ණය",
+    micro_f1: "",
     micro_f2: "සංකීර්ණ විගණන ලේඛන අවශ්‍ය නොවන සරල ලිපිලේඛන ක්‍රමවේදය",
     micro_f3: "දිනපතා, සතිපතා හෝ මාසිකව ආපසු ගෙවීමේ ක්‍රම",
     micro_f4: "ඔබේ ස්ථානයටම පැමිණෙන සුහද උපදේශනය සහ විධිමත් මුදල් මුදාහැරීම",
