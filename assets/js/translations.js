@@ -41,8 +41,8 @@ const siteTranslations = {
     
     // Hero
     hero_badge: "Trusted Financial Partner in Sri Lanka",
-    hero_title: "Hire purchase and business loans, <span class='highlight'>explained clearly.</span>",
-    hero_subtitle: "People’s Ceylon (Private) Limited helps individuals, professionals, and small businesses buy vehicles and grow, offering transparent terms and friendly service through our branches across Sri Lanka.",
+    hero_title: "Smart Financing Solutions <span class='highlight'>for Every Milestone.</span>",
+    hero_subtitle: "Experience clear, straightforward lending with People’s Ceylon (Private) Limited. Empowering individuals, professionals, and growing enterprises with owned-fund stability, transparent terms, and dedicated support. Your next big step starts here.",
     hero_btn_apply: "Apply Now",
     hero_btn_call: "Call: 063 7 245 245",
     hero_btn_calc: "Calculate My Installment",
