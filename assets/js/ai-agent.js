@@ -79,9 +79,9 @@
       },
       {
         id: "gold",
-        nameEn: "Gold Coin Purchase Loan",
-        nameSi: "රන් කාසි මිලදී ගැනීමේ ණය (Gold Coin Purchase Loan)",
-        nameTa: "தங்க நாணயம் கொள்முதல் கடன்",
+        nameEn: "Gold Coin Purchase Facility",
+        nameSi: "රන් කාසි මිලදී ගැනීමේ පහසුකම (Gold Coin Purchase Facility)",
+        nameTa: "தங்க நாணயம் கொள்முதல் வசதி (Gold Coin Purchase Facility)",
         summaryEn: "Convenient, secure financing to purchase gold coins and precious bullion assets with transparent terms.",
         summarySi: "පූර්ණ විනිවිදභාවය සහ සාධාරණ තක්සේරුවක් සහිතව රන් කාසි මිලදී ගැනීම සඳහා පහසු සහ සුරක්ෂිත මූල්‍ය පහසුකම්.",
         features: ["Instant appraisal with calibrated precision digital scales", "Bank vault custody and full insurance", "Partial redemption options"]
@@ -688,7 +688,7 @@
 
     // 4.10 Gold Coin Loans
     if (/(gold|coin|bullion|soiyna|ran|කාසි|රන්|தங்கம்)/i.test(q)) {
-      return `<strong>Gold Coin Purchase Loan (රන් කාසි මිලදී ගැනීමේ ණය):</strong><br><br>
+      return `<strong>Gold Coin Purchase Facility (රන් කාසි මිලදී ගැනීමේ පහසුකම):</strong><br><br>
 🥇 <strong>විස්තරය:</strong> පූර්ණ විනිවිදභාවය සහ උපරිම ප්‍රතිලාභ සහිතව රන් කාසි (Gold Coins) මිලදී ගැනීම සඳහා මූල්‍ය පහසුකම්.<br>
 ⚖️ <strong>තක්සේරුව:</strong> කැලිබ්‍රේටඩ් ඩිජිටල් තරාදි මඟින් නිවැරදි තක්සේරුව.<br>
 🔒 <strong>ආරක්ෂාව:</strong> බැංකු සුරක්ෂිතාගාර ආරක්ෂාව සහ පූර්ණ රක්ෂණ ආවරණය සහිතයි.`;
