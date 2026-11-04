@@ -668,10 +668,58 @@ body.lang-ta .nav-link {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  max-width: 960px;
-  gap: 2.5rem;
+  grid-template-columns: auto 1fr;
+  max-width: 1140px;
+  gap: 2.75rem;
+  align-items: flex-start;
+}
+
+.hero-brand-emblem-wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
+  padding-top: 0.35rem;
+  z-index: 2;
+  flex-shrink: 0;
+}
+
+.hero-emblem-badge {
+  position: relative;
+  width: 135px;
+  height: 135px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle, rgba(245, 166, 35, 0.28) 0%, rgba(10, 16, 28, 0.75) 100%);
+  border: 2px solid rgba(245, 166, 35, 0.65);
+  padding: 6px;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.6),
+    0 0 28px rgba(245, 166, 35, 0.42),
+    inset 0 0 16px rgba(245, 166, 35, 0.22);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.hero-emblem-badge:hover {
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 
+    0 12px 36px rgba(0, 0, 0, 0.7),
+    0 0 40px rgba(245, 166, 35, 0.6),
+    inset 0 0 22px rgba(245, 166, 35, 0.35);
+}
+
+.hero-emblem-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.5));
 }
 
 .hero-content {
@@ -2014,9 +2062,20 @@ body.lang-ta .nav-link {
    RESPONSIVE DESIGN (MOBILE-FIRST BREAKPOINTS)
    ========================================================================== */
 @media (max-width: 1024px) {
-  .hero-grid, .calc-grid, .about-grid, .two-col-showcase, .contact-grid {
+  .calc-grid, .about-grid, .two-col-showcase, .contact-grid {
     grid-template-columns: 1fr;
     gap: 2.5rem;
+  }
+  
+  .hero-grid {
+    grid-template-columns: auto 1fr;
+    gap: 1.85rem;
+  }
+
+  .hero-emblem-badge {
+    width: 110px;
+    height: 110px;
+    padding: 5px;
   }
   
   .hero-title {
@@ -2029,6 +2088,22 @@ body.lang-ta .nav-link {
 }
 
 @media (max-width: 768px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .hero-brand-emblem-wrap {
+    padding-top: 0;
+    margin-bottom: 0.25rem;
+  }
+
+  .hero-emblem-badge {
+    width: 85px;
+    height: 85px;
+    padding: 4px;
+  }
+
   .brand-official-logo {
     height: 40px;
     max-height: 42px;
