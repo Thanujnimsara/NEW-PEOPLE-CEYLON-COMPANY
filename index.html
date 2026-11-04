@@ -19,7 +19,7 @@
   <link rel="canonical" href="https://www.pcl.lk/">
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="assets/css/style.css?v=4.6">
+  <link rel="stylesheet" href="assets/css/style.css?v=4.7">
   
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/images/peoples-ceylon-emblem-badge.png">
@@ -191,6 +191,10 @@
       </nav>
 
       <div class="nav-actions">
+        <button class="btn btn-gold btn-sm" data-open-modal="callbackModal" data-i18n="btn_fast_callback">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 4px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          Request a Fast Call-Back
+        </button>
         <a href="loan-calculator.html" class="btn btn-navy btn-sm" data-i18n="btn_calc_nav">Calculate</a>
         <a href="tel:0637245245" class="btn btn-primary btn-sm" data-i18n="btn_call_us">Call Us</a>
         <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation">
@@ -221,7 +225,10 @@
 
         <!-- CTA Buttons -->
         <div class="hero-actions">
-          <a href="#" class="btn btn-primary btn-lg" data-open-modal="callbackModal" data-facility="hp" data-i18n="hero_btn_apply">Apply Now</a>
+          <button class="btn btn-gold btn-lg" data-open-modal="callbackModal" data-facility="hp" data-i18n="btn_fast_callback">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            Request a Fast Call-Back
+          </button>
           <a href="tel:0637245245" class="btn btn-outline-white btn-lg" data-i18n="hero_btn_call">Call: 063 7 245 245</a>
           <a href="loan-calculator.html" class="btn btn-outline-white btn-lg" data-i18n="hero_btn_calc">Calculate My Installment</a>
         </div>
@@ -241,58 +248,6 @@
             <span class="stat-label" data-i18n="stat_transp_sub">Clear Statutory Disclosures</span>
           </div>
         </div>
-      </div>
-
-      <!-- Quick Inquiry Card -->
-      <div class="hero-card">
-        <div class="hero-card-header">
-          <h2 class="hero-card-title" data-i18n="hero_card_title">Request a Fast Call-Back</h2>
-          <p class="hero-card-subtitle" data-i18n="hero_card_sub">Our credit specialist will contact you today.</p>
-        </div>
-
-        <form id="heroCallbackForm">
-          <div class="form-group">
-            <label class="form-label" data-i18n="label_name">Full Name</label>
-            <input type="text" class="form-control" required placeholder="e.g. Sunil Perera" data-i18n-ph="placeholder_name">
-          </div>
-
-          <div class="form-group">
-            <label class="form-label" data-i18n="label_phone">Mobile / WhatsApp Number</label>
-            <input type="tel" class="form-control" required placeholder="07X XXX XXXX" data-i18n-ph="placeholder_phone">
-          </div>
-
-          <div class="form-group">
-            <label class="form-label" data-i18n="label_product">Select Financial Facility</label>
-            <select class="form-control" name="facility">
-              <option value="hp" data-i18n="opt_hp">Vehicle Hire Purchase</option>
-              <option value="sme" data-i18n="opt_sme">SME Business Loan</option>
-              <option value="wc" data-i18n="opt_wc">Working Capital Loan</option>
-              <option value="micro" data-i18n="opt_micro">Micro Business Loan</option>
-              <option value="gold" data-i18n="opt_gold">Gold Coin Purchase Facility</option>
-              <option value="edu" data-i18n="opt_edu">Higher Education Loans</option>
-              <option value="revolving" data-i18n="opt_revolving">Revolving Loan</option>
-              <option value="prof" data-i18n="opt_prof">Professional Loan</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label" data-i18n="label_pref_time">Preferred Call-Back Time</label>
-            <select class="form-control" name="pref_time">
-              <option value="any" data-i18n="time_any">Anytime during office hours</option>
-              <option value="morning" data-i18n="time_morning">Morning (8:30 AM - 12:00 PM)</option>
-              <option value="afternoon" data-i18n="time_afternoon">Afternoon (12:00 PM - 5:00 PM)</option>
-            </select>
-          </div>
-
-          <label class="form-checkbox">
-            <input type="checkbox" required checked>
-            <span data-i18n="consent_crib">I consent to People's Ceylon contacting me regarding this financial enquiry under our Privacy Policy.</span>
-          </label>
-
-          <button type="submit" class="btn btn-primary" style="width: 100%;" data-i18n="btn_request_callback">
-            Request Instant Call-Back
-          </button>
-        </form>
       </div>
     </div>
   </section>
@@ -1369,8 +1324,8 @@
       <button class="modal-close-btn" aria-label="Close Modal">&times;</button>
       <div style="margin-bottom: 1.5rem;">
         <span class="section-badge" data-i18n="hero_badge">Priority Processing</span>
-        <h3 style="font-size: 1.5rem; color: var(--color-primary); margin-top: 0.5rem;">Apply for Financial Facility</h3>
-        <p style="font-size: 0.875rem; color: var(--color-text-muted);">Submit your details and our credit officer in Ampara will assist your application.</p>
+        <h3 style="font-size: 1.5rem; color: var(--color-primary); margin-top: 0.5rem;" data-i18n="hero_card_title">Request a Fast Call-Back</h3>
+        <p style="font-size: 0.875rem; color: var(--color-text-muted);" data-i18n="hero_card_sub">Our credit specialist will contact you today.</p>
       </div>
 
       <form id="modalCallbackForm">
@@ -1399,7 +1354,16 @@
         </div>
 
         <div class="form-group">
-          <label class="form-label">Estimated Facility Amount (LKR)</label>
+          <label class="form-label" data-i18n="label_pref_time">Preferred Call-Back Time</label>
+          <select class="form-control" name="pref_time">
+            <option value="any" data-i18n="time_any">Anytime during office hours</option>
+            <option value="morning" data-i18n="time_morning">Morning (8:30 AM - 12:00 PM)</option>
+            <option value="afternoon" data-i18n="time_afternoon">Afternoon (12:00 PM - 5:00 PM)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Estimated Facility Amount (LKR) [Optional]</label>
           <input type="text" class="form-control" name="estimatedAmount" placeholder="e.g. LKR 1,500,000">
         </div>
 
@@ -1408,8 +1372,8 @@
           <span data-i18n="consent_crib">I consent to People's Ceylon contacting me regarding this financial enquiry under our Privacy Policy.</span>
         </label>
 
-        <button type="submit" class="btn btn-primary" style="width: 100%;">
-          Submit Priority Application
+        <button type="submit" class="btn btn-gold" style="width: 100%;" data-i18n="btn_request_callback">
+          Request Instant Call-Back
         </button>
       </form>
     </div>
@@ -1785,9 +1749,9 @@
   </div>
 
   <!-- JavaScript Files -->
-  <script src="assets/js/translations.js?v=4.6"></script>
-  <script src="assets/js/main.js?v=4.6"></script>
-  <script src="assets/js/ai-agent.js?v=4.6"></script>
+  <script src="assets/js/translations.js?v=4.7"></script>
+  <script src="assets/js/main.js?v=4.7"></script>
+  <script src="assets/js/ai-agent.js?v=4.7"></script>
   <script>
   /* ── Loan Calculator Modal Logic ── */
   (function () {

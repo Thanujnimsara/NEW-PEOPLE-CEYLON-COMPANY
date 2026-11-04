@@ -38,6 +38,7 @@ const siteTranslations = {
     nav_contact: "Contact",
     btn_call_us: "Call Us",
     btn_calc_nav: "Calculate",
+    btn_fast_callback: "Request a Fast Call-Back",
     
     // Hero
     hero_badge: "Trusted Financial Partner in Sri Lanka",
@@ -325,6 +326,7 @@ const siteTranslations = {
     nav_contact: "සම්බන්ධ වන්න",
     btn_call_us: "අමතන්න",
     btn_calc_nav: "වාරිකය ගණනය",
+    btn_fast_callback: "ක්ෂණික ඇමතුමක් ලබාගන්න",
 
     // Hero
     hero_badge: "ශ්‍රී ලංකාවේ විශ්වාසනීය මුල්‍ය හවුල්කරු",
@@ -611,6 +613,7 @@ const siteTranslations = {
     nav_contact: "தொடர்புகள்",
     btn_call_us: "அழைக்கவும்",
     btn_calc_nav: "தவணை கணிப்பு",
+    btn_fast_callback: "விரைவான அழைப்பைக் கோரவும்",
 
     // Hero
     hero_badge: "இலங்கையின் நம்பிக்கையான நிதிப் பங்காளர்",
