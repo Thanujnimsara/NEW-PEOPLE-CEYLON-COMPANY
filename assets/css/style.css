@@ -224,15 +224,15 @@ ul {
 
 .btn-gold {
   background: linear-gradient(135deg, #F5A623 0%, #F0A501 50%, #D97706 100%);
-  color: #0A1628;
-  font-weight: 700;
-  border: 1px solid rgba(180, 83, 9, 0.4);
+  color: #780E0E;
+  font-weight: 800;
+  border: 1px solid rgba(180, 83, 9, 0.45);
   box-shadow: 0 4px 14px rgba(240, 165, 1, 0.45);
 }
 
 .btn-gold:hover {
   background: linear-gradient(135deg, #FBBF24 0%, #F5A623 50%, #E69512 100%);
-  color: #0A1628;
+  color: #550707;
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(240, 165, 1, 0.6);
   border-color: rgba(180, 83, 9, 0.6);
