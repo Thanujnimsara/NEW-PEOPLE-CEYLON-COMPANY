@@ -470,8 +470,8 @@ window.previewDocument = function(docType) {
     previewContent.innerHTML = html;
     openModal('docPreviewModal');
     return;
-  } else if (docType === 'guar_stmt') {
-    title = "Guarantor's Legal Statement & Consent Form";
+  } else if (docType === 'guar_stmt' || docType === 'guarantor' || docType === 'checklist') {
+    title = "Application & Guarantor's Document/  Declaration Form";
     html = `
       <div class="no-print" style="background: #EFF6FF; border: 1px solid #BFDBFE; border-radius: 6px; padding: 10px 14px; margin-bottom: 16px; font-size: 13px; color: #1E40AF; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
         <span>✏️ <strong>Fillable Form:</strong> You can type directly into the fields below before printing or saving as PDF.</span>
@@ -535,7 +535,7 @@ window.previewDocument = function(docType) {
         <div style="background: #FFFBEB; border-left: 4px solid #F59E0B; padding: 12px; font-size: 11px; line-height: 1.5; margin-top: 15px;">
           I confirm that I have read and understood the liability I undertake. I have not been pressured into signing this guarantee and have been provided with an opportunity to seek independent advice.
         </div>
-        <div style="display: flex; justify-content: space-between; margin-top: 35px; font-size: 12px; gap: 20px; flex-wrap: wrap;">
+        <div style="display: flex; justify-content: space-between; margin-top: 25px; font-size: 12px; gap: 20px; flex-wrap: wrap;">
           <div style="flex: 1; min-width: 240px; display: flex; align-items: center; gap: 8px;">
             <span style="font-weight: 600; white-space: nowrap;">Guarantor Signature:</span>
             <input type="text" placeholder="(Type full name or sign on paper)" style="flex: 1; border: none; border-bottom: 1px solid #94A3B8; background: transparent; padding: 4px; font-size: 12px; font-family: inherit; outline: none;" oninput="this.setAttribute('value', this.value)">
@@ -543,6 +543,27 @@ window.previewDocument = function(docType) {
           <div style="display: flex; align-items: center; gap: 8px; width: 220px;">
             <span style="font-weight: 600; white-space: nowrap;">Date:</span>
             <input type="date" style="flex: 1; border: none; border-bottom: 1px solid #94A3B8; background: transparent; padding: 4px; font-size: 12px; font-family: inherit; outline: none;" oninput="this.setAttribute('value', this.value)">
+          </div>
+        </div>
+
+        <!-- Section 2: Applicant & Guarantor Document Checklist -->
+        <div style="margin-top: 25px; border-top: 2px dashed #CBD5E1; padding-top: 20px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+            <h4 style="margin: 0; color: #0A2540; font-size: 14px; text-transform: uppercase;">APPLICANT & GUARANTOR REQUIRED DOCUMENTS CHECKLIST</h4>
+            <span style="font-size: 11px; font-weight: bold; color: #C59B27;">CHECKLIST: PC-CK-04</span>
+          </div>
+          <ul style="line-height: 1.8; font-size: 12px; list-style-type: none; padding-left: 0; color: #334155;">
+            <li>☑ [ 1 ] Clear color copy of Applicant National Identity Card (NIC) / Valid Passport / Driving License</li>
+            <li>☑ [ 2 ] Proof of Billing / Residential Address (Electricity / Water / Landline bill within last 3 months)</li>
+            <li>☑ [ 3 ] Bank Statements for last 3 to 6 consecutive months (Official bank certified)</li>
+            <li>☑ [ 4 ] For Salaried: Salary slips for last 3 months and Letter of Employment Confirmation</li>
+            <li>☑ [ 5 ] For Self-employed / Businesses: Business Registration (BR) Certificate & Sales Ledger proof</li>
+            <li>☑ [ 6 ] For Agriculturalists: Crop / paddy harvest slips, cultivation officer letter, or sales receipts</li>
+            <li>☑ [ 7 ] Vehicle Quotation or Certificate of Registration (CR Book Copy) from seller / registered dealer</li>
+            <li>☑ [ 8 ] Clear copy of Guarantor(s) NIC and recent income proof (salary slip or business proof)</li>
+          </ul>
+          <div style="margin-top: 15px; padding: 10px 14px; background: #ECFDF5; border-left: 4px solid #10B981; font-size: 11.5px; color: #065F46;">
+            <strong>Tip for Prompt Processing:</strong> Submitting all required items together helps expedite facility appraisal and verification within 48 to 72 business hours.
           </div>
         </div>
       </div>
