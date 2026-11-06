@@ -2025,11 +2025,33 @@ body.lang-ta .nav-link {
 
 .fab-whatsapp {
   background: #25D366;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.35);
+}
+
+.fab-whatsapp:hover {
+  background: #20ba5a;
+  box-shadow: 0 12px 28px rgba(37, 211, 102, 0.5);
+}
+
+.fab-facebook {
+  background: #1877F2;
+  box-shadow: 0 8px 24px rgba(24, 119, 242, 0.35);
+}
+
+.fab-facebook:hover {
+  background: #0d65d9;
+  box-shadow: 0 12px 28px rgba(24, 119, 242, 0.5);
 }
 
 .fab-call {
   background: linear-gradient(135deg, #A81B1B 0%, #780E0E 100%);
   border: 2px solid var(--color-accent);
+  box-shadow: 0 8px 24px rgba(168, 27, 27, 0.35);
+}
+
+.fab-call:hover {
+  background: linear-gradient(135deg, #C52828 0%, #8E1212 100%);
+  box-shadow: 0 12px 28px rgba(168, 27, 27, 0.5);
 }
 
 .fab svg {
