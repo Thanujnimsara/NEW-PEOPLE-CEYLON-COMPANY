@@ -290,6 +290,7 @@ const siteTranslations = {
     legal_disclaimer: "Product & Regulatory Disclaimer",
     footer_desc: "People’s Ceylon (Private) Limited (Company No. PV 00354852, Incorporated 5 February 2026). Affiliated member of the Global Group of Companies (Group operating since 2007). Providing responsible vehicle hire purchase, business, working capital, and professional credit facilities from Ampara, Sri Lanka.",
     footer_rights: "© 2026 People’s Ceylon (Private) Limited. All rights reserved.",
+    footer_credits: "Created by the IT Team of the Global Group",
     footer_disclaimer_summary: "Disclaimer: All loan and hire purchase approvals, interest rates, statutory charges, and terms are subject to formal credit appraisal, verification, and execution of legally binding agreements. Calculator output is indicative only."
   },
 
@@ -577,6 +578,7 @@ const siteTranslations = {
     legal_business_office: "ව්‍යාපාරික කාර්යාලය: පන්සල හන්දිය, ඩී.එස්. සේනානායක වීදිය, අම්පාර",
     footer_desc: "පීපල්ස් සිලෝන් (පුද්ගලික) සමාගම (සමාගම් අංකය: PV 00354852, සංස්ථාපනය 2026 පෙබරවාරි 5). 2007 සිට ක්‍රියාත්මක ග්ලෝබල් සමාගම් සමූහයේ (Global Group of Companies) අනුබද්ධිත සාමාජිකයෙකි. වගකීම් සහගත වාහන කුලී සින්නක්කර, ව්‍යාපාරික හා වෘත්තීය ණය සේවා සපයනු ලැබේ.",
     footer_rights: "© 2026 පීපල්ස් සිලෝන් (පුද්ගලික) සමාගම. සියලුම හිමිකම් ඇවිරිණි.",
+    footer_credits: "ග්ලෝබල් සමූහයේ තොරතුරු තාක්ෂණ (IT) කණ්ඩායම විසින් නිර්මාණය කරන ලදී",
     footer_disclaimer_summary: "වගකීම් සීමාව: සියලුම ණය සහ කුලී සින්නක්කර අනුමැතීන්, අනුපාත සහ කොන්දේසි ආයතනයේ නිල ණය තක්සේරුව මත රඳා පවතී. මෙම වෙබ් අඩවියේ ඇති ගණනය කිරීම් ඇස්තමේන්තුවක් පමණි."
   },
 
@@ -864,6 +866,7 @@ const siteTranslations = {
     legal_business_office: "வணிக அலுவலகம்: கோவில் சந்தி, டி.எஸ். சேனாநாயக்க வீதி, அம்பாறை",
     footer_desc: "பீப்பிள்ஸ் சிலோன் (பிரைவேட்) லிமிடெட் (நிறுவன இலக்கம்: PV 00354852, பதிவு: 5 பெப்ரவரி 2026). 2007 முதல் இயங்கும் குளோபல் குழுமத்தின் (Global Group of Companies) இணைந்த அங்கம். பொறுப்பான வாகன வாடகை கொள்முதல், வணிக மற்றும் தொழில்முறை கடன் சேவைகளை வழங்குகிறது.",
     footer_rights: "© 2026 பீப்பிள்ஸ் சிலோன் (பிரைவேட்) லிமிடெட். அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.",
+    footer_credits: "குளோபல் குழுமத்தின் தகவல் தொழில்நுட்ப (IT) குழுவினால் உருவாக்கப்பட்டது",
     footer_disclaimer_summary: "பொறுப்புத் துறப்பு: அனைத்து கடன் மற்றும் வாடகை கொள்முதல் அனுமதிகளும் நிறுவனத்தின் கடன் மதிப்பீட்டிற்கு உட்பட்டவை. இங்குள்ள கணிப்பு ஒரு மதிப்பீடு மட்டுமே."
   }
 };
